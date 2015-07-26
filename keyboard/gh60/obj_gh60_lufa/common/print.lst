@@ -69,12 +69,12 @@
   33               		.file 3 "../../common/avr/xprintf.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 print.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqQvops.s:13     .text.print_set_sendchar:00000000 print_set_sendchar
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc6Vyxyk.s:13     .text.print_set_sendchar:00000000 print_set_sendchar
 
 UNDEFINED SYMBOLS
 xfunc_out

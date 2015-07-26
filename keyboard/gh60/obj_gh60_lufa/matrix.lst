@@ -1579,34 +1579,34 @@
  977               		.file 9 "../../common/util.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 matrix.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:12     .text.unselect_rows:00000000 unselect_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:40     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:56     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:71     .text.matrix_rows:00000000 matrix_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:88     .text.matrix_cols:00000000 matrix_cols
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:105    .text.matrix_init:00000000 matrix_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:962    .bss:0000000a matrix
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:12     .text.unselect_rows:00000000 unselect_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:40     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:56     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:71     .text.matrix_rows:00000000 matrix_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:88     .text.matrix_cols:00000000 matrix_cols
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:105    .text.matrix_init:00000000 matrix_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:962    .bss:0000000a matrix
                              .bss:00000000 matrix_debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:177    .text.matrix_scan:00000000 matrix_scan
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:955    .progmem.data:00000029 __c.2329
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:968    .data:00000000 debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:959    .progmem.data:0000002e __c.2327
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:951    .progmem.data:00000027 __c.2331
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:651    .text.matrix_is_modified:00000000 matrix_is_modified
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:673    .text.matrix_is_on:00000000 matrix_is_on
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:716    .text.matrix_get_row:00000000 matrix_get_row
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:743    .text.matrix_print:00000000 matrix_print
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:947    .progmem.data:00000010 __c.2358
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:943    .progmem.data:0000000b __c.2361
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:935    .progmem.data:00000002 __c.2365
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:939    .progmem.data:00000008 __c.2363
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:931    .progmem.data:00000000 __c.2367
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccvVnJaN.s:876    .text.matrix_key_count:00000000 matrix_key_count
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:177    .text.matrix_scan:00000000 matrix_scan
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:955    .progmem.data:00000029 __c.2329
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:968    .data:00000000 debouncing
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:959    .progmem.data:0000002e __c.2327
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:951    .progmem.data:00000027 __c.2331
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:651    .text.matrix_is_modified:00000000 matrix_is_modified
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:673    .text.matrix_is_on:00000000 matrix_is_on
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:716    .text.matrix_get_row:00000000 matrix_get_row
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:743    .text.matrix_print:00000000 matrix_print
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:947    .progmem.data:00000010 __c.2358
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:943    .progmem.data:0000000b __c.2361
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:935    .progmem.data:00000002 __c.2365
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:939    .progmem.data:00000008 __c.2363
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:931    .progmem.data:00000000 __c.2367
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3FZCGi.s:876    .text.matrix_key_count:00000000 matrix_key_count
 
 UNDEFINED SYMBOLS
 debug_config
