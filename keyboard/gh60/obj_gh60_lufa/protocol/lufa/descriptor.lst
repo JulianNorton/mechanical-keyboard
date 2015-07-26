@@ -1,0 +1,1315 @@
+   1               		.file	"descriptor.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.CALLBACK_USB_GetDescriptor,"ax",@progbits
+  11               	.global	CALLBACK_USB_GetDescriptor
+  13               	CALLBACK_USB_GetDescriptor:
+  14               	.LFB99:
+  15               		.file 1 "../../protocol/lufa/descriptor.c"
+   1:../../protocol/lufa/descriptor.c **** /* 
+   2:../../protocol/lufa/descriptor.c ****  * Copyright 2012 Jun Wako <wakojun@gmail.com>
+   3:../../protocol/lufa/descriptor.c ****  * This file is based on:
+   4:../../protocol/lufa/descriptor.c ****  *     LUFA-120219/Demos/Device/Lowlevel/KeyboardMouse
+   5:../../protocol/lufa/descriptor.c ****  *     LUFA-120219/Demos/Device/Lowlevel/GenericHID
+   6:../../protocol/lufa/descriptor.c ****  */
+   7:../../protocol/lufa/descriptor.c **** 
+   8:../../protocol/lufa/descriptor.c **** /*
+   9:../../protocol/lufa/descriptor.c ****              LUFA Library
+  10:../../protocol/lufa/descriptor.c ****      Copyright (C) Dean Camera, 2012.
+  11:../../protocol/lufa/descriptor.c **** 
+  12:../../protocol/lufa/descriptor.c ****   dean [at] fourwalledcubicle [dot] com
+  13:../../protocol/lufa/descriptor.c ****            www.lufa-lib.org
+  14:../../protocol/lufa/descriptor.c **** */
+  15:../../protocol/lufa/descriptor.c **** 
+  16:../../protocol/lufa/descriptor.c **** /*
+  17:../../protocol/lufa/descriptor.c ****   Copyright 2012  Dean Camera (dean [at] fourwalledcubicle [dot] com)
+  18:../../protocol/lufa/descriptor.c ****   Copyright 2010  Denver Gingerich (denver [at] ossguy [dot] com)
+  19:../../protocol/lufa/descriptor.c **** 
+  20:../../protocol/lufa/descriptor.c ****   Permission to use, copy, modify, distribute, and sell this
+  21:../../protocol/lufa/descriptor.c ****   software and its documentation for any purpose is hereby granted
+  22:../../protocol/lufa/descriptor.c ****   without fee, provided that the above copyright notice appear in
+  23:../../protocol/lufa/descriptor.c ****   all copies and that both that the copyright notice and this
+  24:../../protocol/lufa/descriptor.c ****   permission notice and warranty disclaimer appear in supporting
+  25:../../protocol/lufa/descriptor.c ****   documentation, and that the name of the author not be used in
+  26:../../protocol/lufa/descriptor.c ****   advertising or publicity pertaining to distribution of the
+  27:../../protocol/lufa/descriptor.c ****   software without specific, written prior permission.
+  28:../../protocol/lufa/descriptor.c **** 
+  29:../../protocol/lufa/descriptor.c ****   The author disclaim all warranties with regard to this
+  30:../../protocol/lufa/descriptor.c ****   software, including all implied warranties of merchantability
+  31:../../protocol/lufa/descriptor.c ****   and fitness.  In no event shall the author be liable for any
+  32:../../protocol/lufa/descriptor.c ****   special, indirect or consequential damages or any damages
+  33:../../protocol/lufa/descriptor.c ****   whatsoever resulting from loss of use, data or profits, whether
+  34:../../protocol/lufa/descriptor.c ****   in an action of contract, negligence or other tortious action,
+  35:../../protocol/lufa/descriptor.c ****   arising out of or in connection with the use or performance of
+  36:../../protocol/lufa/descriptor.c ****   this software.
+  37:../../protocol/lufa/descriptor.c **** */
+  38:../../protocol/lufa/descriptor.c **** 
+  39:../../protocol/lufa/descriptor.c **** #include "util.h"
+  40:../../protocol/lufa/descriptor.c **** #include "report.h"
+  41:../../protocol/lufa/descriptor.c **** #include "descriptor.h"
+  42:../../protocol/lufa/descriptor.c **** 
+  43:../../protocol/lufa/descriptor.c **** 
+  44:../../protocol/lufa/descriptor.c **** /*******************************************************************************
+  45:../../protocol/lufa/descriptor.c ****  * HID Report Descriptors
+  46:../../protocol/lufa/descriptor.c ****  ******************************************************************************/
+  47:../../protocol/lufa/descriptor.c **** const USB_Descriptor_HIDReport_Datatype_t PROGMEM KeyboardReport[] =
+  48:../../protocol/lufa/descriptor.c **** {
+  49:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(8, 0x01), /* Generic Desktop */
+  50:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x06), /* Keyboard */
+  51:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+  52:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x07), /* Key Codes */
+  53:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0xE0), /* Keyboard Left Control */
+  54:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, 0xE7), /* Keyboard Right GUI */
+  55:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+  56:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0x01),
+  57:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x08),
+  58:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x01),
+  59:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE),
+  60:../../protocol/lufa/descriptor.c **** 
+  61:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x01),
+  62:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x08),
+  63:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_CONSTANT),  /* reserved */
+  64:../../protocol/lufa/descriptor.c **** 
+  65:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x08), /* LEDs */
+  66:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0x01), /* Num Lock */
+  67:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, 0x05), /* Kana */
+  68:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x05),
+  69:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x01),
+  70:../../protocol/lufa/descriptor.c ****         HID_RI_OUTPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE | HID_IOF_NON_VOLATILE)
+  71:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x01),
+  72:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x03),
+  73:../../protocol/lufa/descriptor.c ****         HID_RI_OUTPUT(8, HID_IOF_CONSTANT),
+  74:../../protocol/lufa/descriptor.c **** 
+  75:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x07), /* Keyboard */
+  76:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0x00), /* Reserved (no event indicated) */
+  77:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, 0xFF), /* Keyboard Application */
+  78:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+  79:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0xFF),
+  80:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x06),
+  81:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x08),
+  82:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_ARRAY | HID_IOF_ABSOLUTE),
+  83:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+  84:../../protocol/lufa/descriptor.c **** };
+  85:../../protocol/lufa/descriptor.c **** 
+  86:../../protocol/lufa/descriptor.c **** #ifdef MOUSE_ENABLE
+  87:../../protocol/lufa/descriptor.c **** const USB_Descriptor_HIDReport_Datatype_t PROGMEM MouseReport[] =
+  88:../../protocol/lufa/descriptor.c **** {
+  89:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(8, 0x01), /* Generic Desktop */
+  90:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x02), /* Mouse */
+  91:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+  92:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE(8, 0x01), /* Pointer */
+  93:../../protocol/lufa/descriptor.c ****         HID_RI_COLLECTION(8, 0x00), /* Physical */
+  94:../../protocol/lufa/descriptor.c **** 
+  95:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE_PAGE(8, 0x09), /* Button */
+  96:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE_MINIMUM(8, 0x01),  /* Button 1 */
+  97:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE_MAXIMUM(8, 0x05),  /* Button 5 */
+  98:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MINIMUM(8, 0x00),
+  99:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MAXIMUM(8, 0x01),
+ 100:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_COUNT(8, 0x05),
+ 101:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_SIZE(8, 0x01),
+ 102:../../protocol/lufa/descriptor.c ****             HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE),
+ 103:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_COUNT(8, 0x01),
+ 104:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_SIZE(8, 0x03),
+ 105:../../protocol/lufa/descriptor.c ****             HID_RI_INPUT(8, HID_IOF_CONSTANT),
+ 106:../../protocol/lufa/descriptor.c **** 
+ 107:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE_PAGE(8, 0x01), /* Generic Desktop */
+ 108:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE(8, 0x30), /* Usage X */
+ 109:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE(8, 0x31), /* Usage Y */
+ 110:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MINIMUM(8, -127),
+ 111:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MAXIMUM(8, 127),
+ 112:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_COUNT(8, 0x02),
+ 113:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_SIZE(8, 0x08),
+ 114:../../protocol/lufa/descriptor.c ****             HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_RELATIVE),
+ 115:../../protocol/lufa/descriptor.c **** 
+ 116:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE(8, 0x38), /* Wheel */
+ 117:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MINIMUM(8, -127),
+ 118:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MAXIMUM(8, 127),
+ 119:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_COUNT(8, 0x01),
+ 120:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_SIZE(8, 0x08),
+ 121:../../protocol/lufa/descriptor.c ****             HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_RELATIVE),
+ 122:../../protocol/lufa/descriptor.c **** 
+ 123:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE_PAGE(8, 0x0C), /* Consumer */
+ 124:../../protocol/lufa/descriptor.c ****             HID_RI_USAGE(16, 0x0238), /* AC Pan (Horizontal wheel) */
+ 125:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MINIMUM(8, -127),
+ 126:../../protocol/lufa/descriptor.c ****             HID_RI_LOGICAL_MAXIMUM(8, 127),
+ 127:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_COUNT(8, 0x01),
+ 128:../../protocol/lufa/descriptor.c ****             HID_RI_REPORT_SIZE(8, 0x08),
+ 129:../../protocol/lufa/descriptor.c ****             HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_RELATIVE),
+ 130:../../protocol/lufa/descriptor.c **** 
+ 131:../../protocol/lufa/descriptor.c ****         HID_RI_END_COLLECTION(0),
+ 132:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+ 133:../../protocol/lufa/descriptor.c **** };
+ 134:../../protocol/lufa/descriptor.c **** #endif
+ 135:../../protocol/lufa/descriptor.c **** 
+ 136:../../protocol/lufa/descriptor.c **** #ifdef EXTRAKEY_ENABLE
+ 137:../../protocol/lufa/descriptor.c **** const USB_Descriptor_HIDReport_Datatype_t PROGMEM ExtrakeyReport[] =
+ 138:../../protocol/lufa/descriptor.c **** {
+ 139:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(8, 0x01), /* Generic Desktop */
+ 140:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x80), /* System Control */
+ 141:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+ 142:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_ID(8, REPORT_ID_SYSTEM),
+ 143:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(16, 0x0001),
+ 144:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(16, 0x00B7),
+ 145:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(16, 0x0001), /* System Power Down */
+ 146:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(16, 0x00B7), /* System Display LCD Autoscale */
+ 147:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 16),
+ 148:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 1),
+ 149:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_ARRAY | HID_IOF_ABSOLUTE),
+ 150:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+ 151:../../protocol/lufa/descriptor.c **** 
+ 152:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(8, 0x0C), /* Consumer */
+ 153:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x01), /* Consumer Control */
+ 154:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+ 155:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_ID(8, REPORT_ID_CONSUMER),
+ 156:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(16, 0x0001),
+ 157:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(16, 0x029C),
+ 158:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(16, 0x0001), /* +10 */
+ 159:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(16, 0x029C), /* AC Distribute Vertically */
+ 160:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 16),
+ 161:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 1),
+ 162:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_ARRAY | HID_IOF_ABSOLUTE),
+ 163:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+ 164:../../protocol/lufa/descriptor.c **** };
+ 165:../../protocol/lufa/descriptor.c **** #endif
+ 166:../../protocol/lufa/descriptor.c **** 
+ 167:../../protocol/lufa/descriptor.c **** #ifdef CONSOLE_ENABLE
+ 168:../../protocol/lufa/descriptor.c **** const USB_Descriptor_HIDReport_Datatype_t PROGMEM ConsoleReport[] =
+ 169:../../protocol/lufa/descriptor.c **** {
+ 170:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(16, 0xFF31), /* Vendor Page(PJRC Teensy compatible) */
+ 171:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x74), /* Vendor Usage(PJRC Teensy compatible) */
+ 172:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+ 173:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE(8, 0x75), /* Vendor Usage 0x75 */
+ 174:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+ 175:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0xFF),
+ 176:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, CONSOLE_EPSIZE),
+ 177:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x08),
+ 178:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE),
+ 179:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE(8, 0x76), /* Vendor Usage 0x76 */
+ 180:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+ 181:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0xFF),
+ 182:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, CONSOLE_EPSIZE),
+ 183:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x08),
+ 184:../../protocol/lufa/descriptor.c ****         HID_RI_OUTPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE | HID_IOF_NON_VOLATILE)
+ 185:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+ 186:../../protocol/lufa/descriptor.c **** };
+ 187:../../protocol/lufa/descriptor.c **** #endif
+ 188:../../protocol/lufa/descriptor.c **** 
+ 189:../../protocol/lufa/descriptor.c **** #ifdef NKRO_ENABLE
+ 190:../../protocol/lufa/descriptor.c **** const USB_Descriptor_HIDReport_Datatype_t PROGMEM NKROReport[] =
+ 191:../../protocol/lufa/descriptor.c **** {
+ 192:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE_PAGE(8, 0x01), /* Generic Desktop */
+ 193:../../protocol/lufa/descriptor.c ****     HID_RI_USAGE(8, 0x06), /* Keyboard */
+ 194:../../protocol/lufa/descriptor.c ****     HID_RI_COLLECTION(8, 0x01), /* Application */
+ 195:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x07), /* Key Codes */
+ 196:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0xE0), /* Keyboard Left Control */
+ 197:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, 0xE7), /* Keyboard Right GUI */
+ 198:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+ 199:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0x01),
+ 200:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x08),
+ 201:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x01),
+ 202:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE),
+ 203:../../protocol/lufa/descriptor.c **** 
+ 204:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x08), /* LEDs */
+ 205:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0x01), /* Num Lock */
+ 206:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, 0x05), /* Kana */
+ 207:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x05),
+ 208:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x01),
+ 209:../../protocol/lufa/descriptor.c ****         HID_RI_OUTPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE | HID_IOF_NON_VOLATILE)
+ 210:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, 0x01),
+ 211:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x03),
+ 212:../../protocol/lufa/descriptor.c ****         HID_RI_OUTPUT(8, HID_IOF_CONSTANT),
+ 213:../../protocol/lufa/descriptor.c **** 
+ 214:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_PAGE(8, 0x07), /* Key Codes */
+ 215:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MINIMUM(8, 0x00), /* Keyboard 0 */
+ 216:../../protocol/lufa/descriptor.c ****         HID_RI_USAGE_MAXIMUM(8, (NKRO_EPSIZE-1)*8-1), /* Keyboard Right GUI */
+ 217:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MINIMUM(8, 0x00),
+ 218:../../protocol/lufa/descriptor.c ****         HID_RI_LOGICAL_MAXIMUM(8, 0x01),
+ 219:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_COUNT(8, (NKRO_EPSIZE-1)*8),
+ 220:../../protocol/lufa/descriptor.c ****         HID_RI_REPORT_SIZE(8, 0x01),
+ 221:../../protocol/lufa/descriptor.c ****         HID_RI_INPUT(8, HID_IOF_DATA | HID_IOF_VARIABLE | HID_IOF_ABSOLUTE),
+ 222:../../protocol/lufa/descriptor.c ****     HID_RI_END_COLLECTION(0),
+ 223:../../protocol/lufa/descriptor.c **** };
+ 224:../../protocol/lufa/descriptor.c **** #endif
+ 225:../../protocol/lufa/descriptor.c **** 
+ 226:../../protocol/lufa/descriptor.c **** /*******************************************************************************
+ 227:../../protocol/lufa/descriptor.c ****  * Device Descriptors
+ 228:../../protocol/lufa/descriptor.c ****  ******************************************************************************/
+ 229:../../protocol/lufa/descriptor.c **** const USB_Descriptor_Device_t PROGMEM DeviceDescriptor =
+ 230:../../protocol/lufa/descriptor.c **** {
+ 231:../../protocol/lufa/descriptor.c ****     .Header                 = {.Size = sizeof(USB_Descriptor_Device_t), .Type = DTYPE_Device},
+ 232:../../protocol/lufa/descriptor.c **** 
+ 233:../../protocol/lufa/descriptor.c ****     .USBSpecification       = VERSION_BCD(1,1,0),
+ 234:../../protocol/lufa/descriptor.c ****     .Class                  = USB_CSCP_NoDeviceClass,
+ 235:../../protocol/lufa/descriptor.c ****     .SubClass               = USB_CSCP_NoDeviceSubclass,
+ 236:../../protocol/lufa/descriptor.c ****     .Protocol               = USB_CSCP_NoDeviceProtocol,
+ 237:../../protocol/lufa/descriptor.c **** 
+ 238:../../protocol/lufa/descriptor.c ****     .Endpoint0Size          = FIXED_CONTROL_ENDPOINT_SIZE,
+ 239:../../protocol/lufa/descriptor.c **** 
+ 240:../../protocol/lufa/descriptor.c ****     /* specified in config.h */
+ 241:../../protocol/lufa/descriptor.c ****     .VendorID               = VENDOR_ID,
+ 242:../../protocol/lufa/descriptor.c ****     .ProductID              = PRODUCT_ID,
+ 243:../../protocol/lufa/descriptor.c ****     .ReleaseNumber          = DEVICE_VER,
+ 244:../../protocol/lufa/descriptor.c **** 
+ 245:../../protocol/lufa/descriptor.c ****     .ManufacturerStrIndex   = 0x01,
+ 246:../../protocol/lufa/descriptor.c ****     .ProductStrIndex        = 0x02,
+ 247:../../protocol/lufa/descriptor.c ****     .SerialNumStrIndex      = NO_DESCRIPTOR,
+ 248:../../protocol/lufa/descriptor.c **** 
+ 249:../../protocol/lufa/descriptor.c ****     .NumberOfConfigurations = FIXED_NUM_CONFIGURATIONS
+ 250:../../protocol/lufa/descriptor.c **** };
+ 251:../../protocol/lufa/descriptor.c **** 
+ 252:../../protocol/lufa/descriptor.c **** /*******************************************************************************
+ 253:../../protocol/lufa/descriptor.c ****  * Configuration Descriptors
+ 254:../../protocol/lufa/descriptor.c ****  ******************************************************************************/
+ 255:../../protocol/lufa/descriptor.c **** const USB_Descriptor_Configuration_t PROGMEM ConfigurationDescriptor =
+ 256:../../protocol/lufa/descriptor.c **** {
+ 257:../../protocol/lufa/descriptor.c ****     .Config =
+ 258:../../protocol/lufa/descriptor.c ****         {
+ 259:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Configuration_Header_t), .Type
+ 260:../../protocol/lufa/descriptor.c **** 
+ 261:../../protocol/lufa/descriptor.c ****             .TotalConfigurationSize = sizeof(USB_Descriptor_Configuration_t),
+ 262:../../protocol/lufa/descriptor.c ****             .TotalInterfaces        = TOTAL_INTERFACES,
+ 263:../../protocol/lufa/descriptor.c **** 
+ 264:../../protocol/lufa/descriptor.c ****             .ConfigurationNumber    = 1,
+ 265:../../protocol/lufa/descriptor.c ****             .ConfigurationStrIndex  = NO_DESCRIPTOR,
+ 266:../../protocol/lufa/descriptor.c **** 
+ 267:../../protocol/lufa/descriptor.c ****             .ConfigAttributes       = (USB_CONFIG_ATTR_RESERVED | USB_CONFIG_ATTR_REMOTEWAKEUP),
+ 268:../../protocol/lufa/descriptor.c **** 
+ 269:../../protocol/lufa/descriptor.c ****             .MaxPowerConsumption    = USB_CONFIG_POWER_MA(100)
+ 270:../../protocol/lufa/descriptor.c ****         },
+ 271:../../protocol/lufa/descriptor.c **** 
+ 272:../../protocol/lufa/descriptor.c ****     /*
+ 273:../../protocol/lufa/descriptor.c ****      * Keyboard
+ 274:../../protocol/lufa/descriptor.c ****      */
+ 275:../../protocol/lufa/descriptor.c ****     .Keyboard_Interface =
+ 276:../../protocol/lufa/descriptor.c ****         {
+ 277:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Interface_t), .Type = DTYPE_In
+ 278:../../protocol/lufa/descriptor.c **** 
+ 279:../../protocol/lufa/descriptor.c ****             .InterfaceNumber        = KEYBOARD_INTERFACE,
+ 280:../../protocol/lufa/descriptor.c ****             .AlternateSetting       = 0x00,
+ 281:../../protocol/lufa/descriptor.c **** 
+ 282:../../protocol/lufa/descriptor.c ****             .TotalEndpoints         = 1,
+ 283:../../protocol/lufa/descriptor.c **** 
+ 284:../../protocol/lufa/descriptor.c ****             .Class                  = HID_CSCP_HIDClass,
+ 285:../../protocol/lufa/descriptor.c ****             .SubClass               = HID_CSCP_BootSubclass,
+ 286:../../protocol/lufa/descriptor.c ****             .Protocol               = HID_CSCP_KeyboardBootProtocol,
+ 287:../../protocol/lufa/descriptor.c **** 
+ 288:../../protocol/lufa/descriptor.c ****             .InterfaceStrIndex      = NO_DESCRIPTOR
+ 289:../../protocol/lufa/descriptor.c ****         },
+ 290:../../protocol/lufa/descriptor.c **** 
+ 291:../../protocol/lufa/descriptor.c ****     .Keyboard_HID =
+ 292:../../protocol/lufa/descriptor.c ****         {
+ 293:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_HID_Descriptor_HID_t), .Type = HID_DTYPE_
+ 294:../../protocol/lufa/descriptor.c **** 
+ 295:../../protocol/lufa/descriptor.c ****             .HIDSpec                = VERSION_BCD(1,1,1),
+ 296:../../protocol/lufa/descriptor.c ****             .CountryCode            = 0x00,
+ 297:../../protocol/lufa/descriptor.c ****             .TotalReportDescriptors = 1,
+ 298:../../protocol/lufa/descriptor.c ****             .HIDReportType          = HID_DTYPE_Report,
+ 299:../../protocol/lufa/descriptor.c ****             .HIDReportLength        = sizeof(KeyboardReport)
+ 300:../../protocol/lufa/descriptor.c ****         },
+ 301:../../protocol/lufa/descriptor.c **** 
+ 302:../../protocol/lufa/descriptor.c ****     .Keyboard_INEndpoint =
+ 303:../../protocol/lufa/descriptor.c ****         {
+ 304:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 305:../../protocol/lufa/descriptor.c **** 
+ 306:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_IN | KEYBOARD_IN_EPNUM),
+ 307:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 308:../../protocol/lufa/descriptor.c ****             .EndpointSize           = KEYBOARD_EPSIZE,
+ 309:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x0A
+ 310:../../protocol/lufa/descriptor.c ****         },
+ 311:../../protocol/lufa/descriptor.c **** 
+ 312:../../protocol/lufa/descriptor.c ****     /*
+ 313:../../protocol/lufa/descriptor.c ****      * Mouse
+ 314:../../protocol/lufa/descriptor.c ****      */
+ 315:../../protocol/lufa/descriptor.c **** #ifdef MOUSE_ENABLE
+ 316:../../protocol/lufa/descriptor.c ****     .Mouse_Interface =
+ 317:../../protocol/lufa/descriptor.c ****         {
+ 318:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Interface_t), .Type = DTYPE_In
+ 319:../../protocol/lufa/descriptor.c **** 
+ 320:../../protocol/lufa/descriptor.c ****             .InterfaceNumber        = MOUSE_INTERFACE,
+ 321:../../protocol/lufa/descriptor.c ****             .AlternateSetting       = 0x00,
+ 322:../../protocol/lufa/descriptor.c **** 
+ 323:../../protocol/lufa/descriptor.c ****             .TotalEndpoints         = 1,
+ 324:../../protocol/lufa/descriptor.c **** 
+ 325:../../protocol/lufa/descriptor.c ****             .Class                  = HID_CSCP_HIDClass,
+ 326:../../protocol/lufa/descriptor.c ****             .SubClass               = HID_CSCP_BootSubclass,
+ 327:../../protocol/lufa/descriptor.c ****             .Protocol               = HID_CSCP_MouseBootProtocol,
+ 328:../../protocol/lufa/descriptor.c **** 
+ 329:../../protocol/lufa/descriptor.c ****             .InterfaceStrIndex      = NO_DESCRIPTOR
+ 330:../../protocol/lufa/descriptor.c ****         },
+ 331:../../protocol/lufa/descriptor.c **** 
+ 332:../../protocol/lufa/descriptor.c ****     .Mouse_HID =
+ 333:../../protocol/lufa/descriptor.c ****         {
+ 334:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_HID_Descriptor_HID_t), .Type = HID_DTYPE_
+ 335:../../protocol/lufa/descriptor.c **** 
+ 336:../../protocol/lufa/descriptor.c ****             .HIDSpec                = VERSION_BCD(1,1,1),
+ 337:../../protocol/lufa/descriptor.c ****             .CountryCode            = 0x00,
+ 338:../../protocol/lufa/descriptor.c ****             .TotalReportDescriptors = 1,
+ 339:../../protocol/lufa/descriptor.c ****             .HIDReportType          = HID_DTYPE_Report,
+ 340:../../protocol/lufa/descriptor.c ****             .HIDReportLength        = sizeof(MouseReport)
+ 341:../../protocol/lufa/descriptor.c ****         },
+ 342:../../protocol/lufa/descriptor.c **** 
+ 343:../../protocol/lufa/descriptor.c ****     .Mouse_INEndpoint =
+ 344:../../protocol/lufa/descriptor.c ****         {
+ 345:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 346:../../protocol/lufa/descriptor.c **** 
+ 347:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_IN | MOUSE_IN_EPNUM),
+ 348:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 349:../../protocol/lufa/descriptor.c ****             .EndpointSize           = MOUSE_EPSIZE,
+ 350:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x0A
+ 351:../../protocol/lufa/descriptor.c ****         },
+ 352:../../protocol/lufa/descriptor.c **** #endif
+ 353:../../protocol/lufa/descriptor.c **** 
+ 354:../../protocol/lufa/descriptor.c ****     /*
+ 355:../../protocol/lufa/descriptor.c ****      * Extra
+ 356:../../protocol/lufa/descriptor.c ****      */
+ 357:../../protocol/lufa/descriptor.c **** #ifdef EXTRAKEY_ENABLE
+ 358:../../protocol/lufa/descriptor.c ****     .Extrakey_Interface =
+ 359:../../protocol/lufa/descriptor.c ****         {
+ 360:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Interface_t), .Type = DTYPE_In
+ 361:../../protocol/lufa/descriptor.c **** 
+ 362:../../protocol/lufa/descriptor.c ****             .InterfaceNumber        = EXTRAKEY_INTERFACE,
+ 363:../../protocol/lufa/descriptor.c ****             .AlternateSetting       = 0x00,
+ 364:../../protocol/lufa/descriptor.c **** 
+ 365:../../protocol/lufa/descriptor.c ****             .TotalEndpoints         = 1,
+ 366:../../protocol/lufa/descriptor.c **** 
+ 367:../../protocol/lufa/descriptor.c ****             .Class                  = HID_CSCP_HIDClass,
+ 368:../../protocol/lufa/descriptor.c ****             .SubClass               = HID_CSCP_NonBootSubclass,
+ 369:../../protocol/lufa/descriptor.c ****             .Protocol               = HID_CSCP_NonBootProtocol,
+ 370:../../protocol/lufa/descriptor.c **** 
+ 371:../../protocol/lufa/descriptor.c ****             .InterfaceStrIndex      = NO_DESCRIPTOR
+ 372:../../protocol/lufa/descriptor.c ****         },
+ 373:../../protocol/lufa/descriptor.c **** 
+ 374:../../protocol/lufa/descriptor.c ****     .Extrakey_HID =
+ 375:../../protocol/lufa/descriptor.c ****         {
+ 376:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_HID_Descriptor_HID_t), .Type = HID_DTYPE_
+ 377:../../protocol/lufa/descriptor.c **** 
+ 378:../../protocol/lufa/descriptor.c ****             .HIDSpec                = VERSION_BCD(1,1,1),
+ 379:../../protocol/lufa/descriptor.c ****             .CountryCode            = 0x00,
+ 380:../../protocol/lufa/descriptor.c ****             .TotalReportDescriptors = 1,
+ 381:../../protocol/lufa/descriptor.c ****             .HIDReportType          = HID_DTYPE_Report,
+ 382:../../protocol/lufa/descriptor.c ****             .HIDReportLength        = sizeof(ExtrakeyReport)
+ 383:../../protocol/lufa/descriptor.c ****         },
+ 384:../../protocol/lufa/descriptor.c **** 
+ 385:../../protocol/lufa/descriptor.c ****     .Extrakey_INEndpoint =
+ 386:../../protocol/lufa/descriptor.c ****         {
+ 387:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 388:../../protocol/lufa/descriptor.c **** 
+ 389:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_IN | EXTRAKEY_IN_EPNUM),
+ 390:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 391:../../protocol/lufa/descriptor.c ****             .EndpointSize           = EXTRAKEY_EPSIZE,
+ 392:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x0A
+ 393:../../protocol/lufa/descriptor.c ****         },
+ 394:../../protocol/lufa/descriptor.c **** #endif
+ 395:../../protocol/lufa/descriptor.c **** 
+ 396:../../protocol/lufa/descriptor.c ****     /*
+ 397:../../protocol/lufa/descriptor.c ****      * Console
+ 398:../../protocol/lufa/descriptor.c ****      */
+ 399:../../protocol/lufa/descriptor.c **** #ifdef CONSOLE_ENABLE
+ 400:../../protocol/lufa/descriptor.c ****     .Console_Interface =
+ 401:../../protocol/lufa/descriptor.c ****         {
+ 402:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Interface_t), .Type = DTYPE_In
+ 403:../../protocol/lufa/descriptor.c **** 
+ 404:../../protocol/lufa/descriptor.c ****             .InterfaceNumber        = CONSOLE_INTERFACE,
+ 405:../../protocol/lufa/descriptor.c ****             .AlternateSetting       = 0x00,
+ 406:../../protocol/lufa/descriptor.c **** 
+ 407:../../protocol/lufa/descriptor.c ****             .TotalEndpoints         = 2,
+ 408:../../protocol/lufa/descriptor.c **** 
+ 409:../../protocol/lufa/descriptor.c ****             .Class                  = HID_CSCP_HIDClass,
+ 410:../../protocol/lufa/descriptor.c ****             .SubClass               = HID_CSCP_NonBootSubclass,
+ 411:../../protocol/lufa/descriptor.c ****             .Protocol               = HID_CSCP_NonBootProtocol,
+ 412:../../protocol/lufa/descriptor.c **** 
+ 413:../../protocol/lufa/descriptor.c ****             .InterfaceStrIndex      = NO_DESCRIPTOR
+ 414:../../protocol/lufa/descriptor.c ****         },
+ 415:../../protocol/lufa/descriptor.c **** 
+ 416:../../protocol/lufa/descriptor.c ****     .Console_HID =
+ 417:../../protocol/lufa/descriptor.c ****         {
+ 418:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_HID_Descriptor_HID_t), .Type = HID_DTYPE_
+ 419:../../protocol/lufa/descriptor.c **** 
+ 420:../../protocol/lufa/descriptor.c ****             .HIDSpec                = VERSION_BCD(1,1,1),
+ 421:../../protocol/lufa/descriptor.c ****             .CountryCode            = 0x00,
+ 422:../../protocol/lufa/descriptor.c ****             .TotalReportDescriptors = 1,
+ 423:../../protocol/lufa/descriptor.c ****             .HIDReportType          = HID_DTYPE_Report,
+ 424:../../protocol/lufa/descriptor.c ****             .HIDReportLength        = sizeof(ConsoleReport)
+ 425:../../protocol/lufa/descriptor.c ****         },
+ 426:../../protocol/lufa/descriptor.c **** 
+ 427:../../protocol/lufa/descriptor.c ****     .Console_INEndpoint =
+ 428:../../protocol/lufa/descriptor.c ****         {
+ 429:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 430:../../protocol/lufa/descriptor.c **** 
+ 431:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_IN | CONSOLE_IN_EPNUM),
+ 432:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 433:../../protocol/lufa/descriptor.c ****             .EndpointSize           = CONSOLE_EPSIZE,
+ 434:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x01
+ 435:../../protocol/lufa/descriptor.c ****         },
+ 436:../../protocol/lufa/descriptor.c **** 
+ 437:../../protocol/lufa/descriptor.c ****     .Console_OUTEndpoint =
+ 438:../../protocol/lufa/descriptor.c ****         {
+ 439:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 440:../../protocol/lufa/descriptor.c **** 
+ 441:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_OUT | CONSOLE_OUT_EPNUM),
+ 442:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 443:../../protocol/lufa/descriptor.c ****             .EndpointSize           = CONSOLE_EPSIZE,
+ 444:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x01
+ 445:../../protocol/lufa/descriptor.c ****         },
+ 446:../../protocol/lufa/descriptor.c **** #endif
+ 447:../../protocol/lufa/descriptor.c **** 
+ 448:../../protocol/lufa/descriptor.c ****     /*
+ 449:../../protocol/lufa/descriptor.c ****      * NKRO
+ 450:../../protocol/lufa/descriptor.c ****      */
+ 451:../../protocol/lufa/descriptor.c **** #ifdef NKRO_ENABLE
+ 452:../../protocol/lufa/descriptor.c ****     .NKRO_Interface =
+ 453:../../protocol/lufa/descriptor.c ****         {
+ 454:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Interface_t), .Type = DTYPE_In
+ 455:../../protocol/lufa/descriptor.c **** 
+ 456:../../protocol/lufa/descriptor.c ****             .InterfaceNumber        = NKRO_INTERFACE,
+ 457:../../protocol/lufa/descriptor.c ****             .AlternateSetting       = 0x00,
+ 458:../../protocol/lufa/descriptor.c **** 
+ 459:../../protocol/lufa/descriptor.c ****             .TotalEndpoints         = 1,
+ 460:../../protocol/lufa/descriptor.c **** 
+ 461:../../protocol/lufa/descriptor.c ****             .Class                  = HID_CSCP_HIDClass,
+ 462:../../protocol/lufa/descriptor.c ****             .SubClass               = HID_CSCP_NonBootSubclass,
+ 463:../../protocol/lufa/descriptor.c ****             .Protocol               = HID_CSCP_NonBootProtocol,
+ 464:../../protocol/lufa/descriptor.c **** 
+ 465:../../protocol/lufa/descriptor.c ****             .InterfaceStrIndex      = NO_DESCRIPTOR
+ 466:../../protocol/lufa/descriptor.c ****         },
+ 467:../../protocol/lufa/descriptor.c **** 
+ 468:../../protocol/lufa/descriptor.c ****     .NKRO_HID =
+ 469:../../protocol/lufa/descriptor.c ****         {
+ 470:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_HID_Descriptor_HID_t), .Type = HID_DTYPE_
+ 471:../../protocol/lufa/descriptor.c **** 
+ 472:../../protocol/lufa/descriptor.c ****             .HIDSpec                = VERSION_BCD(1,1,1),
+ 473:../../protocol/lufa/descriptor.c ****             .CountryCode            = 0x00,
+ 474:../../protocol/lufa/descriptor.c ****             .TotalReportDescriptors = 1,
+ 475:../../protocol/lufa/descriptor.c ****             .HIDReportType          = HID_DTYPE_Report,
+ 476:../../protocol/lufa/descriptor.c ****             .HIDReportLength        = sizeof(NKROReport)
+ 477:../../protocol/lufa/descriptor.c ****         },
+ 478:../../protocol/lufa/descriptor.c **** 
+ 479:../../protocol/lufa/descriptor.c ****     .NKRO_INEndpoint =
+ 480:../../protocol/lufa/descriptor.c ****         {
+ 481:../../protocol/lufa/descriptor.c ****             .Header                 = {.Size = sizeof(USB_Descriptor_Endpoint_t), .Type = DTYPE_End
+ 482:../../protocol/lufa/descriptor.c **** 
+ 483:../../protocol/lufa/descriptor.c ****             .EndpointAddress        = (ENDPOINT_DIR_IN | NKRO_IN_EPNUM),
+ 484:../../protocol/lufa/descriptor.c ****             .Attributes             = (EP_TYPE_INTERRUPT | ENDPOINT_ATTR_NO_SYNC | ENDPOINT_USAGE_D
+ 485:../../protocol/lufa/descriptor.c ****             .EndpointSize           = NKRO_EPSIZE,
+ 486:../../protocol/lufa/descriptor.c ****             .PollingIntervalMS      = 0x01
+ 487:../../protocol/lufa/descriptor.c ****         },
+ 488:../../protocol/lufa/descriptor.c **** #endif
+ 489:../../protocol/lufa/descriptor.c **** };
+ 490:../../protocol/lufa/descriptor.c **** 
+ 491:../../protocol/lufa/descriptor.c **** 
+ 492:../../protocol/lufa/descriptor.c **** /*******************************************************************************
+ 493:../../protocol/lufa/descriptor.c ****  * String Descriptors
+ 494:../../protocol/lufa/descriptor.c ****  ******************************************************************************/
+ 495:../../protocol/lufa/descriptor.c **** const USB_Descriptor_String_t PROGMEM LanguageString =
+ 496:../../protocol/lufa/descriptor.c **** {
+ 497:../../protocol/lufa/descriptor.c ****     .Header                 = {.Size = USB_STRING_LEN(1), .Type = DTYPE_String},
+ 498:../../protocol/lufa/descriptor.c **** 
+ 499:../../protocol/lufa/descriptor.c ****     .UnicodeString          = {LANGUAGE_ID_ENG}
+ 500:../../protocol/lufa/descriptor.c **** };
+ 501:../../protocol/lufa/descriptor.c **** 
+ 502:../../protocol/lufa/descriptor.c **** const USB_Descriptor_String_t PROGMEM ManufacturerString =
+ 503:../../protocol/lufa/descriptor.c **** {
+ 504:../../protocol/lufa/descriptor.c ****     /* subtract 1 for null terminator */
+ 505:../../protocol/lufa/descriptor.c ****     .Header                 = {.Size = USB_STRING_LEN(sizeof(STR(MANUFACTURER))-1), .Type = DTYPE_S
+ 506:../../protocol/lufa/descriptor.c **** 
+ 507:../../protocol/lufa/descriptor.c ****     .UnicodeString          = LSTR(MANUFACTURER)
+ 508:../../protocol/lufa/descriptor.c **** };
+ 509:../../protocol/lufa/descriptor.c **** 
+ 510:../../protocol/lufa/descriptor.c **** const USB_Descriptor_String_t PROGMEM ProductString =
+ 511:../../protocol/lufa/descriptor.c **** {
+ 512:../../protocol/lufa/descriptor.c ****     /* subtract 1 for null terminator */
+ 513:../../protocol/lufa/descriptor.c ****     .Header                 = {.Size = USB_STRING_LEN(sizeof(STR(PRODUCT))-1), .Type = DTYPE_String
+ 514:../../protocol/lufa/descriptor.c **** 
+ 515:../../protocol/lufa/descriptor.c ****     .UnicodeString          = LSTR(PRODUCT)
+ 516:../../protocol/lufa/descriptor.c **** };
+ 517:../../protocol/lufa/descriptor.c **** 
+ 518:../../protocol/lufa/descriptor.c **** 
+ 519:../../protocol/lufa/descriptor.c **** /** This function is called by the library when in device mode, and must be overridden (see library
+ 520:../../protocol/lufa/descriptor.c ****  *  documentation) by the application code so that the address and size of a requested descriptor c
+ 521:../../protocol/lufa/descriptor.c ****  *  to the USB library. When the device receives a Get Descriptor request on the control endpoint, 
+ 522:../../protocol/lufa/descriptor.c ****  *  is called so that the descriptor details can be passed back and the appropriate descriptor sent
+ 523:../../protocol/lufa/descriptor.c ****  *  USB host.
+ 524:../../protocol/lufa/descriptor.c ****  */
+ 525:../../protocol/lufa/descriptor.c **** uint16_t CALLBACK_USB_GetDescriptor(const uint16_t wValue,
+ 526:../../protocol/lufa/descriptor.c ****                                     const uint8_t wIndex,
+ 527:../../protocol/lufa/descriptor.c ****                                     const void** const DescriptorAddress)
+ 528:../../protocol/lufa/descriptor.c **** {
+  16               		.loc 1 528 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+ 529:../../protocol/lufa/descriptor.c ****     const uint8_t  DescriptorType   = (wValue >> 8);
+  23               		.loc 1 529 0
+  24 0000 292F      		mov r18,r25
+  25 0002 3327      		clr r19
+ 530:../../protocol/lufa/descriptor.c ****     const uint8_t  DescriptorIndex  = (wValue & 0xFF);
+ 531:../../protocol/lufa/descriptor.c **** 
+ 532:../../protocol/lufa/descriptor.c ****     const void* Address = NULL;
+ 533:../../protocol/lufa/descriptor.c ****     uint16_t    Size    = NO_DESCRIPTOR;
+ 534:../../protocol/lufa/descriptor.c **** 
+ 535:../../protocol/lufa/descriptor.c ****     switch (DescriptorType)
+  26               		.loc 1 535 0
+  27 0004 2330      		cpi r18,3
+  28 0006 3105      		cpc r19,__zero_reg__
+  29 0008 01F0      		breq .L3
+  30 000a 04F4      		brge .L4
+  31 000c 2130      		cpi r18,1
+  32 000e 3105      		cpc r19,__zero_reg__
+  33 0010 01F4      		brne .+2
+  34 0012 00C0      		rjmp .L12
+  35 0014 2230      		cpi r18,2
+  36 0016 3105      		cpc r19,__zero_reg__
+  37 0018 01F0      		breq .+2
+  38 001a 00C0      		rjmp .L15
+  39               	.LVL1:
+ 536:../../protocol/lufa/descriptor.c ****     {
+ 537:../../protocol/lufa/descriptor.c ****         case DTYPE_Device:
+ 538:../../protocol/lufa/descriptor.c ****             Address = &DeviceDescriptor;
+ 539:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Device_t);
+ 540:../../protocol/lufa/descriptor.c ****             break;
+ 541:../../protocol/lufa/descriptor.c ****         case DTYPE_Configuration:
+ 542:../../protocol/lufa/descriptor.c ****             Address = &ConfigurationDescriptor;
+ 543:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Configuration_t);
+  40               		.loc 1 543 0
+  41 001c 8DE8      		ldi r24,lo8(-115)
+  42 001e 90E0      		ldi r25,0
+  43               	.LVL2:
+ 542:../../protocol/lufa/descriptor.c ****             Address = &ConfigurationDescriptor;
+  44               		.loc 1 542 0
+  45 0020 20E0      		ldi r18,lo8(ConfigurationDescriptor)
+  46 0022 30E0      		ldi r19,hi8(ConfigurationDescriptor)
+ 544:../../protocol/lufa/descriptor.c ****             break;
+  47               		.loc 1 544 0
+  48 0024 00C0      		rjmp .L5
+  49               	.LVL3:
+  50               	.L4:
+ 535:../../protocol/lufa/descriptor.c ****     switch (DescriptorType)
+  51               		.loc 1 535 0
+  52 0026 2132      		cpi r18,33
+  53 0028 3105      		cpc r19,__zero_reg__
+  54 002a 01F0      		breq .L7
+  55 002c 2232      		cpi r18,34
+  56 002e 3105      		cpc r19,__zero_reg__
+  57 0030 01F0      		breq .L8
+  58 0032 00C0      		rjmp .L15
+  59               	.L3:
+  60 0034 9927      		clr r25
+  61               	.LVL4:
+ 545:../../protocol/lufa/descriptor.c ****         case DTYPE_String:
+ 546:../../protocol/lufa/descriptor.c ****             switch (DescriptorIndex )
+  62               		.loc 1 546 0
+  63 0036 8130      		cpi r24,1
+  64 0038 9105      		cpc r25,__zero_reg__
+  65 003a 01F0      		breq .L9
+  66 003c 8230      		cpi r24,2
+  67 003e 9105      		cpc r25,__zero_reg__
+  68 0040 01F0      		breq .L10
+  69 0042 892B      		or r24,r25
+  70 0044 01F4      		brne .L15
+  71               	.LVL5:
+  72               	.LBB2:
+ 547:../../protocol/lufa/descriptor.c ****             {
+ 548:../../protocol/lufa/descriptor.c ****                 case 0x00:
+ 549:../../protocol/lufa/descriptor.c ****                     Address = &LanguageString;
+ 550:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&LanguageString.Header.Size);
+  73               		.loc 1 550 0
+  74 0046 E0E0      		ldi r30,lo8(LanguageString)
+  75 0048 F0E0      		ldi r31,hi8(LanguageString)
+  76 004a 00C0      		rjmp .L17
+  77               	.LVL6:
+  78               	.L9:
+  79               	.LBE2:
+  80               	.LBB3:
+ 551:../../protocol/lufa/descriptor.c ****                     break;
+ 552:../../protocol/lufa/descriptor.c ****                 case 0x01:
+ 553:../../protocol/lufa/descriptor.c ****                     Address = &ManufacturerString;
+ 554:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&ManufacturerString.Header.Size);
+  81               		.loc 1 554 0
+  82 004c E0E0      		ldi r30,lo8(ManufacturerString)
+  83 004e F0E0      		ldi r31,hi8(ManufacturerString)
+  84 0050 00C0      		rjmp .L17
+  85               	.LVL7:
+  86               	.L10:
+  87               	.LBE3:
+  88               	.LBB4:
+ 555:../../protocol/lufa/descriptor.c ****                     break;
+ 556:../../protocol/lufa/descriptor.c ****                 case 0x02:
+ 557:../../protocol/lufa/descriptor.c ****                     Address = &ProductString;
+ 558:../../protocol/lufa/descriptor.c ****                     Size    = pgm_read_byte(&ProductString.Header.Size);
+  89               		.loc 1 558 0
+  90 0052 E0E0      		ldi r30,lo8(ProductString)
+  91 0054 F0E0      		ldi r31,hi8(ProductString)
+  92               	.LVL8:
+  93               	.L17:
+  94               	/* #APP */
+  95               	 ;  558 "../../protocol/lufa/descriptor.c" 1
+  96 0056 8491      		lpm r24, Z
+  97               		
+  98               	 ;  0 "" 2
+  99               	.LVL9:
+ 100               	/* #NOAPP */
+ 101               	.LBE4:
+ 102 0058 90E0      		ldi r25,0
+ 103               	.LVL10:
+ 557:../../protocol/lufa/descriptor.c ****                     Address = &ProductString;
+ 104               		.loc 1 557 0
+ 105 005a 9F01      		movw r18,r30
+ 559:../../protocol/lufa/descriptor.c ****                     break;
+ 106               		.loc 1 559 0
+ 107 005c 00C0      		rjmp .L5
+ 108               	.LVL11:
+ 109               	.L7:
+ 110 005e 6530      		cpi r22,lo8(5)
+ 111 0060 00F4      		brsh .L15
+ 112 0062 E62F      		mov r30,r22
+ 113 0064 F0E0      		ldi r31,0
+ 114 0066 EE0F      		lsl r30
+ 115 0068 FF1F      		rol r31
+ 116 006a E050      		subi r30,lo8(-(CSWTCH.1))
+ 117 006c F040      		sbci r31,hi8(-(CSWTCH.1))
+ 118 006e 2081      		ld r18,Z
+ 119 0070 3181      		ldd r19,Z+1
+ 120 0072 89E0      		ldi r24,lo8(9)
+ 121 0074 90E0      		ldi r25,0
+ 122               	.LVL12:
+ 123 0076 00C0      		rjmp .L5
+ 124               	.LVL13:
+ 125               	.L8:
+ 126 0078 6530      		cpi r22,lo8(5)
+ 127 007a 00F4      		brsh .L15
+ 128 007c E62F      		mov r30,r22
+ 129 007e F0E0      		ldi r31,0
+ 130 0080 DF01      		movw r26,r30
+ 131 0082 AA0F      		lsl r26
+ 132 0084 BB1F      		rol r27
+ 133               	.LVL14:
+ 134 0086 A050      		subi r26,lo8(-(CSWTCH.2))
+ 135 0088 B040      		sbci r27,hi8(-(CSWTCH.2))
+ 136 008a 2D91      		ld r18,X+
+ 137 008c 3C91      		ld r19,X
+ 138 008e E050      		subi r30,lo8(-(CSWTCH.3))
+ 139 0090 F040      		sbci r31,hi8(-(CSWTCH.3))
+ 140 0092 8081      		ld r24,Z
+ 141 0094 90E0      		ldi r25,0
+ 142 0096 00C0      		rjmp .L5
+ 143               	.LVL15:
+ 144               	.L12:
+ 539:../../protocol/lufa/descriptor.c ****             Size    = sizeof(USB_Descriptor_Device_t);
+ 145               		.loc 1 539 0
+ 146 0098 82E1      		ldi r24,lo8(18)
+ 147 009a 90E0      		ldi r25,0
+ 148               	.LVL16:
+ 538:../../protocol/lufa/descriptor.c ****             Address = &DeviceDescriptor;
+ 149               		.loc 1 538 0
+ 150 009c 20E0      		ldi r18,lo8(DeviceDescriptor)
+ 151 009e 30E0      		ldi r19,hi8(DeviceDescriptor)
+ 152 00a0 00C0      		rjmp .L5
+ 153               	.L15:
+ 154 00a2 80E0      		ldi r24,0
+ 155 00a4 90E0      		ldi r25,0
+ 156 00a6 20E0      		ldi r18,0
+ 157 00a8 30E0      		ldi r19,0
+ 158               	.LVL17:
+ 159               	.L5:
+ 560:../../protocol/lufa/descriptor.c ****             }
+ 561:../../protocol/lufa/descriptor.c ****             break;
+ 562:../../protocol/lufa/descriptor.c ****         case HID_DTYPE_HID:
+ 563:../../protocol/lufa/descriptor.c ****             switch (wIndex) {
+ 564:../../protocol/lufa/descriptor.c ****             case KEYBOARD_INTERFACE:
+ 565:../../protocol/lufa/descriptor.c ****                 Address = &ConfigurationDescriptor.Keyboard_HID;
+ 566:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(USB_HID_Descriptor_HID_t);
+ 567:../../protocol/lufa/descriptor.c ****                 break;
+ 568:../../protocol/lufa/descriptor.c **** #ifdef MOUSE_ENABLE
+ 569:../../protocol/lufa/descriptor.c ****             case MOUSE_INTERFACE:
+ 570:../../protocol/lufa/descriptor.c ****                 Address = &ConfigurationDescriptor.Mouse_HID;
+ 571:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(USB_HID_Descriptor_HID_t);
+ 572:../../protocol/lufa/descriptor.c ****                 break;
+ 573:../../protocol/lufa/descriptor.c **** #endif
+ 574:../../protocol/lufa/descriptor.c **** #ifdef EXTRAKEY_ENABLE
+ 575:../../protocol/lufa/descriptor.c ****             case EXTRAKEY_INTERFACE:
+ 576:../../protocol/lufa/descriptor.c ****                 Address = &ConfigurationDescriptor.Extrakey_HID;
+ 577:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(USB_HID_Descriptor_HID_t);
+ 578:../../protocol/lufa/descriptor.c ****                 break;
+ 579:../../protocol/lufa/descriptor.c **** #endif
+ 580:../../protocol/lufa/descriptor.c **** #ifdef CONSOLE_ENABLE
+ 581:../../protocol/lufa/descriptor.c ****             case CONSOLE_INTERFACE:
+ 582:../../protocol/lufa/descriptor.c ****                 Address = &ConfigurationDescriptor.Console_HID;
+ 583:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(USB_HID_Descriptor_HID_t);
+ 584:../../protocol/lufa/descriptor.c ****                 break;
+ 585:../../protocol/lufa/descriptor.c **** #endif
+ 586:../../protocol/lufa/descriptor.c **** #ifdef NKRO_ENABLE
+ 587:../../protocol/lufa/descriptor.c ****             case NKRO_INTERFACE:
+ 588:../../protocol/lufa/descriptor.c ****                 Address = &ConfigurationDescriptor.NKRO_HID;
+ 589:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(USB_HID_Descriptor_HID_t);
+ 590:../../protocol/lufa/descriptor.c ****                 break;
+ 591:../../protocol/lufa/descriptor.c **** #endif
+ 592:../../protocol/lufa/descriptor.c ****             }
+ 593:../../protocol/lufa/descriptor.c ****             break;
+ 594:../../protocol/lufa/descriptor.c ****         case HID_DTYPE_Report:
+ 595:../../protocol/lufa/descriptor.c ****             switch (wIndex) {
+ 596:../../protocol/lufa/descriptor.c ****             case KEYBOARD_INTERFACE:
+ 597:../../protocol/lufa/descriptor.c ****                 Address = &KeyboardReport;
+ 598:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(KeyboardReport);
+ 599:../../protocol/lufa/descriptor.c ****                 break;
+ 600:../../protocol/lufa/descriptor.c **** #ifdef MOUSE_ENABLE
+ 601:../../protocol/lufa/descriptor.c ****             case MOUSE_INTERFACE:
+ 602:../../protocol/lufa/descriptor.c ****                 Address = &MouseReport;
+ 603:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(MouseReport);
+ 604:../../protocol/lufa/descriptor.c ****                 break;
+ 605:../../protocol/lufa/descriptor.c **** #endif
+ 606:../../protocol/lufa/descriptor.c **** #ifdef EXTRAKEY_ENABLE
+ 607:../../protocol/lufa/descriptor.c ****             case EXTRAKEY_INTERFACE:
+ 608:../../protocol/lufa/descriptor.c ****                 Address = &ExtrakeyReport;
+ 609:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(ExtrakeyReport);
+ 610:../../protocol/lufa/descriptor.c ****                 break;
+ 611:../../protocol/lufa/descriptor.c **** #endif
+ 612:../../protocol/lufa/descriptor.c **** #ifdef CONSOLE_ENABLE
+ 613:../../protocol/lufa/descriptor.c ****             case CONSOLE_INTERFACE:
+ 614:../../protocol/lufa/descriptor.c ****                 Address = &ConsoleReport;
+ 615:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(ConsoleReport);
+ 616:../../protocol/lufa/descriptor.c ****                 break;
+ 617:../../protocol/lufa/descriptor.c **** #endif
+ 618:../../protocol/lufa/descriptor.c **** #ifdef NKRO_ENABLE
+ 619:../../protocol/lufa/descriptor.c ****             case NKRO_INTERFACE:
+ 620:../../protocol/lufa/descriptor.c ****                 Address = &NKROReport;
+ 621:../../protocol/lufa/descriptor.c ****                 Size    = sizeof(NKROReport);
+ 622:../../protocol/lufa/descriptor.c ****                 break;
+ 623:../../protocol/lufa/descriptor.c **** #endif
+ 624:../../protocol/lufa/descriptor.c ****             }
+ 625:../../protocol/lufa/descriptor.c ****             break;
+ 626:../../protocol/lufa/descriptor.c ****     }
+ 627:../../protocol/lufa/descriptor.c **** 
+ 628:../../protocol/lufa/descriptor.c ****     *DescriptorAddress = Address;
+ 160               		.loc 1 628 0
+ 161 00aa FA01      		movw r30,r20
+ 162 00ac 3183      		std Z+1,r19
+ 163 00ae 2083      		st Z,r18
+ 629:../../protocol/lufa/descriptor.c ****     return Size;
+ 630:../../protocol/lufa/descriptor.c **** }
+ 164               		.loc 1 630 0
+ 165 00b0 0895      		ret
+ 166               		.cfi_endproc
+ 167               	.LFE99:
+ 169               		.section	.rodata
+ 172               	CSWTCH.3:
+ 173 0000 3F        		.byte	63
+ 174 0001 4D        		.byte	77
+ 175 0002 36        		.byte	54
+ 176 0003 20        		.byte	32
+ 177 0004 39        		.byte	57
+ 180               	CSWTCH.2:
+ 181 0005 0000      		.word	KeyboardReport
+ 182 0007 0000      		.word	MouseReport
+ 183 0009 0000      		.word	ExtrakeyReport
+ 184 000b 0000      		.word	ConsoleReport
+ 185 000d 0000      		.word	NKROReport
+ 188               	CSWTCH.1:
+ 189 000f 0000      		.word	ConfigurationDescriptor+18
+ 190 0011 0000      		.word	ConfigurationDescriptor+43
+ 191 0013 0000      		.word	ConfigurationDescriptor+68
+ 192 0015 0000      		.word	ConfigurationDescriptor+93
+ 193 0017 0000      		.word	ConfigurationDescriptor+125
+ 194               	.global	ProductString
+ 195               		.section	.progmem.data,"a",@progbits
+ 198               	ProductString:
+ 199 0000 0A        		.byte	10
+ 200 0001 03        		.byte	3
+ 201 0002 4700      		.string	"G"
+ 202 0004 4800      		.string	"H"
+ 203 0006 3600      		.string	"6"
+ 204 0008 3000      		.string	"0"
+ 205 000a 00        		.string	""
+ 206 000b 00        		.string	""
+ 207               	.global	ManufacturerString
+ 210               	ManufacturerString:
+ 211 000c 0E        		.byte	14
+ 212 000d 03        		.byte	3
+ 213 000e 6A00      		.string	"j"
+ 214 0010 7500      		.string	"u"
+ 215 0012 6C00      		.string	"l"
+ 216 0014 6900      		.string	"i"
+ 217 0016 6100      		.string	"a"
+ 218 0018 6E00      		.string	"n"
+ 219 001a 00        		.string	""
+ 220 001b 00        		.string	""
+ 221               	.global	LanguageString
+ 224               	LanguageString:
+ 225 001c 04        		.byte	4
+ 226 001d 03        		.byte	3
+ 227 001e 0904      		.word	1033
+ 228               	.global	ConfigurationDescriptor
+ 231               	ConfigurationDescriptor:
+ 232 0020 09        		.byte	9
+ 233 0021 02        		.byte	2
+ 234 0022 8D00      		.word	141
+ 235 0024 05        		.byte	5
+ 236 0025 01        		.byte	1
+ 237 0026 00        		.byte	0
+ 238 0027 A0        		.byte	-96
+ 239 0028 32        		.byte	50
+ 240 0029 09        		.byte	9
+ 241 002a 04        		.byte	4
+ 242 002b 00        		.byte	0
+ 243 002c 00        		.byte	0
+ 244 002d 01        		.byte	1
+ 245 002e 03        		.byte	3
+ 246 002f 01        		.byte	1
+ 247 0030 01        		.byte	1
+ 248 0031 00        		.byte	0
+ 249 0032 09        		.byte	9
+ 250 0033 21        		.byte	33
+ 251 0034 1101      		.word	273
+ 252 0036 00        		.byte	0
+ 253 0037 01        		.byte	1
+ 254 0038 22        		.byte	34
+ 255 0039 3F00      		.word	63
+ 256 003b 07        		.byte	7
+ 257 003c 05        		.byte	5
+ 258 003d 81        		.byte	-127
+ 259 003e 03        		.byte	3
+ 260 003f 0800      		.word	8
+ 261 0041 0A        		.byte	10
+ 262 0042 09        		.byte	9
+ 263 0043 04        		.byte	4
+ 264 0044 01        		.byte	1
+ 265 0045 00        		.byte	0
+ 266 0046 01        		.byte	1
+ 267 0047 03        		.byte	3
+ 268 0048 01        		.byte	1
+ 269 0049 02        		.byte	2
+ 270 004a 00        		.byte	0
+ 271 004b 09        		.byte	9
+ 272 004c 21        		.byte	33
+ 273 004d 1101      		.word	273
+ 274 004f 00        		.byte	0
+ 275 0050 01        		.byte	1
+ 276 0051 22        		.byte	34
+ 277 0052 4D00      		.word	77
+ 278 0054 07        		.byte	7
+ 279 0055 05        		.byte	5
+ 280 0056 82        		.byte	-126
+ 281 0057 03        		.byte	3
+ 282 0058 0800      		.word	8
+ 283 005a 0A        		.byte	10
+ 284 005b 09        		.byte	9
+ 285 005c 04        		.byte	4
+ 286 005d 02        		.byte	2
+ 287 005e 00        		.byte	0
+ 288 005f 01        		.byte	1
+ 289 0060 03        		.byte	3
+ 290 0061 00        		.byte	0
+ 291 0062 00        		.byte	0
+ 292 0063 00        		.byte	0
+ 293 0064 09        		.byte	9
+ 294 0065 21        		.byte	33
+ 295 0066 1101      		.word	273
+ 296 0068 00        		.byte	0
+ 297 0069 01        		.byte	1
+ 298 006a 22        		.byte	34
+ 299 006b 3600      		.word	54
+ 300 006d 07        		.byte	7
+ 301 006e 05        		.byte	5
+ 302 006f 83        		.byte	-125
+ 303 0070 03        		.byte	3
+ 304 0071 0800      		.word	8
+ 305 0073 0A        		.byte	10
+ 306 0074 09        		.byte	9
+ 307 0075 04        		.byte	4
+ 308 0076 03        		.byte	3
+ 309 0077 00        		.byte	0
+ 310 0078 02        		.byte	2
+ 311 0079 03        		.byte	3
+ 312 007a 00        		.byte	0
+ 313 007b 00        		.byte	0
+ 314 007c 00        		.byte	0
+ 315 007d 09        		.byte	9
+ 316 007e 21        		.byte	33
+ 317 007f 1101      		.word	273
+ 318 0081 00        		.byte	0
+ 319 0082 01        		.byte	1
+ 320 0083 22        		.byte	34
+ 321 0084 2000      		.word	32
+ 322 0086 07        		.byte	7
+ 323 0087 05        		.byte	5
+ 324 0088 84        		.byte	-124
+ 325 0089 03        		.byte	3
+ 326 008a 2000      		.word	32
+ 327 008c 01        		.byte	1
+ 328 008d 07        		.byte	7
+ 329 008e 05        		.byte	5
+ 330 008f 04        		.byte	4
+ 331 0090 03        		.byte	3
+ 332 0091 2000      		.word	32
+ 333 0093 01        		.byte	1
+ 334 0094 09        		.byte	9
+ 335 0095 04        		.byte	4
+ 336 0096 04        		.byte	4
+ 337 0097 00        		.byte	0
+ 338 0098 01        		.byte	1
+ 339 0099 03        		.byte	3
+ 340 009a 00        		.byte	0
+ 341 009b 00        		.byte	0
+ 342 009c 00        		.byte	0
+ 343 009d 09        		.byte	9
+ 344 009e 21        		.byte	33
+ 345 009f 1101      		.word	273
+ 346 00a1 00        		.byte	0
+ 347 00a2 01        		.byte	1
+ 348 00a3 22        		.byte	34
+ 349 00a4 3900      		.word	57
+ 350 00a6 07        		.byte	7
+ 351 00a7 05        		.byte	5
+ 352 00a8 85        		.byte	-123
+ 353 00a9 03        		.byte	3
+ 354 00aa 1000      		.word	16
+ 355 00ac 01        		.byte	1
+ 356               	.global	DeviceDescriptor
+ 359               	DeviceDescriptor:
+ 360 00ad 12        		.byte	18
+ 361 00ae 01        		.byte	1
+ 362 00af 1001      		.word	272
+ 363 00b1 00        		.byte	0
+ 364 00b2 00        		.byte	0
+ 365 00b3 00        		.byte	0
+ 366 00b4 08        		.byte	8
+ 367 00b5 EDFE      		.word	-275
+ 368 00b7 6060      		.word	24672
+ 369 00b9 0100      		.word	1
+ 370 00bb 01        		.byte	1
+ 371 00bc 02        		.byte	2
+ 372 00bd 00        		.byte	0
+ 373 00be 01        		.byte	1
+ 374               	.global	NKROReport
+ 377               	NKROReport:
+ 378 00bf 05        		.byte	5
+ 379 00c0 01        		.byte	1
+ 380 00c1 09        		.byte	9
+ 381 00c2 06        		.byte	6
+ 382 00c3 A1        		.byte	-95
+ 383 00c4 01        		.byte	1
+ 384 00c5 05        		.byte	5
+ 385 00c6 07        		.byte	7
+ 386 00c7 19        		.byte	25
+ 387 00c8 E0        		.byte	-32
+ 388 00c9 29        		.byte	41
+ 389 00ca E7        		.byte	-25
+ 390 00cb 15        		.byte	21
+ 391 00cc 00        		.byte	0
+ 392 00cd 25        		.byte	37
+ 393 00ce 01        		.byte	1
+ 394 00cf 95        		.byte	-107
+ 395 00d0 08        		.byte	8
+ 396 00d1 75        		.byte	117
+ 397 00d2 01        		.byte	1
+ 398 00d3 81        		.byte	-127
+ 399 00d4 02        		.byte	2
+ 400 00d5 05        		.byte	5
+ 401 00d6 08        		.byte	8
+ 402 00d7 19        		.byte	25
+ 403 00d8 01        		.byte	1
+ 404 00d9 29        		.byte	41
+ 405 00da 05        		.byte	5
+ 406 00db 95        		.byte	-107
+ 407 00dc 05        		.byte	5
+ 408 00dd 75        		.byte	117
+ 409 00de 01        		.byte	1
+ 410 00df 91        		.byte	-111
+ 411 00e0 02        		.byte	2
+ 412 00e1 95        		.byte	-107
+ 413 00e2 01        		.byte	1
+ 414 00e3 75        		.byte	117
+ 415 00e4 03        		.byte	3
+ 416 00e5 91        		.byte	-111
+ 417 00e6 01        		.byte	1
+ 418 00e7 05        		.byte	5
+ 419 00e8 07        		.byte	7
+ 420 00e9 19        		.byte	25
+ 421 00ea 00        		.byte	0
+ 422 00eb 29        		.byte	41
+ 423 00ec 77        		.byte	119
+ 424 00ed 15        		.byte	21
+ 425 00ee 00        		.byte	0
+ 426 00ef 25        		.byte	37
+ 427 00f0 01        		.byte	1
+ 428 00f1 95        		.byte	-107
+ 429 00f2 78        		.byte	120
+ 430 00f3 75        		.byte	117
+ 431 00f4 01        		.byte	1
+ 432 00f5 81        		.byte	-127
+ 433 00f6 02        		.byte	2
+ 434 00f7 C0        		.byte	-64
+ 435               	.global	ConsoleReport
+ 438               	ConsoleReport:
+ 439 00f8 06        		.byte	6
+ 440 00f9 31        		.byte	49
+ 441 00fa FF        		.byte	-1
+ 442 00fb 09        		.byte	9
+ 443 00fc 74        		.byte	116
+ 444 00fd A1        		.byte	-95
+ 445 00fe 01        		.byte	1
+ 446 00ff 09        		.byte	9
+ 447 0100 75        		.byte	117
+ 448 0101 15        		.byte	21
+ 449 0102 00        		.byte	0
+ 450 0103 25        		.byte	37
+ 451 0104 FF        		.byte	-1
+ 452 0105 95        		.byte	-107
+ 453 0106 20        		.byte	32
+ 454 0107 75        		.byte	117
+ 455 0108 08        		.byte	8
+ 456 0109 81        		.byte	-127
+ 457 010a 02        		.byte	2
+ 458 010b 09        		.byte	9
+ 459 010c 76        		.byte	118
+ 460 010d 15        		.byte	21
+ 461 010e 00        		.byte	0
+ 462 010f 25        		.byte	37
+ 463 0110 FF        		.byte	-1
+ 464 0111 95        		.byte	-107
+ 465 0112 20        		.byte	32
+ 466 0113 75        		.byte	117
+ 467 0114 08        		.byte	8
+ 468 0115 91        		.byte	-111
+ 469 0116 02        		.byte	2
+ 470 0117 C0        		.byte	-64
+ 471               	.global	ExtrakeyReport
+ 474               	ExtrakeyReport:
+ 475 0118 05        		.byte	5
+ 476 0119 01        		.byte	1
+ 477 011a 09        		.byte	9
+ 478 011b 80        		.byte	-128
+ 479 011c A1        		.byte	-95
+ 480 011d 01        		.byte	1
+ 481 011e 85        		.byte	-123
+ 482 011f 02        		.byte	2
+ 483 0120 16        		.byte	22
+ 484 0121 01        		.byte	1
+ 485 0122 00        		.byte	0
+ 486 0123 26        		.byte	38
+ 487 0124 B7        		.byte	-73
+ 488 0125 00        		.byte	0
+ 489 0126 1A        		.byte	26
+ 490 0127 01        		.byte	1
+ 491 0128 00        		.byte	0
+ 492 0129 2A        		.byte	42
+ 493 012a B7        		.byte	-73
+ 494 012b 00        		.byte	0
+ 495 012c 75        		.byte	117
+ 496 012d 10        		.byte	16
+ 497 012e 95        		.byte	-107
+ 498 012f 01        		.byte	1
+ 499 0130 81        		.byte	-127
+ 500 0131 00        		.byte	0
+ 501 0132 C0        		.byte	-64
+ 502 0133 05        		.byte	5
+ 503 0134 0C        		.byte	12
+ 504 0135 09        		.byte	9
+ 505 0136 01        		.byte	1
+ 506 0137 A1        		.byte	-95
+ 507 0138 01        		.byte	1
+ 508 0139 85        		.byte	-123
+ 509 013a 03        		.byte	3
+ 510 013b 16        		.byte	22
+ 511 013c 01        		.byte	1
+ 512 013d 00        		.byte	0
+ 513 013e 26        		.byte	38
+ 514 013f 9C        		.byte	-100
+ 515 0140 02        		.byte	2
+ 516 0141 1A        		.byte	26
+ 517 0142 01        		.byte	1
+ 518 0143 00        		.byte	0
+ 519 0144 2A        		.byte	42
+ 520 0145 9C        		.byte	-100
+ 521 0146 02        		.byte	2
+ 522 0147 75        		.byte	117
+ 523 0148 10        		.byte	16
+ 524 0149 95        		.byte	-107
+ 525 014a 01        		.byte	1
+ 526 014b 81        		.byte	-127
+ 527 014c 00        		.byte	0
+ 528 014d C0        		.byte	-64
+ 529               	.global	MouseReport
+ 532               	MouseReport:
+ 533 014e 05        		.byte	5
+ 534 014f 01        		.byte	1
+ 535 0150 09        		.byte	9
+ 536 0151 02        		.byte	2
+ 537 0152 A1        		.byte	-95
+ 538 0153 01        		.byte	1
+ 539 0154 09        		.byte	9
+ 540 0155 01        		.byte	1
+ 541 0156 A1        		.byte	-95
+ 542 0157 00        		.byte	0
+ 543 0158 05        		.byte	5
+ 544 0159 09        		.byte	9
+ 545 015a 19        		.byte	25
+ 546 015b 01        		.byte	1
+ 547 015c 29        		.byte	41
+ 548 015d 05        		.byte	5
+ 549 015e 15        		.byte	21
+ 550 015f 00        		.byte	0
+ 551 0160 25        		.byte	37
+ 552 0161 01        		.byte	1
+ 553 0162 95        		.byte	-107
+ 554 0163 05        		.byte	5
+ 555 0164 75        		.byte	117
+ 556 0165 01        		.byte	1
+ 557 0166 81        		.byte	-127
+ 558 0167 02        		.byte	2
+ 559 0168 95        		.byte	-107
+ 560 0169 01        		.byte	1
+ 561 016a 75        		.byte	117
+ 562 016b 03        		.byte	3
+ 563 016c 81        		.byte	-127
+ 564 016d 01        		.byte	1
+ 565 016e 05        		.byte	5
+ 566 016f 01        		.byte	1
+ 567 0170 09        		.byte	9
+ 568 0171 30        		.byte	48
+ 569 0172 09        		.byte	9
+ 570 0173 31        		.byte	49
+ 571 0174 15        		.byte	21
+ 572 0175 81        		.byte	-127
+ 573 0176 25        		.byte	37
+ 574 0177 7F        		.byte	127
+ 575 0178 95        		.byte	-107
+ 576 0179 02        		.byte	2
+ 577 017a 75        		.byte	117
+ 578 017b 08        		.byte	8
+ 579 017c 81        		.byte	-127
+ 580 017d 06        		.byte	6
+ 581 017e 09        		.byte	9
+ 582 017f 38        		.byte	56
+ 583 0180 15        		.byte	21
+ 584 0181 81        		.byte	-127
+ 585 0182 25        		.byte	37
+ 586 0183 7F        		.byte	127
+ 587 0184 95        		.byte	-107
+ 588 0185 01        		.byte	1
+ 589 0186 75        		.byte	117
+ 590 0187 08        		.byte	8
+ 591 0188 81        		.byte	-127
+ 592 0189 06        		.byte	6
+ 593 018a 05        		.byte	5
+ 594 018b 0C        		.byte	12
+ 595 018c 0A        		.byte	10
+ 596 018d 38        		.byte	56
+ 597 018e 02        		.byte	2
+ 598 018f 15        		.byte	21
+ 599 0190 81        		.byte	-127
+ 600 0191 25        		.byte	37
+ 601 0192 7F        		.byte	127
+ 602 0193 95        		.byte	-107
+ 603 0194 01        		.byte	1
+ 604 0195 75        		.byte	117
+ 605 0196 08        		.byte	8
+ 606 0197 81        		.byte	-127
+ 607 0198 06        		.byte	6
+ 608 0199 C0        		.byte	-64
+ 609 019a C0        		.byte	-64
+ 610               	.global	KeyboardReport
+ 613               	KeyboardReport:
+ 614 019b 05        		.byte	5
+ 615 019c 01        		.byte	1
+ 616 019d 09        		.byte	9
+ 617 019e 06        		.byte	6
+ 618 019f A1        		.byte	-95
+ 619 01a0 01        		.byte	1
+ 620 01a1 05        		.byte	5
+ 621 01a2 07        		.byte	7
+ 622 01a3 19        		.byte	25
+ 623 01a4 E0        		.byte	-32
+ 624 01a5 29        		.byte	41
+ 625 01a6 E7        		.byte	-25
+ 626 01a7 15        		.byte	21
+ 627 01a8 00        		.byte	0
+ 628 01a9 25        		.byte	37
+ 629 01aa 01        		.byte	1
+ 630 01ab 95        		.byte	-107
+ 631 01ac 08        		.byte	8
+ 632 01ad 75        		.byte	117
+ 633 01ae 01        		.byte	1
+ 634 01af 81        		.byte	-127
+ 635 01b0 02        		.byte	2
+ 636 01b1 95        		.byte	-107
+ 637 01b2 01        		.byte	1
+ 638 01b3 75        		.byte	117
+ 639 01b4 08        		.byte	8
+ 640 01b5 81        		.byte	-127
+ 641 01b6 01        		.byte	1
+ 642 01b7 05        		.byte	5
+ 643 01b8 08        		.byte	8
+ 644 01b9 19        		.byte	25
+ 645 01ba 01        		.byte	1
+ 646 01bb 29        		.byte	41
+ 647 01bc 05        		.byte	5
+ 648 01bd 95        		.byte	-107
+ 649 01be 05        		.byte	5
+ 650 01bf 75        		.byte	117
+ 651 01c0 01        		.byte	1
+ 652 01c1 91        		.byte	-111
+ 653 01c2 02        		.byte	2
+ 654 01c3 95        		.byte	-107
+ 655 01c4 01        		.byte	1
+ 656 01c5 75        		.byte	117
+ 657 01c6 03        		.byte	3
+ 658 01c7 91        		.byte	-111
+ 659 01c8 01        		.byte	1
+ 660 01c9 05        		.byte	5
+ 661 01ca 07        		.byte	7
+ 662 01cb 19        		.byte	25
+ 663 01cc 00        		.byte	0
+ 664 01cd 29        		.byte	41
+ 665 01ce FF        		.byte	-1
+ 666 01cf 15        		.byte	21
+ 667 01d0 00        		.byte	0
+ 668 01d1 25        		.byte	37
+ 669 01d2 FF        		.byte	-1
+ 670 01d3 95        		.byte	-107
+ 671 01d4 06        		.byte	6
+ 672 01d5 75        		.byte	117
+ 673 01d6 08        		.byte	8
+ 674 01d7 81        		.byte	-127
+ 675 01d8 00        		.byte	0
+ 676 01d9 C0        		.byte	-64
+ 677               		.text
+ 678               	.Letext0:
+ 679               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 680               		.file 3 "/usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/include/stddef.h"
+ 681               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h"
+ 682               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h"
+ 683               		.file 6 "../../protocol/lufa/descriptor.h"
+ 684               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 descriptor.c
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:13     .text.CALLBACK_USB_GetDescriptor:00000000 CALLBACK_USB_GetDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:231    .progmem.data:00000020 ConfigurationDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:224    .progmem.data:0000001c LanguageString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:210    .progmem.data:0000000c ManufacturerString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:198    .progmem.data:00000000 ProductString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:188    .rodata:0000000f CSWTCH.1
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:180    .rodata:00000005 CSWTCH.2
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:172    .rodata:00000000 CSWTCH.3
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:359    .progmem.data:000000ad DeviceDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:613    .progmem.data:0000019b KeyboardReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:532    .progmem.data:0000014e MouseReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:474    .progmem.data:00000118 ExtrakeyReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:438    .progmem.data:000000f8 ConsoleReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccxuJ7lW.s:377    .progmem.data:000000bf NKROReport
+
+UNDEFINED SYMBOLS
+__do_copy_data

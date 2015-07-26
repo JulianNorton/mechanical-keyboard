@@ -1,0 +1,852 @@
+   1               		.file	"keymap.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.keycode_to_action,"ax",@progbits
+  12               	keycode_to_action:
+  13               	.LFB107:
+  14               		.file 1 "../../common/keymap.c"
+   1:../../common/keymap.c **** /*
+   2:../../common/keymap.c **** Copyright 2013 Jun Wako <wakojun@gmail.com>
+   3:../../common/keymap.c **** 
+   4:../../common/keymap.c **** This program is free software: you can redistribute it and/or modify
+   5:../../common/keymap.c **** it under the terms of the GNU General Public License as published by
+   6:../../common/keymap.c **** the Free Software Foundation, either version 2 of the License, or
+   7:../../common/keymap.c **** (at your option) any later version.
+   8:../../common/keymap.c **** 
+   9:../../common/keymap.c **** This program is distributed in the hope that it will be useful,
+  10:../../common/keymap.c **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../common/keymap.c **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../common/keymap.c **** GNU General Public License for more details.
+  13:../../common/keymap.c **** 
+  14:../../common/keymap.c **** You should have received a copy of the GNU General Public License
+  15:../../common/keymap.c **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../common/keymap.c **** */
+  17:../../common/keymap.c **** #include "keymap.h"
+  18:../../common/keymap.c **** #include "report.h"
+  19:../../common/keymap.c **** #include "keycode.h"
+  20:../../common/keymap.c **** #include "action_layer.h"
+  21:../../common/keymap.c **** #include "action.h"
+  22:../../common/keymap.c **** #include "action_macro.h"
+  23:../../common/keymap.c **** #include "debug.h"
+  24:../../common/keymap.c **** 
+  25:../../common/keymap.c **** 
+  26:../../common/keymap.c **** static action_t keycode_to_action(uint8_t keycode);
+  27:../../common/keymap.c **** 
+  28:../../common/keymap.c **** 
+  29:../../common/keymap.c **** /* converts key to action */
+  30:../../common/keymap.c **** __attribute__ ((weak))
+  31:../../common/keymap.c **** action_t action_for_key(uint8_t layer, keypos_t key)
+  32:../../common/keymap.c **** {
+  33:../../common/keymap.c ****     uint8_t keycode = keymap_key_to_keycode(layer, key);
+  34:../../common/keymap.c ****     switch (keycode) {
+  35:../../common/keymap.c ****         case KC_FN0 ... KC_FN31:
+  36:../../common/keymap.c ****             return keymap_fn_to_action(keycode);
+  37:../../common/keymap.c **** #ifdef BOOTMAGIC_ENABLE
+  38:../../common/keymap.c ****         case KC_CAPSLOCK:
+  39:../../common/keymap.c ****         case KC_LOCKING_CAPS:
+  40:../../common/keymap.c ****             if (keymap_config.swap_control_capslock || keymap_config.capslock_to_control) {
+  41:../../common/keymap.c ****                 return keycode_to_action(KC_LCTL);
+  42:../../common/keymap.c ****             }
+  43:../../common/keymap.c ****             return keycode_to_action(keycode);
+  44:../../common/keymap.c ****         case KC_LCTL:
+  45:../../common/keymap.c ****             if (keymap_config.swap_control_capslock) {
+  46:../../common/keymap.c ****                 return keycode_to_action(KC_CAPSLOCK);
+  47:../../common/keymap.c ****             }
+  48:../../common/keymap.c ****             return keycode_to_action(KC_LCTL);
+  49:../../common/keymap.c ****         case KC_LALT:
+  50:../../common/keymap.c ****             if (keymap_config.swap_lalt_lgui) {
+  51:../../common/keymap.c ****                 if (keymap_config.no_gui) {
+  52:../../common/keymap.c ****                     return keycode_to_action(ACTION_NO);
+  53:../../common/keymap.c ****                 }
+  54:../../common/keymap.c ****                 return keycode_to_action(KC_LGUI);
+  55:../../common/keymap.c ****             }
+  56:../../common/keymap.c ****             return keycode_to_action(KC_LALT);
+  57:../../common/keymap.c ****         case KC_LGUI:
+  58:../../common/keymap.c ****             if (keymap_config.swap_lalt_lgui) {
+  59:../../common/keymap.c ****                 return keycode_to_action(KC_LALT);
+  60:../../common/keymap.c ****             }
+  61:../../common/keymap.c ****             if (keymap_config.no_gui) {
+  62:../../common/keymap.c ****                 return keycode_to_action(ACTION_NO);
+  63:../../common/keymap.c ****             }
+  64:../../common/keymap.c ****             return keycode_to_action(KC_LGUI);
+  65:../../common/keymap.c ****         case KC_RALT:
+  66:../../common/keymap.c ****             if (keymap_config.swap_ralt_rgui) {
+  67:../../common/keymap.c ****                 if (keymap_config.no_gui) {
+  68:../../common/keymap.c ****                     return keycode_to_action(ACTION_NO);
+  69:../../common/keymap.c ****                 }
+  70:../../common/keymap.c ****                 return keycode_to_action(KC_RGUI);
+  71:../../common/keymap.c ****             }
+  72:../../common/keymap.c ****             return keycode_to_action(KC_RALT);
+  73:../../common/keymap.c ****         case KC_RGUI:
+  74:../../common/keymap.c ****             if (keymap_config.swap_ralt_rgui) {
+  75:../../common/keymap.c ****                 return keycode_to_action(KC_RALT);
+  76:../../common/keymap.c ****             }
+  77:../../common/keymap.c ****             if (keymap_config.no_gui) {
+  78:../../common/keymap.c ****                 return keycode_to_action(ACTION_NO);
+  79:../../common/keymap.c ****             }
+  80:../../common/keymap.c ****             return keycode_to_action(KC_RGUI);
+  81:../../common/keymap.c ****         case KC_GRAVE:
+  82:../../common/keymap.c ****             if (keymap_config.swap_grave_esc) {
+  83:../../common/keymap.c ****                 return keycode_to_action(KC_ESC);
+  84:../../common/keymap.c ****             }
+  85:../../common/keymap.c ****             return keycode_to_action(KC_GRAVE);
+  86:../../common/keymap.c ****         case KC_ESC:
+  87:../../common/keymap.c ****             if (keymap_config.swap_grave_esc) {
+  88:../../common/keymap.c ****                 return keycode_to_action(KC_GRAVE);
+  89:../../common/keymap.c ****             }
+  90:../../common/keymap.c ****             return keycode_to_action(KC_ESC);
+  91:../../common/keymap.c ****         case KC_BSLASH:
+  92:../../common/keymap.c ****             if (keymap_config.swap_backslash_backspace) {
+  93:../../common/keymap.c ****                 return keycode_to_action(KC_BSPACE);
+  94:../../common/keymap.c ****             }
+  95:../../common/keymap.c ****             return keycode_to_action(KC_BSLASH);
+  96:../../common/keymap.c ****         case KC_BSPACE:
+  97:../../common/keymap.c ****             if (keymap_config.swap_backslash_backspace) {
+  98:../../common/keymap.c ****                 return keycode_to_action(KC_BSLASH);
+  99:../../common/keymap.c ****             }
+ 100:../../common/keymap.c ****             return keycode_to_action(KC_BSPACE);
+ 101:../../common/keymap.c **** #endif
+ 102:../../common/keymap.c ****         default:
+ 103:../../common/keymap.c ****             return keycode_to_action(keycode);
+ 104:../../common/keymap.c ****     }
+ 105:../../common/keymap.c **** }
+ 106:../../common/keymap.c **** 
+ 107:../../common/keymap.c **** 
+ 108:../../common/keymap.c **** /* Macro */
+ 109:../../common/keymap.c **** __attribute__ ((weak))
+ 110:../../common/keymap.c **** const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 111:../../common/keymap.c **** {
+ 112:../../common/keymap.c ****     return MACRO_NONE;
+ 113:../../common/keymap.c **** }
+ 114:../../common/keymap.c **** 
+ 115:../../common/keymap.c **** /* Function */
+ 116:../../common/keymap.c **** __attribute__ ((weak))
+ 117:../../common/keymap.c **** void action_function(keyrecord_t *record, uint8_t id, uint8_t opt)
+ 118:../../common/keymap.c **** {
+ 119:../../common/keymap.c **** }
+ 120:../../common/keymap.c **** 
+ 121:../../common/keymap.c **** /* translates keycode to action */
+ 122:../../common/keymap.c **** static action_t keycode_to_action(uint8_t keycode)
+ 123:../../common/keymap.c **** {
+  15               		.loc 1 123 0
+  16               		.cfi_startproc
+  17               	.LVL0:
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+ 124:../../common/keymap.c ****     action_t action;
+ 125:../../common/keymap.c ****     switch (keycode) {
+  22               		.loc 1 125 0
+  23 0000 8B3B      		cpi r24,lo8(-69)
+  24 0002 00F4      		brsh .L3
+  25 0004 883A      		cpi r24,lo8(-88)
+  26 0006 00F4      		brsh .L4
+  27 0008 853A      		cpi r24,lo8(-91)
+  28 000a 00F4      		brsh .L5
+  29 000c 8430      		cpi r24,lo8(4)
+  30 000e 00F4      		brsh .L6
+  31 0010 8130      		cpi r24,lo8(1)
+  32 0012 01F0      		breq .+2
+  33 0014 00C0      		rjmp .L9
+ 126:../../common/keymap.c ****         case KC_A ... KC_EXSEL:
+ 127:../../common/keymap.c ****         case KC_LCTRL ... KC_RGUI:
+ 128:../../common/keymap.c ****             action.code = ACTION_KEY(keycode);
+ 129:../../common/keymap.c ****             break;
+ 130:../../common/keymap.c ****         case KC_SYSTEM_POWER ... KC_SYSTEM_WAKE:
+ 131:../../common/keymap.c ****             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
+ 132:../../common/keymap.c ****             break;
+ 133:../../common/keymap.c ****         case KC_AUDIO_MUTE ... KC_WWW_FAVORITES:
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 135:../../common/keymap.c ****             break;
+ 136:../../common/keymap.c ****         case KC_MS_UP ... KC_MS_ACCEL2:
+ 137:../../common/keymap.c ****             action.code = ACTION_MOUSEKEY(keycode);
+ 138:../../common/keymap.c ****             break;
+ 139:../../common/keymap.c ****         case KC_TRNS:
+ 140:../../common/keymap.c ****             action.code = ACTION_TRANSPARENT;
+  34               		.loc 1 140 0
+  35 0016 81E0      		ldi r24,lo8(1)
+  36 0018 90E0      		ldi r25,0
+  37               	.LVL1:
+  38 001a 0895      		ret
+  39               	.LVL2:
+  40               	.L3:
+ 125:../../common/keymap.c ****     switch (keycode) {
+  41               		.loc 1 125 0
+  42 001c 803E      		cpi r24,lo8(-32)
+  43 001e 00F4      		brsh .+2
+  44 0020 00C0      		rjmp .L9
+  45 0022 883E      		cpi r24,lo8(-24)
+  46 0024 00F0      		brlo .L6
+  47 0026 803F      		cpi r24,lo8(-16)
+  48 0028 00F4      		brsh .+2
+  49 002a 00C0      		rjmp .L9
+ 137:../../common/keymap.c ****             action.code = ACTION_MOUSEKEY(keycode);
+  50               		.loc 1 137 0
+  51 002c 90E0      		ldi r25,0
+  52 002e 9065      		ori r25,80
+  53               	.LVL3:
+ 138:../../common/keymap.c ****             break;
+  54               		.loc 1 138 0
+  55 0030 0895      		ret
+  56               	.LVL4:
+  57               	.L6:
+ 128:../../common/keymap.c ****             action.code = ACTION_KEY(keycode);
+  58               		.loc 1 128 0
+  59 0032 90E0      		ldi r25,0
+  60               	.LVL5:
+ 129:../../common/keymap.c ****             break;
+  61               		.loc 1 129 0
+  62 0034 0895      		ret
+  63               	.LVL6:
+  64               	.L5:
+ 131:../../common/keymap.c ****             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
+  65               		.loc 1 131 0
+  66 0036 853A      		cpi r24,lo8(-91)
+  67 0038 01F4      		brne .+2
+  68 003a 00C0      		rjmp .L10
+ 131:../../common/keymap.c ****             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
+  69               		.loc 1 131 0 is_stmt 0 discriminator 1
+  70 003c 863A      		cpi r24,lo8(-90)
+  71 003e 01F0      		breq .+2
+  72 0040 00C0      		rjmp .L11
+ 131:../../common/keymap.c ****             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
+  73               		.loc 1 131 0
+  74 0042 82E8      		ldi r24,lo8(-126)
+  75 0044 90E4      		ldi r25,lo8(64)
+  76               	.LVL7:
+  77 0046 0895      		ret
+  78               	.LVL8:
+  79               	.L4:
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+  80               		.loc 1 134 0 is_stmt 1
+  81 0048 883A      		cpi r24,lo8(-88)
+  82 004a 01F4      		brne .+2
+  83 004c 00C0      		rjmp .L12
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+  84               		.loc 1 134 0 is_stmt 0 discriminator 1
+  85 004e 893A      		cpi r24,lo8(-87)
+  86 0050 01F4      		brne .+2
+  87 0052 00C0      		rjmp .L13
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+  88               		.loc 1 134 0 discriminator 3
+  89 0054 8A3A      		cpi r24,lo8(-86)
+  90 0056 01F4      		brne .+2
+  91 0058 00C0      		rjmp .L14
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+  92               		.loc 1 134 0 discriminator 5
+  93 005a 8B3A      		cpi r24,lo8(-85)
+  94 005c 01F4      		brne .+2
+  95 005e 00C0      		rjmp .L15
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+  96               		.loc 1 134 0 discriminator 7
+  97 0060 8C3A      		cpi r24,lo8(-84)
+  98 0062 01F4      		brne .+2
+  99 0064 00C0      		rjmp .L16
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 100               		.loc 1 134 0 discriminator 13
+ 101 0066 8D3A      		cpi r24,lo8(-83)
+ 102 0068 01F4      		brne .+2
+ 103 006a 00C0      		rjmp .L17
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 104               		.loc 1 134 0 discriminator 15
+ 105 006c 803B      		cpi r24,lo8(-80)
+ 106 006e 01F4      		brne .+2
+ 107 0070 00C0      		rjmp .L18
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 108               		.loc 1 134 0 discriminator 17
+ 109 0072 8E3A      		cpi r24,lo8(-82)
+ 110 0074 01F4      		brne .+2
+ 111 0076 00C0      		rjmp .L19
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 112               		.loc 1 134 0 discriminator 19
+ 113 0078 8F3A      		cpi r24,lo8(-81)
+ 114 007a 01F4      		brne .+2
+ 115 007c 00C0      		rjmp .L20
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 116               		.loc 1 134 0 discriminator 21
+ 117 007e 813B      		cpi r24,lo8(-79)
+ 118 0080 01F4      		brne .+2
+ 119 0082 00C0      		rjmp .L21
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 120               		.loc 1 134 0 discriminator 23
+ 121 0084 823B      		cpi r24,lo8(-78)
+ 122 0086 01F4      		brne .+2
+ 123 0088 00C0      		rjmp .L22
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 124               		.loc 1 134 0 discriminator 25
+ 125 008a 833B      		cpi r24,lo8(-77)
+ 126 008c 01F4      		brne .+2
+ 127 008e 00C0      		rjmp .L23
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 128               		.loc 1 134 0 discriminator 27
+ 129 0090 843B      		cpi r24,lo8(-76)
+ 130 0092 01F4      		brne .+2
+ 131 0094 00C0      		rjmp .L24
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 132               		.loc 1 134 0 discriminator 29
+ 133 0096 853B      		cpi r24,lo8(-75)
+ 134 0098 01F4      		brne .+2
+ 135 009a 00C0      		rjmp .L25
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 136               		.loc 1 134 0 discriminator 31
+ 137 009c 863B      		cpi r24,lo8(-74)
+ 138 009e 01F4      		brne .+2
+ 139 00a0 00C0      		rjmp .L26
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 140               		.loc 1 134 0 discriminator 33
+ 141 00a2 873B      		cpi r24,lo8(-73)
+ 142 00a4 01F4      		brne .+2
+ 143 00a6 00C0      		rjmp .L27
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 144               		.loc 1 134 0 discriminator 35
+ 145 00a8 883B      		cpi r24,lo8(-72)
+ 146 00aa 01F4      		brne .+2
+ 147 00ac 00C0      		rjmp .L28
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 148               		.loc 1 134 0 discriminator 37
+ 149 00ae 893B      		cpi r24,lo8(-71)
+ 150 00b0 01F4      		brne .+2
+ 151 00b2 00C0      		rjmp .L29
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 152               		.loc 1 134 0 discriminator 39
+ 153 00b4 8A3B      		cpi r24,lo8(-70)
+ 154 00b6 01F0      		breq .+2
+ 155 00b8 00C0      		rjmp .L30
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 156               		.loc 1 134 0
+ 157 00ba 8AE2      		ldi r24,lo8(42)
+ 158 00bc 96E4      		ldi r25,lo8(70)
+ 159               	.LVL9:
+ 160 00be 0895      		ret
+ 161               	.LVL10:
+ 162               	.L9:
+ 141:../../common/keymap.c ****             break;
+ 142:../../common/keymap.c ****         default:
+ 143:../../common/keymap.c ****             action.code = ACTION_NO;
+ 163               		.loc 1 143 0 is_stmt 1
+ 164 00c0 80E0      		ldi r24,0
+ 165 00c2 90E0      		ldi r25,0
+ 166               	.LVL11:
+ 167 00c4 0895      		ret
+ 168               	.LVL12:
+ 169               	.L10:
+ 131:../../common/keymap.c ****             action.code = ACTION_USAGE_SYSTEM(KEYCODE2SYSTEM(keycode));
+ 170               		.loc 1 131 0
+ 171 00c6 81E8      		ldi r24,lo8(-127)
+ 172 00c8 90E4      		ldi r25,lo8(64)
+ 173               	.LVL13:
+ 174 00ca 0895      		ret
+ 175               	.LVL14:
+ 176               	.L11:
+ 177 00cc 83E8      		ldi r24,lo8(-125)
+ 178 00ce 90E4      		ldi r25,lo8(64)
+ 179               	.LVL15:
+ 180 00d0 0895      		ret
+ 181               	.LVL16:
+ 182               	.L12:
+ 134:../../common/keymap.c ****             action.code = ACTION_USAGE_CONSUMER(KEYCODE2CONSUMER(keycode));
+ 183               		.loc 1 134 0
+ 184 00d2 82EE      		ldi r24,lo8(-30)
+ 185 00d4 94E4      		ldi r25,lo8(68)
+ 186               	.LVL17:
+ 187 00d6 0895      		ret
+ 188               	.LVL18:
+ 189               	.L13:
+ 190 00d8 89EE      		ldi r24,lo8(-23)
+ 191 00da 94E4      		ldi r25,lo8(68)
+ 192               	.LVL19:
+ 193 00dc 0895      		ret
+ 194               	.LVL20:
+ 195               	.L14:
+ 196 00de 8AEE      		ldi r24,lo8(-22)
+ 197 00e0 94E4      		ldi r25,lo8(68)
+ 198               	.LVL21:
+ 199 00e2 0895      		ret
+ 200               	.LVL22:
+ 201               	.L15:
+ 202 00e4 85EB      		ldi r24,lo8(-75)
+ 203 00e6 94E4      		ldi r25,lo8(68)
+ 204               	.LVL23:
+ 205 00e8 0895      		ret
+ 206               	.LVL24:
+ 207               	.L16:
+ 208 00ea 86EB      		ldi r24,lo8(-74)
+ 209 00ec 94E4      		ldi r25,lo8(68)
+ 210               	.LVL25:
+ 211 00ee 0895      		ret
+ 212               	.LVL26:
+ 213               	.L17:
+ 214 00f0 87EB      		ldi r24,lo8(-73)
+ 215 00f2 94E4      		ldi r25,lo8(68)
+ 216               	.LVL27:
+ 217 00f4 0895      		ret
+ 218               	.LVL28:
+ 219               	.L18:
+ 220 00f6 8CEC      		ldi r24,lo8(-52)
+ 221 00f8 94E4      		ldi r25,lo8(68)
+ 222               	.LVL29:
+ 223 00fa 0895      		ret
+ 224               	.LVL30:
+ 225               	.L19:
+ 226 00fc 8DEC      		ldi r24,lo8(-51)
+ 227 00fe 94E4      		ldi r25,lo8(68)
+ 228               	.LVL31:
+ 229 0100 0895      		ret
+ 230               	.LVL32:
+ 231               	.L20:
+ 232 0102 83E8      		ldi r24,lo8(-125)
+ 233 0104 95E4      		ldi r25,lo8(69)
+ 234               	.LVL33:
+ 235 0106 0895      		ret
+ 236               	.LVL34:
+ 237               	.L21:
+ 238 0108 8AE8      		ldi r24,lo8(-118)
+ 239 010a 95E4      		ldi r25,lo8(69)
+ 240               	.LVL35:
+ 241 010c 0895      		ret
+ 242               	.LVL36:
+ 243               	.L22:
+ 244 010e 82E9      		ldi r24,lo8(-110)
+ 245 0110 95E4      		ldi r25,lo8(69)
+ 246               	.LVL37:
+ 247 0112 0895      		ret
+ 248               	.LVL38:
+ 249               	.L23:
+ 250 0114 84E9      		ldi r24,lo8(-108)
+ 251 0116 95E4      		ldi r25,lo8(69)
+ 252               	.LVL39:
+ 253 0118 0895      		ret
+ 254               	.LVL40:
+ 255               	.L24:
+ 256 011a 81E2      		ldi r24,lo8(33)
+ 257 011c 96E4      		ldi r25,lo8(70)
+ 258               	.LVL41:
+ 259 011e 0895      		ret
+ 260               	.LVL42:
+ 261               	.L25:
+ 262 0120 83E2      		ldi r24,lo8(35)
+ 263 0122 96E4      		ldi r25,lo8(70)
+ 264               	.LVL43:
+ 265 0124 0895      		ret
+ 266               	.LVL44:
+ 267               	.L26:
+ 268 0126 84E2      		ldi r24,lo8(36)
+ 269 0128 96E4      		ldi r25,lo8(70)
+ 270               	.LVL45:
+ 271 012a 0895      		ret
+ 272               	.LVL46:
+ 273               	.L27:
+ 274 012c 85E2      		ldi r24,lo8(37)
+ 275 012e 96E4      		ldi r25,lo8(70)
+ 276               	.LVL47:
+ 277 0130 0895      		ret
+ 278               	.LVL48:
+ 279               	.L28:
+ 280 0132 86E2      		ldi r24,lo8(38)
+ 281 0134 96E4      		ldi r25,lo8(70)
+ 282               	.LVL49:
+ 283 0136 0895      		ret
+ 284               	.LVL50:
+ 285               	.L29:
+ 286 0138 87E2      		ldi r24,lo8(39)
+ 287 013a 96E4      		ldi r25,lo8(70)
+ 288               	.LVL51:
+ 289 013c 0895      		ret
+ 290               	.LVL52:
+ 291               	.L30:
+ 292 013e 80E0      		ldi r24,0
+ 293 0140 94E4      		ldi r25,lo8(68)
+ 294               	.LVL53:
+ 144:../../common/keymap.c ****             break;
+ 145:../../common/keymap.c ****     }
+ 146:../../common/keymap.c ****     return action;
+ 147:../../common/keymap.c **** }
+ 295               		.loc 1 147 0
+ 296 0142 0895      		ret
+ 297               		.cfi_endproc
+ 298               	.LFE107:
+ 300               		.section	.text.matrix_power_up,"ax",@progbits
+ 301               		.weak	matrix_power_up
+ 303               	matrix_power_up:
+ 304               	.LFB3:
+ 305               		.file 2 "../../common/keyboard.h"
+   1:../../common/keyboard.h **** /*
+   2:../../common/keyboard.h **** Copyright 2011,2012,2013 Jun Wako <wakojun@gmail.com>
+   3:../../common/keyboard.h **** 
+   4:../../common/keyboard.h **** This program is free software: you can redistribute it and/or modify
+   5:../../common/keyboard.h **** it under the terms of the GNU General Public License as published by
+   6:../../common/keyboard.h **** the Free Software Foundation, either version 2 of the License, or
+   7:../../common/keyboard.h **** (at your option) any later version.
+   8:../../common/keyboard.h **** 
+   9:../../common/keyboard.h **** This program is distributed in the hope that it will be useful,
+  10:../../common/keyboard.h **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../common/keyboard.h **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../common/keyboard.h **** GNU General Public License for more details.
+  13:../../common/keyboard.h **** 
+  14:../../common/keyboard.h **** You should have received a copy of the GNU General Public License
+  15:../../common/keyboard.h **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../common/keyboard.h **** */
+  17:../../common/keyboard.h **** 
+  18:../../common/keyboard.h **** #ifndef KEYBOARD_H
+  19:../../common/keyboard.h **** #define KEYBOARD_H
+  20:../../common/keyboard.h **** 
+  21:../../common/keyboard.h **** #include <stdbool.h>
+  22:../../common/keyboard.h **** #include <stdint.h>
+  23:../../common/keyboard.h **** 
+  24:../../common/keyboard.h **** 
+  25:../../common/keyboard.h **** #ifdef __cplusplus
+  26:../../common/keyboard.h **** extern "C" {
+  27:../../common/keyboard.h **** #endif
+  28:../../common/keyboard.h **** 
+  29:../../common/keyboard.h **** /* key matrix position */
+  30:../../common/keyboard.h **** typedef struct {
+  31:../../common/keyboard.h ****     uint8_t col;
+  32:../../common/keyboard.h ****     uint8_t row;
+  33:../../common/keyboard.h **** } keypos_t;
+  34:../../common/keyboard.h **** 
+  35:../../common/keyboard.h **** /* key event */
+  36:../../common/keyboard.h **** typedef struct {
+  37:../../common/keyboard.h ****     keypos_t key;
+  38:../../common/keyboard.h ****     bool     pressed;
+  39:../../common/keyboard.h ****     uint16_t time;
+  40:../../common/keyboard.h **** } keyevent_t;
+  41:../../common/keyboard.h **** 
+  42:../../common/keyboard.h **** /* equivalent test of keypos_t */
+  43:../../common/keyboard.h **** #define KEYEQ(keya, keyb)       ((keya).row == (keyb).row && (keya).col == (keyb).col)
+  44:../../common/keyboard.h **** 
+  45:../../common/keyboard.h **** /* Rules for No Event:
+  46:../../common/keyboard.h ****  * 1) (time == 0) to handle (keyevent_t){} as empty event
+  47:../../common/keyboard.h ****  * 2) Matrix(255, 255) to make TICK event available
+  48:../../common/keyboard.h ****  */
+  49:../../common/keyboard.h **** static inline bool IS_NOEVENT(keyevent_t event) { return event.time == 0 || (event.key.row == 255 &
+  50:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
+  51:../../common/keyboard.h **** static inline bool IS_RELEASED(keyevent_t event) { return (!IS_NOEVENT(event) && !event.pressed); }
+  52:../../common/keyboard.h **** 
+  53:../../common/keyboard.h **** /* Tick event */
+  54:../../common/keyboard.h **** #define TICK                    (keyevent_t){           \
+  55:../../common/keyboard.h ****     .key = (keypos_t){ .row = 255, .col = 255 },           \
+  56:../../common/keyboard.h ****     .pressed = false,                                   \
+  57:../../common/keyboard.h ****     .time = (timer_read() | 1)                          \
+  58:../../common/keyboard.h **** }
+  59:../../common/keyboard.h **** 
+  60:../../common/keyboard.h **** 
+  61:../../common/keyboard.h **** void keyboard_init(void);
+  62:../../common/keyboard.h **** void keyboard_task(void);
+  63:../../common/keyboard.h **** void keyboard_set_leds(uint8_t leds);
+  64:../../common/keyboard.h **** 
+  65:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_up(void) {}
+ 306               		.loc 2 65 0
+ 307               		.cfi_startproc
+ 308               	/* prologue: function */
+ 309               	/* frame size = 0 */
+ 310               	/* stack size = 0 */
+ 311               	.L__stack_usage = 0
+ 312 0000 0895      		ret
+ 313               		.cfi_endproc
+ 314               	.LFE3:
+ 316               		.section	.text.matrix_power_down,"ax",@progbits
+ 317               		.weak	matrix_power_down
+ 319               	matrix_power_down:
+ 320               	.LFB4:
+  66:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_down(void) {}
+ 321               		.loc 2 66 0
+ 322               		.cfi_startproc
+ 323               	/* prologue: function */
+ 324               	/* frame size = 0 */
+ 325               	/* stack size = 0 */
+ 326               	.L__stack_usage = 0
+ 327 0000 0895      		ret
+ 328               		.cfi_endproc
+ 329               	.LFE4:
+ 331               		.section	.text.action_for_key,"ax",@progbits
+ 332               		.weak	action_for_key
+ 334               	action_for_key:
+ 335               	.LFB104:
+  32:../../common/keymap.c **** {
+ 336               		.loc 1 32 0
+ 337               		.cfi_startproc
+ 338               	.LVL54:
+ 339               	/* prologue: function */
+ 340               	/* frame size = 0 */
+ 341               	/* stack size = 0 */
+ 342               	.L__stack_usage = 0
+  33:../../common/keymap.c ****     uint8_t keycode = keymap_key_to_keycode(layer, key);
+ 343               		.loc 1 33 0
+ 344 0000 0E94 0000 		call keymap_key_to_keycode
+ 345               	.LVL55:
+  34:../../common/keymap.c ****     switch (keycode) {
+ 346               		.loc 1 34 0
+ 347 0004 803E      		cpi r24,lo8(-32)
+ 348 0006 00F4      		brsh .L37
+ 349 0008 803C      		cpi r24,lo8(-64)
+ 350 000a 00F4      		brsh .L38
+ 351 000c 8133      		cpi r24,lo8(49)
+ 352 000e 01F4      		brne .+2
+ 353 0010 00C0      		rjmp .L39
+ 354 0012 00F4      		brsh .L40
+ 355 0014 8932      		cpi r24,lo8(41)
+ 356 0016 01F4      		brne .+2
+ 357 0018 00C0      		rjmp .L41
+ 358 001a 8A32      		cpi r24,lo8(42)
+ 359 001c 01F4      		brne .+2
+ 360 001e 00C0      		rjmp .L42
+ 361 0020 00C0      		rjmp .L36
+ 362               	.L40:
+ 363 0022 8933      		cpi r24,lo8(57)
+ 364 0024 01F0      		breq .L43
+ 365 0026 8238      		cpi r24,lo8(-126)
+ 366 0028 01F0      		breq .L43
+ 367 002a 8533      		cpi r24,lo8(53)
+ 368 002c 01F4      		brne .+2
+ 369 002e 00C0      		rjmp .L44
+ 370 0030 00C0      		rjmp .L36
+ 371               	.L37:
+ 372 0032 833E      		cpi r24,lo8(-29)
+ 373 0034 01F0      		breq .L45
+ 374 0036 00F4      		brsh .L46
+ 375 0038 803E      		cpi r24,lo8(-32)
+ 376 003a 01F0      		breq .L47
+ 377 003c 823E      		cpi r24,lo8(-30)
+ 378 003e 01F0      		breq .L48
+ 379 0040 00C0      		rjmp .L36
+ 380               	.L46:
+ 381 0042 863E      		cpi r24,lo8(-26)
+ 382 0044 01F0      		breq .L49
+ 383 0046 873E      		cpi r24,lo8(-25)
+ 384 0048 01F0      		breq .L50
+ 385 004a 00C0      		rjmp .L36
+ 386               	.L38:
+  36:../../common/keymap.c ****             return keymap_fn_to_action(keycode);
+ 387               		.loc 1 36 0
+ 388 004c 0E94 0000 		call keymap_fn_to_action
+ 389               	.LVL56:
+ 390 0050 0895      		ret
+ 391               	.LVL57:
+ 392               	.L43:
+  40:../../common/keymap.c ****             if (keymap_config.swap_control_capslock || keymap_config.capslock_to_control) {
+ 393               		.loc 1 40 0
+ 394 0052 9091 0000 		lds r25,keymap_config
+ 395 0056 90FD      		sbrc r25,0
+ 396 0058 00C0      		rjmp .L52
+  40:../../common/keymap.c ****             if (keymap_config.swap_control_capslock || keymap_config.capslock_to_control) {
+ 397               		.loc 1 40 0 is_stmt 0 discriminator 1
+ 398 005a 91FF      		sbrs r25,1
+ 399 005c 00C0      		rjmp .L36
+ 400               	.LVL58:
+ 401               	.L52:
+  41:../../common/keymap.c ****                 return keycode_to_action(KC_LCTL);
+ 402               		.loc 1 41 0 is_stmt 1
+ 403 005e 80EE      		ldi r24,lo8(-32)
+ 404 0060 00C0      		rjmp .L36
+ 405               	.LVL59:
+ 406               	.L47:
+  45:../../common/keymap.c ****             if (keymap_config.swap_control_capslock) {
+ 407               		.loc 1 45 0
+ 408 0062 8091 0000 		lds r24,keymap_config
+ 409               	.LVL60:
+ 410 0066 80FF      		sbrs r24,0
+ 411 0068 00C0      		rjmp .L52
+  46:../../common/keymap.c ****                 return keycode_to_action(KC_CAPSLOCK);
+ 412               		.loc 1 46 0
+ 413 006a 89E3      		ldi r24,lo8(57)
+ 414 006c 00C0      		rjmp .L36
+ 415               	.LVL61:
+ 416               	.L48:
+  50:../../common/keymap.c ****             if (keymap_config.swap_lalt_lgui) {
+ 417               		.loc 1 50 0
+ 418 006e 8091 0000 		lds r24,keymap_config
+ 419               	.LVL62:
+ 420 0072 82FF      		sbrs r24,2
+ 421 0074 00C0      		rjmp .L54
+ 422               	.L56:
+  51:../../common/keymap.c ****                 if (keymap_config.no_gui) {
+ 423               		.loc 1 51 0
+ 424 0076 8091 0000 		lds r24,keymap_config
+ 425 007a 84FF      		sbrs r24,4
+ 426 007c 00C0      		rjmp .L55
+ 427               	.L58:
+  52:../../common/keymap.c ****                     return keycode_to_action(ACTION_NO);
+ 428               		.loc 1 52 0
+ 429 007e 80E0      		ldi r24,0
+ 430 0080 00C0      		rjmp .L36
+ 431               	.L55:
+  54:../../common/keymap.c ****                 return keycode_to_action(KC_LGUI);
+ 432               		.loc 1 54 0
+ 433 0082 83EE      		ldi r24,lo8(-29)
+ 434 0084 00C0      		rjmp .L36
+ 435               	.LVL63:
+ 436               	.L45:
+  58:../../common/keymap.c ****             if (keymap_config.swap_lalt_lgui) {
+ 437               		.loc 1 58 0
+ 438 0086 8091 0000 		lds r24,keymap_config
+ 439               	.LVL64:
+ 440 008a 82FF      		sbrs r24,2
+ 441 008c 00C0      		rjmp .L56
+ 442               	.L54:
+  56:../../common/keymap.c ****             return keycode_to_action(KC_LALT);
+ 443               		.loc 1 56 0
+ 444 008e 82EE      		ldi r24,lo8(-30)
+ 445 0090 00C0      		rjmp .L36
+ 446               	.LVL65:
+ 447               	.L49:
+  66:../../common/keymap.c ****             if (keymap_config.swap_ralt_rgui) {
+ 448               		.loc 1 66 0
+ 449 0092 8091 0000 		lds r24,keymap_config
+ 450               	.LVL66:
+ 451 0096 83FF      		sbrs r24,3
+ 452 0098 00C0      		rjmp .L57
+ 453               	.L59:
+  67:../../common/keymap.c ****                 if (keymap_config.no_gui) {
+ 454               		.loc 1 67 0
+ 455 009a 8091 0000 		lds r24,keymap_config
+ 456 009e 84FD      		sbrc r24,4
+ 457 00a0 00C0      		rjmp .L58
+  70:../../common/keymap.c ****                 return keycode_to_action(KC_RGUI);
+ 458               		.loc 1 70 0
+ 459 00a2 87EE      		ldi r24,lo8(-25)
+ 460 00a4 00C0      		rjmp .L36
+ 461               	.LVL67:
+ 462               	.L50:
+  74:../../common/keymap.c ****             if (keymap_config.swap_ralt_rgui) {
+ 463               		.loc 1 74 0
+ 464 00a6 8091 0000 		lds r24,keymap_config
+ 465               	.LVL68:
+ 466 00aa 83FF      		sbrs r24,3
+ 467 00ac 00C0      		rjmp .L59
+ 468               	.L57:
+  72:../../common/keymap.c ****             return keycode_to_action(KC_RALT);
+ 469               		.loc 1 72 0
+ 470 00ae 86EE      		ldi r24,lo8(-26)
+ 471 00b0 00C0      		rjmp .L36
+ 472               	.LVL69:
+ 473               	.L44:
+  82:../../common/keymap.c ****             if (keymap_config.swap_grave_esc) {
+ 474               		.loc 1 82 0
+ 475 00b2 8091 0000 		lds r24,keymap_config
+ 476               	.LVL70:
+ 477 00b6 85FF      		sbrs r24,5
+ 478 00b8 00C0      		rjmp .L60
+ 479               	.L61:
+  83:../../common/keymap.c ****                 return keycode_to_action(KC_ESC);
+ 480               		.loc 1 83 0
+ 481 00ba 89E2      		ldi r24,lo8(41)
+ 482 00bc 00C0      		rjmp .L36
+ 483               	.LVL71:
+ 484               	.L41:
+  87:../../common/keymap.c ****             if (keymap_config.swap_grave_esc) {
+ 485               		.loc 1 87 0
+ 486 00be 8091 0000 		lds r24,keymap_config
+ 487               	.LVL72:
+ 488 00c2 85FF      		sbrs r24,5
+ 489 00c4 00C0      		rjmp .L61
+ 490               	.L60:
+  85:../../common/keymap.c ****             return keycode_to_action(KC_GRAVE);
+ 491               		.loc 1 85 0
+ 492 00c6 85E3      		ldi r24,lo8(53)
+ 493 00c8 00C0      		rjmp .L36
+ 494               	.LVL73:
+ 495               	.L39:
+  92:../../common/keymap.c ****             if (keymap_config.swap_backslash_backspace) {
+ 496               		.loc 1 92 0
+ 497 00ca 8091 0000 		lds r24,keymap_config
+ 498               	.LVL74:
+ 499 00ce 86FF      		sbrs r24,6
+ 500 00d0 00C0      		rjmp .L62
+ 501               	.L63:
+  93:../../common/keymap.c ****                 return keycode_to_action(KC_BSPACE);
+ 502               		.loc 1 93 0
+ 503 00d2 8AE2      		ldi r24,lo8(42)
+ 504 00d4 00C0      		rjmp .L36
+ 505               	.LVL75:
+ 506               	.L42:
+  97:../../common/keymap.c ****             if (keymap_config.swap_backslash_backspace) {
+ 507               		.loc 1 97 0
+ 508 00d6 8091 0000 		lds r24,keymap_config
+ 509               	.LVL76:
+ 510 00da 86FF      		sbrs r24,6
+ 511 00dc 00C0      		rjmp .L63
+ 512               	.L62:
+  95:../../common/keymap.c ****             return keycode_to_action(KC_BSLASH);
+ 513               		.loc 1 95 0
+ 514 00de 81E3      		ldi r24,lo8(49)
+ 515               	.L36:
+ 103:../../common/keymap.c ****             return keycode_to_action(keycode);
+ 516               		.loc 1 103 0
+ 517 00e0 0E94 0000 		call keycode_to_action
+ 518               	.LVL77:
+ 105:../../common/keymap.c **** }
+ 519               		.loc 1 105 0
+ 520 00e4 0895      		ret
+ 521               		.cfi_endproc
+ 522               	.LFE104:
+ 524               		.section	.text.action_get_macro,"ax",@progbits
+ 525               		.weak	action_get_macro
+ 527               	action_get_macro:
+ 528               	.LFB105:
+ 111:../../common/keymap.c **** {
+ 529               		.loc 1 111 0
+ 530               		.cfi_startproc
+ 531               	.LVL78:
+ 532               	/* prologue: function */
+ 533               	/* frame size = 0 */
+ 534               	/* stack size = 0 */
+ 535               	.L__stack_usage = 0
+ 113:../../common/keymap.c **** }
+ 536               		.loc 1 113 0
+ 537 0000 80E0      		ldi r24,0
+ 538 0002 90E0      		ldi r25,0
+ 539               	.LVL79:
+ 540 0004 0895      		ret
+ 541               		.cfi_endproc
+ 542               	.LFE105:
+ 544               		.section	.text.action_function,"ax",@progbits
+ 545               		.weak	action_function
+ 547               	action_function:
+ 548               	.LFB106:
+ 118:../../common/keymap.c **** {
+ 549               		.loc 1 118 0
+ 550               		.cfi_startproc
+ 551               	.LVL80:
+ 552               	/* prologue: function */
+ 553               	/* frame size = 0 */
+ 554               	/* stack size = 0 */
+ 555               	.L__stack_usage = 0
+ 556 0000 0895      		ret
+ 557               		.cfi_endproc
+ 558               	.LFE106:
+ 560               		.comm	keymap_config,1,1
+ 561               		.text
+ 562               	.Letext0:
+ 563               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 564               		.file 4 "../../common/keycode.h"
+ 565               		.file 5 "../../common/action_code.h"
+ 566               		.file 6 "../../common/action_macro.h"
+ 567               		.file 7 "../../common/action.h"
+ 568               		.file 8 "../../common/keymap.h"
+ 569               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 keymap.c
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:12     .text.keycode_to_action:00000000 keycode_to_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:303    .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:319    .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:334    .text.action_for_key:00000000 action_for_key
+                            *COM*:00000001 keymap_config
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:527    .text.action_get_macro:00000000 action_get_macro
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTlhvCS.s:547    .text.action_function:00000000 action_function
+
+UNDEFINED SYMBOLS
+keymap_key_to_keycode
+keymap_fn_to_action
+__do_clear_bss
