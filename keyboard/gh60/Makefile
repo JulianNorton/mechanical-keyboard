@@ -42,7 +42,7 @@
 TARGET = gh60_lufa
 
 # Directory common source filess exist
-TMK_DIR = ../../tmk_core
+TOP_DIR = ../..
 
 # Directory keyboard dependent files exist
 TARGET_DIR = .
@@ -55,7 +55,7 @@ SRC =	keymap_common.c \
 ifdef KEYMAP
     SRC := keymap_$(KEYMAP).c $(SRC)
 else
-    SRC := keymap_poker.c $(SRC)
+    SRC := keymap_planck.c $(SRC)
 endif
 
 CONFIG_H = config.h
@@ -128,8 +128,8 @@ NKRO_ENABLE = yes	# USB Nkey Rollover - not yet supported in LUFA
 
 # Search Path
 VPATH += $(TARGET_DIR)
-VPATH += $(TMK_DIR)
+VPATH += $(TOP_DIR)
 
-include $(TMK_DIR)/protocol/lufa.mk
-include $(TMK_DIR)/common.mk
-include $(TMK_DIR)/rules.mk
+include $(TOP_DIR)/protocol/lufa.mk
+include $(TOP_DIR)/common.mk
+include $(TOP_DIR)/rules.mk

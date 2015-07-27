@@ -1,0 +1,136 @@
+   1               		.file	"keymap_common.c"
+   2               	__SP_H__ = 0x3e
+   3               	__SP_L__ = 0x3d
+   4               	__SREG__ = 0x3f
+   5               	__tmp_reg__ = 0
+   6               	__zero_reg__ = 1
+   7               		.text
+   8               	.Ltext0:
+   9               		.cfi_sections	.debug_frame
+  10               		.section	.text.keymap_key_to_keycode,"ax",@progbits
+  11               	.global	keymap_key_to_keycode
+  13               	keymap_key_to_keycode:
+  14               	.LFB103:
+  15               		.file 1 "keymap_common.c"
+   1:keymap_common.c **** /*
+   2:keymap_common.c **** Copyright 2012,2013 Jun Wako <wakojun@gmail.com>
+   3:keymap_common.c **** 
+   4:keymap_common.c **** This program is free software: you can redistribute it and/or modify
+   5:keymap_common.c **** it under the terms of the GNU General Public License as published by
+   6:keymap_common.c **** the Free Software Foundation, either version 2 of the License, or
+   7:keymap_common.c **** (at your option) any later version.
+   8:keymap_common.c **** 
+   9:keymap_common.c **** This program is distributed in the hope that it will be useful,
+  10:keymap_common.c **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:keymap_common.c **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:keymap_common.c **** GNU General Public License for more details.
+  13:keymap_common.c **** 
+  14:keymap_common.c **** You should have received a copy of the GNU General Public License
+  15:keymap_common.c **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:keymap_common.c **** */
+  17:keymap_common.c **** #include "keymap_common.h"
+  18:keymap_common.c **** 
+  19:keymap_common.c **** 
+  20:keymap_common.c **** /* translates key to keycode */
+  21:keymap_common.c **** uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
+  22:keymap_common.c **** {
+  16               		.loc 1 22 0
+  17               		.cfi_startproc
+  18               	.LVL0:
+  19               	/* prologue: function */
+  20               	/* frame size = 0 */
+  21               	/* stack size = 0 */
+  22               	.L__stack_usage = 0
+  23               	.LBB2:
+  23:keymap_common.c ****     return pgm_read_byte(&keymaps[(layer)][(key.row)][(key.col)]);
+  24               		.loc 1 23 0
+  25 0000 9EE0      		ldi r25,lo8(14)
+  26 0002 799F      		mul r23,r25
+  27 0004 F001      		movw r30,r0
+  28 0006 1124      		clr __zero_reg__
+  29 0008 96E4      		ldi r25,lo8(70)
+  30 000a 899F      		mul r24,r25
+  31 000c E00D      		add r30,r0
+  32 000e F11D      		adc r31,r1
+  33 0010 1124      		clr __zero_reg__
+  34 0012 E60F      		add r30,r22
+  35 0014 F11D      		adc r31,__zero_reg__
+  36 0016 E050      		subi r30,lo8(-(keymaps))
+  37 0018 F040      		sbci r31,hi8(-(keymaps))
+  38               	/* #APP */
+  39               	 ;  23 "keymap_common.c" 1
+  40 001a 8491      		lpm r24, Z
+  41               		
+  42               	 ;  0 "" 2
+  43               	.LVL1:
+  44               	/* #NOAPP */
+  45               	.LBE2:
+  24:keymap_common.c **** }
+  46               		.loc 1 24 0
+  47 001c 0895      		ret
+  48               		.cfi_endproc
+  49               	.LFE103:
+  51               		.section	.text.keymap_fn_to_action,"ax",@progbits
+  52               	.global	keymap_fn_to_action
+  54               	keymap_fn_to_action:
+  55               	.LFB104:
+  25:keymap_common.c **** 
+  26:keymap_common.c **** /* translates Fn keycode to action */
+  27:keymap_common.c **** action_t keymap_fn_to_action(uint8_t keycode)
+  28:keymap_common.c **** {
+  56               		.loc 1 28 0
+  57               		.cfi_startproc
+  58               	.LVL2:
+  59               	/* prologue: function */
+  60               	/* frame size = 0 */
+  61               	/* stack size = 0 */
+  62               	.L__stack_usage = 0
+  63               	.LBB3:
+  29:keymap_common.c ****     return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
+  64               		.loc 1 29 0
+  65 0000 E82F      		mov r30,r24
+  66 0002 F0E0      		ldi r31,0
+  67 0004 EE0F      		lsl r30
+  68 0006 FF1F      		rol r31
+  69               	.LVL3:
+  70 0008 E050      		subi r30,lo8(-(fn_actions-384))
+  71 000a F040      		sbci r31,hi8(-(fn_actions-384))
+  72               	.LVL4:
+  73               	.LBE3:
+  30:keymap_common.c **** }
+  74               		.loc 1 30 0
+  75               	/* #APP */
+  76               	 ;  29 "keymap_common.c" 1
+  77 000c 8591      		lpm r24, Z+
+  78 000e 9491      		lpm r25, Z
+  79               		
+  80               	 ;  0 "" 2
+  81               	/* #NOAPP */
+  82 0010 0895      		ret
+  83               		.cfi_endproc
+  84               	.LFE104:
+  86               		.comm	keymap_config,1,1
+  87               		.text
+  88               	.Letext0:
+  89               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+  90               		.file 3 "../../tmk_core/common/keyboard.h"
+  91               		.file 4 "../../tmk_core/common/action_code.h"
+  92               		.file 5 "../../tmk_core/common/keymap.h"
+  93               		.file 6 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
+  94               		.file 7 "keymap_common.h"
+  95               		.file 8 "../../tmk_core/common/keycode.h"
+DEFINED SYMBOLS
+                            *ABS*:00000000 keymap_common.c
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:13     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:54     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
+                            *COM*:00000001 keymap_config
+
+UNDEFINED SYMBOLS
+keymaps
+fn_actions
+__do_clear_bss
