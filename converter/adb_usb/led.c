@@ -28,7 +28,7 @@ void led_set(uint8_t usb_led)
         // PORTF |= (1<<0);
     } else {
         // Output low.
-        DDRF &= ~(1<<0);
-        PORTF &= ~(1<<0);
+        // DDRF &= ~(1<<0);
+        // PORTF &= ~(1<<0);
     }
 }
