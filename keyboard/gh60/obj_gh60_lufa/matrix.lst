@@ -9,7 +9,7 @@
    9               		.cfi_sections	.debug_frame
   10               		.section	.text.unselect_rows,"ax",@progbits
   12               	unselect_rows:
-  13               	.LFB21:
+  13               	.LFB23:
   14               		.file 1 "matrix.c"
    1:matrix.c      **** /*
    2:matrix.c      **** Copyright 2012 Jun Wako <wakojun@gmail.com>
@@ -169,315 +169,393 @@
  156:matrix.c      **** static void init_cols(void)
  157:matrix.c      **** {
  158:matrix.c      ****     // Input with pull-up(DDR:0, PORT:1)
- 159:matrix.c      ****     DDRF  &= ~(1<<7);
- 160:matrix.c      ****     PORTF |=  (1<<7);
- 161:matrix.c      ****     DDRB  &= ~(1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<3 | 1<<2 | 1<<1);
- 162:matrix.c      ****     PORTB |=  (1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<3 | 1<<2 | 1<<1);
- 163:matrix.c      ****     DDRD  &= ~(1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0 );
- 164:matrix.c      ****     PORTD |=  (1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0 );
- 165:matrix.c      ****     DDRC  &= ~(1<<7 | 1<<6);
- 166:matrix.c      ****     PORTC |=  (1<<7 | 1<<6);
- 167:matrix.c      **** }
- 168:matrix.c      **** 
- 169:matrix.c      **** static matrix_row_t read_cols(void)
- 170:matrix.c      **** {
- 171:matrix.c      ****     return 
- 172:matrix.c      ****            (PINF&(1<<0) ? 0 : (1<< 0)) |
- 173:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 1)) |
- 174:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 2)) |
- 175:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 3)) |
- 176:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 4)) |
- 177:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 5)) |
- 178:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 6)) |
- 179:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
- 180:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 8)) |
- 181:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 9)) |
- 182:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<10)) |
- 183:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<11)) |
- 184:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<12)) |
- 185:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<13)) |
- 186:matrix.c      ****            (PINB&(1<<7) ? 0 : (1<<14));
- 187:matrix.c      **** }
- 188:matrix.c      **** 
- 189:matrix.c      **** /* Row pin configuration
- 190:matrix.c      ****  * row: 0  1  2  3
- 191:matrix.c      ****  * pin: B0 B1 B2 B3
- 192:matrix.c      ****  */
- 193:matrix.c      **** static void unselect_rows(void)
- 194:matrix.c      **** {
-  15               		.loc 1 194 0
+ 159:matrix.c      ****     // 'F' port columns enabled
+ 160:matrix.c      ****     DDRF  &= ~(1<<0 | 1<<1 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 161:matrix.c      ****     PORTF |=  (1<<0 | 1<<1 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 162:matrix.c      ****     // 'B' port columns enabled
+ 163:matrix.c      ****     DDRB  &= ~(1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 164:matrix.c      ****     PORTB |=  (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 165:matrix.c      ****     // 'D' ports columns enabled
+ 166:matrix.c      ****     DDRD  &= ~(1<<7);
+ 167:matrix.c      ****     PORTD |=  (1<<7);
+ 168:matrix.c      **** }
+ 169:matrix.c      **** 
+ 170:matrix.c      **** static matrix_row_t read_cols(void)
+ 171:matrix.c      **** {
+ 172:matrix.c      ****     return 
+ 173:matrix.c      ****            (PINB&(1<<7) ? 0 : (1<<0)) |
+ 174:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<1)) |
+ 175:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<2)) |
+ 176:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<3)) |
+ 177:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<4)) |
+ 178:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 5)) |
+ 179:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 6)) |
+ 180:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
+ 181:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 8)) |
+ 182:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 9)) |
+ 183:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 10)) |
+ 184:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 11)) |
+ 185:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 12)) |
+ 186:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 13)) |
+ 187:matrix.c      ****            (PINF&(1<<0) ? 0 : (1<< 14)) ;
+ 188:matrix.c      **** }
+ 189:matrix.c      **** 
+ 190:matrix.c      **** /* Row pin configuration
+ 191:matrix.c      ****  * row: 0  1  2  3
+ 192:matrix.c      ****  * pin: B0 B1 B2 B3
+ 193:matrix.c      ****  */
+ 194:matrix.c      **** static void unselect_rows(void)
+ 195:matrix.c      **** {
+  15               		.loc 1 195 0
   16               		.cfi_startproc
   17               	/* prologue: function */
   18               	/* frame size = 0 */
   19               	/* stack size = 0 */
   20               	.L__stack_usage = 0
- 195:matrix.c      ****     // Hi-Z(DDR:0, PORT:0) to unselect
- 196:matrix.c      ****     DDRB  &= ~0b01110000;
-  21               		.loc 1 196 0
+ 196:matrix.c      ****     // Hi-Z(DDR:0, PORT:0) to unselect
+ 197:matrix.c      ****     DDRB  &= ~0b01110000;
+  21               		.loc 1 197 0
   22 0000 84B1      		in r24,0x4
   23 0002 8F78      		andi r24,lo8(-113)
   24 0004 84B9      		out 0x4,r24
- 197:matrix.c      ****     PORTB &= ~0b01110000;
-  25               		.loc 1 197 0
+ 198:matrix.c      ****     PORTB &= ~0b01110000;
+  25               		.loc 1 198 0
   26 0006 85B1      		in r24,0x5
   27 0008 8F78      		andi r24,lo8(-113)
   28 000a 85B9      		out 0x5,r24
- 198:matrix.c      ****     DDRD  &= ~0b10000000;
-  29               		.loc 1 198 0
+ 199:matrix.c      ****     DDRD  &= ~0b10000000;
+  29               		.loc 1 199 0
   30 000c 5798      		cbi 0xa,7
- 199:matrix.c      ****     PORTD &= ~0b10000000;
-  31               		.loc 1 199 0
+ 200:matrix.c      ****     PORTD &= ~0b10000000;
+  31               		.loc 1 200 0
   32 000e 5F98      		cbi 0xb,7
   33 0010 0895      		ret
   34               		.cfi_endproc
-  35               	.LFE21:
-  37               		.section	.text.matrix_rows,"ax",@progbits
-  38               	.global	matrix_rows
-  40               	matrix_rows:
-  41               	.LFB10:
+  35               	.LFE23:
+  37               		.section	.text.matrix_power_up,"ax",@progbits
+  38               		.weak	matrix_power_up
+  40               	matrix_power_up:
+  41               	.LFB9:
+  42               		.file 2 "../../common/keyboard.h"
+   1:../../common/keyboard.h **** /*
+   2:../../common/keyboard.h **** Copyright 2011,2012,2013 Jun Wako <wakojun@gmail.com>
+   3:../../common/keyboard.h **** 
+   4:../../common/keyboard.h **** This program is free software: you can redistribute it and/or modify
+   5:../../common/keyboard.h **** it under the terms of the GNU General Public License as published by
+   6:../../common/keyboard.h **** the Free Software Foundation, either version 2 of the License, or
+   7:../../common/keyboard.h **** (at your option) any later version.
+   8:../../common/keyboard.h **** 
+   9:../../common/keyboard.h **** This program is distributed in the hope that it will be useful,
+  10:../../common/keyboard.h **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../common/keyboard.h **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../common/keyboard.h **** GNU General Public License for more details.
+  13:../../common/keyboard.h **** 
+  14:../../common/keyboard.h **** You should have received a copy of the GNU General Public License
+  15:../../common/keyboard.h **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../common/keyboard.h **** */
+  17:../../common/keyboard.h **** 
+  18:../../common/keyboard.h **** #ifndef KEYBOARD_H
+  19:../../common/keyboard.h **** #define KEYBOARD_H
+  20:../../common/keyboard.h **** 
+  21:../../common/keyboard.h **** #include <stdbool.h>
+  22:../../common/keyboard.h **** #include <stdint.h>
+  23:../../common/keyboard.h **** 
+  24:../../common/keyboard.h **** 
+  25:../../common/keyboard.h **** #ifdef __cplusplus
+  26:../../common/keyboard.h **** extern "C" {
+  27:../../common/keyboard.h **** #endif
+  28:../../common/keyboard.h **** 
+  29:../../common/keyboard.h **** /* key matrix position */
+  30:../../common/keyboard.h **** typedef struct {
+  31:../../common/keyboard.h ****     uint8_t col;
+  32:../../common/keyboard.h ****     uint8_t row;
+  33:../../common/keyboard.h **** } keypos_t;
+  34:../../common/keyboard.h **** 
+  35:../../common/keyboard.h **** /* key event */
+  36:../../common/keyboard.h **** typedef struct {
+  37:../../common/keyboard.h ****     keypos_t key;
+  38:../../common/keyboard.h ****     bool     pressed;
+  39:../../common/keyboard.h ****     uint16_t time;
+  40:../../common/keyboard.h **** } keyevent_t;
+  41:../../common/keyboard.h **** 
+  42:../../common/keyboard.h **** /* equivalent test of keypos_t */
+  43:../../common/keyboard.h **** #define KEYEQ(keya, keyb)       ((keya).row == (keyb).row && (keya).col == (keyb).col)
+  44:../../common/keyboard.h **** 
+  45:../../common/keyboard.h **** /* Rules for No Event:
+  46:../../common/keyboard.h ****  * 1) (time == 0) to handle (keyevent_t){} as empty event
+  47:../../common/keyboard.h ****  * 2) Matrix(255, 255) to make TICK event available
+  48:../../common/keyboard.h ****  */
+  49:../../common/keyboard.h **** static inline bool IS_NOEVENT(keyevent_t event) { return event.time == 0 || (event.key.row == 255 &
+  50:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
+  51:../../common/keyboard.h **** static inline bool IS_RELEASED(keyevent_t event) { return (!IS_NOEVENT(event) && !event.pressed); }
+  52:../../common/keyboard.h **** 
+  53:../../common/keyboard.h **** /* Tick event */
+  54:../../common/keyboard.h **** #define TICK                    (keyevent_t){           \
+  55:../../common/keyboard.h ****     .key = (keypos_t){ .row = 255, .col = 255 },           \
+  56:../../common/keyboard.h ****     .pressed = false,                                   \
+  57:../../common/keyboard.h ****     .time = (timer_read() | 1)                          \
+  58:../../common/keyboard.h **** }
+  59:../../common/keyboard.h **** 
+  60:../../common/keyboard.h **** 
+  61:../../common/keyboard.h **** void keyboard_init(void);
+  62:../../common/keyboard.h **** void keyboard_task(void);
+  63:../../common/keyboard.h **** void keyboard_set_leds(uint8_t leds);
+  64:../../common/keyboard.h **** 
+  65:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_up(void) {}
+  43               		.loc 2 65 0
+  44               		.cfi_startproc
+  45               	/* prologue: function */
+  46               	/* frame size = 0 */
+  47               	/* stack size = 0 */
+  48               	.L__stack_usage = 0
+  49 0000 0895      		ret
+  50               		.cfi_endproc
+  51               	.LFE9:
+  53               		.section	.text.matrix_power_down,"ax",@progbits
+  54               		.weak	matrix_power_down
+  56               	matrix_power_down:
+  57               	.LFB10:
+  66:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_down(void) {}
+  58               		.loc 2 66 0
+  59               		.cfi_startproc
+  60               	/* prologue: function */
+  61               	/* frame size = 0 */
+  62               	/* stack size = 0 */
+  63               	.L__stack_usage = 0
+  64 0000 0895      		ret
+  65               		.cfi_endproc
+  66               	.LFE10:
+  68               		.section	.text.matrix_rows,"ax",@progbits
+  69               	.global	matrix_rows
+  71               	matrix_rows:
+  72               	.LFB12:
   49:matrix.c      **** {
-  42               		.loc 1 49 0
-  43               		.cfi_startproc
-  44               	/* prologue: function */
-  45               	/* frame size = 0 */
-  46               	/* stack size = 0 */
-  47               	.L__stack_usage = 0
+  73               		.loc 1 49 0
+  74               		.cfi_startproc
+  75               	/* prologue: function */
+  76               	/* frame size = 0 */
+  77               	/* stack size = 0 */
+  78               	.L__stack_usage = 0
   51:matrix.c      **** }
-  48               		.loc 1 51 0
-  49 0000 85E0      		ldi r24,lo8(5)
-  50 0002 0895      		ret
-  51               		.cfi_endproc
-  52               	.LFE10:
-  54               		.section	.text.matrix_cols,"ax",@progbits
-  55               	.global	matrix_cols
-  57               	matrix_cols:
-  58               	.LFB11:
+  79               		.loc 1 51 0
+  80 0000 85E0      		ldi r24,lo8(5)
+  81 0002 0895      		ret
+  82               		.cfi_endproc
+  83               	.LFE12:
+  85               		.section	.text.matrix_cols,"ax",@progbits
+  86               	.global	matrix_cols
+  88               	matrix_cols:
+  89               	.LFB13:
   55:matrix.c      **** {
-  59               		.loc 1 55 0
-  60               		.cfi_startproc
-  61               	/* prologue: function */
-  62               	/* frame size = 0 */
-  63               	/* stack size = 0 */
-  64               	.L__stack_usage = 0
+  90               		.loc 1 55 0
+  91               		.cfi_startproc
+  92               	/* prologue: function */
+  93               	/* frame size = 0 */
+  94               	/* stack size = 0 */
+  95               	.L__stack_usage = 0
   57:matrix.c      **** }
-  65               		.loc 1 57 0
-  66 0000 8EE0      		ldi r24,lo8(14)
-  67 0002 0895      		ret
-  68               		.cfi_endproc
-  69               	.LFE11:
-  71               		.section	.text.matrix_init,"ax",@progbits
-  72               	.global	matrix_init
-  74               	matrix_init:
-  75               	.LFB12:
+  96               		.loc 1 57 0
+  97 0000 8EE0      		ldi r24,lo8(14)
+  98 0002 0895      		ret
+  99               		.cfi_endproc
+ 100               	.LFE13:
+ 102               		.section	.text.matrix_init,"ax",@progbits
+ 103               	.global	matrix_init
+ 105               	matrix_init:
+ 106               	.LFB14:
   60:matrix.c      **** {
-  76               		.loc 1 60 0
-  77               		.cfi_startproc
-  78               	/* prologue: function */
-  79               	/* frame size = 0 */
-  80               	/* stack size = 0 */
-  81               	.L__stack_usage = 0
+ 107               		.loc 1 60 0
+ 108               		.cfi_startproc
+ 109               	/* prologue: function */
+ 110               	/* frame size = 0 */
+ 111               	/* stack size = 0 */
+ 112               	.L__stack_usage = 0
   62:matrix.c      ****     unselect_rows();
-  82               		.loc 1 62 0
-  83 0000 0E94 0000 		call unselect_rows
-  84               	.LVL0:
-  85               	.LBB23:
-  86               	.LBB24:
- 159:matrix.c      ****     DDRF  &= ~(1<<7);
-  87               		.loc 1 159 0
-  88 0004 8798      		cbi 0x10,7
- 160:matrix.c      ****     PORTF |=  (1<<7);
-  89               		.loc 1 160 0
-  90 0006 8F9A      		sbi 0x11,7
- 161:matrix.c      ****     DDRB  &= ~(1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<3 | 1<<2 | 1<<1);
-  91               		.loc 1 161 0
-  92 0008 84B1      		in r24,0x4
-  93 000a 8170      		andi r24,lo8(1)
-  94 000c 84B9      		out 0x4,r24
- 162:matrix.c      ****     PORTB |=  (1<<7 | 1<<6 | 1<<5 | 1<<4 | 1<<3 | 1<<2 | 1<<1);
-  95               		.loc 1 162 0
-  96 000e 85B1      		in r24,0x5
-  97 0010 8E6F      		ori r24,lo8(-2)
-  98 0012 85B9      		out 0x5,r24
- 163:matrix.c      ****     DDRD  &= ~(1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0 );
-  99               		.loc 1 163 0
- 100 0014 8AB1      		in r24,0xa
- 101 0016 8077      		andi r24,lo8(112)
- 102 0018 8AB9      		out 0xa,r24
- 164:matrix.c      ****     PORTD |=  (1<<7 | 1<<3 | 1<<2 | 1<<1 | 1<<0 );
- 103               		.loc 1 164 0
- 104 001a 8BB1      		in r24,0xb
- 105 001c 8F68      		ori r24,lo8(-113)
- 106 001e 8BB9      		out 0xb,r24
- 165:matrix.c      ****     DDRC  &= ~(1<<7 | 1<<6);
- 107               		.loc 1 165 0
- 108 0020 87B1      		in r24,0x7
- 109 0022 8F73      		andi r24,lo8(63)
- 110 0024 87B9      		out 0x7,r24
- 166:matrix.c      ****     PORTC |=  (1<<7 | 1<<6);
- 111               		.loc 1 166 0
- 112 0026 88B1      		in r24,0x8
- 113 0028 806C      		ori r24,lo8(-64)
- 114 002a 88B9      		out 0x8,r24
- 115               	.LVL1:
- 116 002c E0E0      		ldi r30,lo8(matrix)
- 117 002e F0E0      		ldi r31,hi8(matrix)
- 118 0030 A0E0      		ldi r26,lo8(matrix_debouncing)
- 119 0032 B0E0      		ldi r27,hi8(matrix_debouncing)
- 120               	.LVL2:
- 121               	.L6:
- 122               	.LBE24:
- 123               	.LBE23:
- 124               	.LBB25:
+ 113               		.loc 1 62 0
+ 114 0000 0E94 0000 		call unselect_rows
+ 115               	.LVL0:
+ 116               	.LBB23:
+ 117               	.LBB24:
+ 160:matrix.c      ****     DDRF  &= ~(1<<0 | 1<<1 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 118               		.loc 1 160 0
+ 119 0004 80B3      		in r24,0x10
+ 120 0006 8C70      		andi r24,lo8(12)
+ 121 0008 80BB      		out 0x10,r24
+ 161:matrix.c      ****     PORTF |=  (1<<0 | 1<<1 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 122               		.loc 1 161 0
+ 123 000a 81B3      		in r24,0x11
+ 124 000c 836F      		ori r24,lo8(-13)
+ 125 000e 81BB      		out 0x11,r24
+ 163:matrix.c      ****     DDRB  &= ~(1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 126               		.loc 1 163 0
+ 127 0010 84B1      		in r24,0x4
+ 128 0012 14B8      		out 0x4,__zero_reg__
+ 164:matrix.c      ****     PORTB |=  (1<<0 | 1<<1 | 1<<2 | 1<<3 | 1<<4 | 1<<5 | 1<<6 | 1<<7);
+ 129               		.loc 1 164 0
+ 130 0014 85B1      		in r24,0x5
+ 131 0016 8FEF      		ldi r24,lo8(-1)
+ 132 0018 85B9      		out 0x5,r24
+ 166:matrix.c      ****     DDRD  &= ~(1<<7);
+ 133               		.loc 1 166 0
+ 134 001a 5798      		cbi 0xa,7
+ 167:matrix.c      ****     PORTD |=  (1<<7);
+ 135               		.loc 1 167 0
+ 136 001c 5F9A      		sbi 0xb,7
+ 137               	.LVL1:
+ 138 001e E0E0      		ldi r30,lo8(matrix)
+ 139 0020 F0E0      		ldi r31,hi8(matrix)
+ 140 0022 A0E0      		ldi r26,lo8(matrix_debouncing)
+ 141 0024 B0E0      		ldi r27,hi8(matrix_debouncing)
+ 142               	.LVL2:
+ 143               	.L8:
+ 144               	.LBE24:
+ 145               	.LBE23:
+ 146               	.LBB25:
   67:matrix.c      ****         matrix[i] = 0;
- 125               		.loc 1 67 0 discriminator 2
- 126 0034 1192      		st Z+,__zero_reg__
- 127 0036 1192      		st Z+,__zero_reg__
+ 147               		.loc 1 67 0 discriminator 2
+ 148 0026 1192      		st Z+,__zero_reg__
+ 149 0028 1192      		st Z+,__zero_reg__
   68:matrix.c      ****         matrix_debouncing[i] = 0;
- 128               		.loc 1 68 0 discriminator 2
- 129 0038 1D92      		st X+,__zero_reg__
- 130 003a 1D92      		st X+,__zero_reg__
+ 150               		.loc 1 68 0 discriminator 2
+ 151 002a 1D92      		st X+,__zero_reg__
+ 152 002c 1D92      		st X+,__zero_reg__
   66:matrix.c      ****     for (uint8_t i=0; i < MATRIX_ROWS; i++) {
- 131               		.loc 1 66 0 discriminator 2
- 132 003c 80E0      		ldi r24,hi8(matrix+10)
- 133 003e E030      		cpi r30,lo8(matrix+10)
- 134 0040 F807      		cpc r31,r24
- 135 0042 01F4      		brne .L6
- 136               	/* epilogue start */
- 137               	.LBE25:
+ 153               		.loc 1 66 0 discriminator 2
+ 154 002e 80E0      		ldi r24,hi8(matrix+10)
+ 155 0030 E030      		cpi r30,lo8(matrix+10)
+ 156 0032 F807      		cpc r31,r24
+ 157 0034 01F4      		brne .L8
+ 158               	/* epilogue start */
+ 159               	.LBE25:
   70:matrix.c      **** }
- 138               		.loc 1 70 0
- 139 0044 0895      		ret
- 140               		.cfi_endproc
- 141               	.LFE12:
- 143               		.section	.text.matrix_scan,"ax",@progbits
- 144               	.global	matrix_scan
- 146               	matrix_scan:
- 147               	.LFB13:
+ 160               		.loc 1 70 0
+ 161 0036 0895      		ret
+ 162               		.cfi_endproc
+ 163               	.LFE14:
+ 165               		.section	.text.matrix_scan,"ax",@progbits
+ 166               	.global	matrix_scan
+ 168               	matrix_scan:
+ 169               	.LFB15:
   73:matrix.c      **** {
- 148               		.loc 1 73 0
- 149               		.cfi_startproc
- 150 0000 EF92      		push r14
- 151               	.LCFI0:
- 152               		.cfi_def_cfa_offset 3
- 153               		.cfi_offset 14, -2
- 154 0002 FF92      		push r15
- 155               	.LCFI1:
- 156               		.cfi_def_cfa_offset 4
- 157               		.cfi_offset 15, -3
- 158 0004 0F93      		push r16
- 159               	.LCFI2:
- 160               		.cfi_def_cfa_offset 5
- 161               		.cfi_offset 16, -4
- 162 0006 1F93      		push r17
- 163               	.LCFI3:
- 164               		.cfi_def_cfa_offset 6
- 165               		.cfi_offset 17, -5
- 166 0008 CF93      		push r28
- 167               	.LCFI4:
- 168               		.cfi_def_cfa_offset 7
- 169               		.cfi_offset 28, -6
- 170 000a DF93      		push r29
- 171               	.LCFI5:
- 172               		.cfi_def_cfa_offset 8
- 173               		.cfi_offset 29, -7
- 174               	/* prologue: function */
- 175               	/* frame size = 0 */
- 176               	/* stack size = 6 */
- 177               	.L__stack_usage = 6
- 178               	.LVL3:
+ 170               		.loc 1 73 0
+ 171               		.cfi_startproc
+ 172 0000 EF92      		push r14
+ 173               	.LCFI0:
+ 174               		.cfi_def_cfa_offset 3
+ 175               		.cfi_offset 14, -2
+ 176 0002 FF92      		push r15
+ 177               	.LCFI1:
+ 178               		.cfi_def_cfa_offset 4
+ 179               		.cfi_offset 15, -3
+ 180 0004 1F93      		push r17
+ 181               	.LCFI2:
+ 182               		.cfi_def_cfa_offset 5
+ 183               		.cfi_offset 17, -4
+ 184 0006 CF93      		push r28
+ 185               	.LCFI3:
+ 186               		.cfi_def_cfa_offset 6
+ 187               		.cfi_offset 28, -5
+ 188 0008 DF93      		push r29
+ 189               	.LCFI4:
+ 190               		.cfi_def_cfa_offset 7
+ 191               		.cfi_offset 29, -6
+ 192               	/* prologue: function */
+ 193               	/* frame size = 0 */
+ 194               	/* stack size = 5 */
+ 195               	.L__stack_usage = 5
+ 196               	.LVL3:
   73:matrix.c      **** {
- 179               		.loc 1 73 0
- 180 000c C0E0      		ldi r28,lo8(matrix_debouncing)
- 181 000e D0E0      		ldi r29,hi8(matrix_debouncing)
- 182               	.LBB40:
+ 197               		.loc 1 73 0
+ 198 000a C0E0      		ldi r28,lo8(matrix_debouncing)
+ 199 000c D0E0      		ldi r29,hi8(matrix_debouncing)
+ 200               	.LBB40:
   74:matrix.c      ****     for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
- 183               		.loc 1 74 0
- 184 0010 10E0      		ldi r17,0
- 185 0012 01E0      		ldi r16,lo8(1)
- 186               	.LBB41:
+ 201               		.loc 1 74 0
+ 202 000e 10E0      		ldi r17,0
+ 203               	.LBB41:
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 187               		.loc 1 81 0
- 188 0014 A0E0      		ldi r26,lo8(__c.2327)
- 189 0016 EA2E      		mov r14,r26
- 190 0018 A0E0      		ldi r26,hi8(__c.2327)
- 191 001a FA2E      		mov r15,r26
- 192               	.LVL4:
- 193               	.L37:
- 194               	.LBB42:
- 195               	.LBB43:
- 200:matrix.c      **** }
- 201:matrix.c      **** 
- 202:matrix.c      **** static void select_row(uint8_t row)
- 203:matrix.c      **** {
- 204:matrix.c      ****     // Output low(DDR:1, PORT:0) to select
- 205:matrix.c      ****        switch (row) {
- 196               		.loc 1 205 0
- 197 001c 1230      		cpi r17,lo8(2)
- 198 001e 01F0      		breq .L10
- 199 0020 00F4      		brsh .L11
- 200 0022 1130      		cpi r17,lo8(1)
- 201 0024 01F0      		breq .L12
- 202 0026 00C0      		rjmp .L9
- 203               	.L11:
- 204 0028 1330      		cpi r17,lo8(3)
- 205 002a 01F0      		breq .L13
- 206 002c 1430      		cpi r17,lo8(4)
- 207 002e 01F0      		breq .L14
- 208               	.L9:
- 206:matrix.c      ****            case 0:
- 207:matrix.c      ****                DDRD  |= (1<<0);
- 209               		.loc 1 207 0
- 210 0030 509A      		sbi 0xa,0
- 208:matrix.c      ****                PORTD &= ~(1<<0);
- 211               		.loc 1 208 0
- 212 0032 5898      		cbi 0xb,0
- 213 0034 00C0      		rjmp .L15
- 214               	.L12:
- 209:matrix.c      ****                break;
- 210:matrix.c      ****            case 1:
- 211:matrix.c      ****                DDRD  |= (1<<1);
- 215               		.loc 1 211 0
- 216 0036 519A      		sbi 0xa,1
- 212:matrix.c      ****                PORTD &= ~(1<<1);
- 217               		.loc 1 212 0
- 218 0038 5998      		cbi 0xb,1
- 219 003a 00C0      		rjmp .L15
- 220               	.L10:
- 213:matrix.c      ****                break;
- 214:matrix.c      ****            case 2:
- 215:matrix.c      ****                DDRD  |= (1<<2);
- 221               		.loc 1 215 0
- 222 003c 529A      		sbi 0xa,2
- 216:matrix.c      ****                PORTD &= ~(1<<2);
- 223               		.loc 1 216 0
- 224 003e 5A98      		cbi 0xb,2
- 225 0040 00C0      		rjmp .L15
- 226               	.L13:
- 217:matrix.c      ****                break;
- 218:matrix.c      ****            case 3:
- 219:matrix.c      ****                DDRD  |= (1<<3);
- 227               		.loc 1 219 0
- 228 0042 539A      		sbi 0xa,3
- 220:matrix.c      ****                PORTD &= ~(1<<3);
- 229               		.loc 1 220 0
- 230 0044 5B98      		cbi 0xb,3
- 231 0046 00C0      		rjmp .L15
- 232               	.L14:
- 221:matrix.c      ****                break;
- 222:matrix.c      ****            case 4:
- 223:matrix.c      ****                DDRC  |= (1<<6);
- 233               		.loc 1 223 0
- 234 0048 3E9A      		sbi 0x7,6
- 224:matrix.c      ****                PORTC &= ~(1<<6);
- 235               		.loc 1 224 0
- 236 004a 4698      		cbi 0x8,6
- 237               	.L15:
- 238               	.LVL5:
- 239               	.LBE43:
- 240               	.LBE42:
- 241               	.LBB44:
- 242               	.LBB45:
- 243               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h"
+ 204               		.loc 1 81 0
+ 205 0010 E0E0      		ldi r30,lo8(__c.2329)
+ 206 0012 EE2E      		mov r14,r30
+ 207 0014 E0E0      		ldi r30,hi8(__c.2329)
+ 208 0016 FE2E      		mov r15,r30
+ 209               	.LVL4:
+ 210               	.L39:
+ 211               	.LBB42:
+ 212               	.LBB43:
+ 201:matrix.c      **** }
+ 202:matrix.c      **** 
+ 203:matrix.c      **** static void select_row(uint8_t row)
+ 204:matrix.c      **** {
+ 205:matrix.c      ****     // Output low(DDR:1, PORT:0) to select
+ 206:matrix.c      ****        switch (row) {
+ 213               		.loc 1 206 0
+ 214 0018 1230      		cpi r17,lo8(2)
+ 215 001a 01F0      		breq .L12
+ 216 001c 00F4      		brsh .L13
+ 217 001e 1130      		cpi r17,lo8(1)
+ 218 0020 01F0      		breq .L14
+ 219 0022 00C0      		rjmp .L11
+ 220               	.L13:
+ 221 0024 1330      		cpi r17,lo8(3)
+ 222 0026 01F0      		breq .L15
+ 223 0028 1430      		cpi r17,lo8(4)
+ 224 002a 01F0      		breq .L16
+ 225               	.L11:
+ 207:matrix.c      ****            case 0:
+ 208:matrix.c      ****                DDRD  |= (1<<0);
+ 226               		.loc 1 208 0
+ 227 002c 509A      		sbi 0xa,0
+ 209:matrix.c      ****                PORTD &= ~(1<<0);
+ 228               		.loc 1 209 0
+ 229 002e 5898      		cbi 0xb,0
+ 230 0030 00C0      		rjmp .L17
+ 231               	.L14:
+ 210:matrix.c      ****                break;
+ 211:matrix.c      ****            case 1:
+ 212:matrix.c      ****                DDRD  |= (1<<1);
+ 232               		.loc 1 212 0
+ 233 0032 519A      		sbi 0xa,1
+ 213:matrix.c      ****                PORTD &= ~(1<<1);
+ 234               		.loc 1 213 0
+ 235 0034 5998      		cbi 0xb,1
+ 236 0036 00C0      		rjmp .L17
+ 237               	.L12:
+ 214:matrix.c      ****                break;
+ 215:matrix.c      ****            case 2:
+ 216:matrix.c      ****                DDRD  |= (1<<2);
+ 238               		.loc 1 216 0
+ 239 0038 529A      		sbi 0xa,2
+ 217:matrix.c      ****                PORTD &= ~(1<<2);
+ 240               		.loc 1 217 0
+ 241 003a 5A98      		cbi 0xb,2
+ 242 003c 00C0      		rjmp .L17
+ 243               	.L15:
+ 218:matrix.c      ****                break;
+ 219:matrix.c      ****            case 3:
+ 220:matrix.c      ****                DDRD  |= (1<<3);
+ 244               		.loc 1 220 0
+ 245 003e 539A      		sbi 0xa,3
+ 221:matrix.c      ****                PORTD &= ~(1<<3);
+ 246               		.loc 1 221 0
+ 247 0040 5B98      		cbi 0xb,3
+ 248 0042 00C0      		rjmp .L17
+ 249               	.L16:
+ 222:matrix.c      ****                break;
+ 223:matrix.c      ****            case 4:
+ 224:matrix.c      ****                DDRC  |= (1<<6);
+ 250               		.loc 1 224 0
+ 251 0044 3E9A      		sbi 0x7,6
+ 225:matrix.c      ****                PORTC &= ~(1<<6);
+ 252               		.loc 1 225 0
+ 253 0046 4698      		cbi 0x8,6
+ 254               	.L17:
+ 255               	.LVL5:
+ 256               	.LBE43:
+ 257               	.LBE42:
+ 258               	.LBB44:
+ 259               	.LBB45:
+ 260               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h"
    1:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** /* Copyright (c) 2002, Marek Michalkiewicz
    2:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Copyright (c) 2004,2005,2007 Joerg Wunsch
    3:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h ****    Copyright (c) 2007  Florin-Viorel Petrov
@@ -723,808 +801,798 @@
  243:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	#endif
  244:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 
  245:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
- 244               		.loc 2 245 0
- 245 004c 80EA      		ldi r24,lo8(-96)
- 246 004e 8A95      		1: dec r24
- 247 0050 01F4      		brne 1b
- 248               	.LBE45:
- 249               	.LBE44:
- 250               	.LBB46:
- 251               	.LBB47:
- 172:matrix.c      ****            (PINF&(1<<0) ? 0 : (1<< 0)) |
- 252               		.loc 1 172 0
- 253 0052 2FB1      		in r18,0xf
- 254 0054 2170      		andi r18,lo8(1)
- 255 0056 2027      		eor r18,r16
- 256 0058 30E0      		ldi r19,0
- 173:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 1)) |
- 257               		.loc 1 173 0
- 258 005a 799B      		sbis 0xf,1
- 259 005c 00C0      		rjmp .L46
- 260 005e 80E0      		ldi r24,0
- 261 0060 90E0      		ldi r25,0
- 262 0062 00C0      		rjmp .L16
- 263               	.L46:
- 264 0064 82E0      		ldi r24,lo8(2)
- 265 0066 90E0      		ldi r25,0
- 266               	.L16:
- 172:matrix.c      ****            (PINF&(1<<0) ? 0 : (1<< 0)) |
- 267               		.loc 1 172 0
- 268 0068 282B      		or r18,r24
- 269 006a 392B      		or r19,r25
- 174:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 2)) |
- 270               		.loc 1 174 0
- 271 006c 7C9B      		sbis 0xf,4
- 272 006e 00C0      		rjmp .L47
- 273 0070 40E0      		ldi r20,0
- 274 0072 50E0      		ldi r21,0
- 275 0074 00C0      		rjmp .L17
- 276               	.L47:
- 277 0076 44E0      		ldi r20,lo8(4)
- 278 0078 50E0      		ldi r21,0
- 279               	.L17:
- 173:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 1)) |
- 280               		.loc 1 173 0
- 281 007a 242B      		or r18,r20
- 282 007c 352B      		or r19,r21
- 175:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 3)) |
- 283               		.loc 1 175 0
- 284 007e 7D9B      		sbis 0xf,5
- 285 0080 00C0      		rjmp .L48
- 286 0082 80E0      		ldi r24,0
- 287 0084 90E0      		ldi r25,0
- 288 0086 00C0      		rjmp .L18
- 289               	.L48:
- 290 0088 88E0      		ldi r24,lo8(8)
- 291 008a 90E0      		ldi r25,0
- 292               	.L18:
- 174:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 2)) |
- 293               		.loc 1 174 0
- 294 008c 282B      		or r18,r24
- 295 008e 392B      		or r19,r25
- 176:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 4)) |
- 296               		.loc 1 176 0
- 297 0090 7E9B      		sbis 0xf,6
- 298 0092 00C0      		rjmp .L49
- 299 0094 80E0      		ldi r24,0
- 300 0096 90E0      		ldi r25,0
- 301 0098 00C0      		rjmp .L19
- 302               	.L49:
- 303 009a 80E1      		ldi r24,lo8(16)
- 304 009c 90E0      		ldi r25,0
- 305               	.L19:
- 175:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 3)) |
- 306               		.loc 1 175 0
- 307 009e 282B      		or r18,r24
- 308 00a0 392B      		or r19,r25
- 177:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 5)) |
- 309               		.loc 1 177 0
- 310 00a2 8FB1      		in r24,0xf
- 311 00a4 9927      		clr r25
- 312 00a6 87FD      		sbrc r24,7
- 313 00a8 9095      		com r25
- 314 00aa 8095      		com r24
- 315 00ac 9095      		com r25
- 316 00ae 8827      		clr r24
- 317 00b0 990F      		lsl r25
- 318 00b2 881F      		rol r24
- 319 00b4 9927      		clr r25
- 320 00b6 F5E0      		ldi r31,5
- 321               		1:
- 322 00b8 880F      		lsl r24
- 323 00ba 991F      		rol r25
- 324 00bc FA95      		dec r31
- 325 00be 01F4      		brne 1b
- 176:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 4)) |
- 326               		.loc 1 176 0
- 327 00c0 282B      		or r18,r24
- 328 00c2 392B      		or r19,r25
- 178:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 6)) |
- 329               		.loc 1 178 0
- 330 00c4 1E9B      		sbis 0x3,6
- 331 00c6 00C0      		rjmp .L51
- 332 00c8 80E0      		ldi r24,0
- 333 00ca 90E0      		ldi r25,0
- 334 00cc 00C0      		rjmp .L21
- 335               	.L51:
- 336 00ce 80E4      		ldi r24,lo8(64)
- 337 00d0 90E0      		ldi r25,0
- 338               	.L21:
- 177:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 5)) |
- 339               		.loc 1 177 0
- 340 00d2 282B      		or r18,r24
- 341 00d4 392B      		or r19,r25
- 179:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
- 342               		.loc 1 179 0
- 343 00d6 1D9B      		sbis 0x3,5
- 344 00d8 00C0      		rjmp .L52
- 345 00da 80E0      		ldi r24,0
- 346 00dc 90E0      		ldi r25,0
- 347 00de 00C0      		rjmp .L22
- 348               	.L52:
- 349 00e0 80E8      		ldi r24,lo8(-128)
- 350 00e2 90E0      		ldi r25,0
- 351               	.L22:
- 178:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 6)) |
- 352               		.loc 1 178 0
- 353 00e4 282B      		or r18,r24
- 354 00e6 392B      		or r19,r25
- 180:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 8)) |
- 355               		.loc 1 180 0
- 356 00e8 1C9B      		sbis 0x3,4
- 357 00ea 00C0      		rjmp .L53
- 358 00ec 80E0      		ldi r24,0
- 359 00ee 90E0      		ldi r25,0
- 360 00f0 00C0      		rjmp .L23
- 361               	.L53:
- 362 00f2 80E0      		ldi r24,0
- 363 00f4 91E0      		ldi r25,lo8(1)
- 364               	.L23:
- 179:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
- 365               		.loc 1 179 0
- 366 00f6 282B      		or r18,r24
- 367 00f8 392B      		or r19,r25
- 181:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 9)) |
- 368               		.loc 1 181 0
- 369 00fa 89B1      		in r24,0x9
- 370 00fc 9927      		clr r25
- 371 00fe 87FD      		sbrc r24,7
- 372 0100 9095      		com r25
- 373 0102 8095      		com r24
- 374 0104 9095      		com r25
- 375 0106 8827      		clr r24
- 376 0108 990F      		lsl r25
- 377 010a 881F      		rol r24
- 378 010c 9927      		clr r25
- 379 010e 982F      		mov r25,r24
- 380 0110 8827      		clr r24
- 381 0112 990F      		lsl r25
- 180:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 8)) |
- 382               		.loc 1 180 0
- 383 0114 282B      		or r18,r24
- 384 0116 392B      		or r19,r25
- 182:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<10)) |
- 385               		.loc 1 182 0
- 386 0118 189B      		sbis 0x3,0
- 387 011a 00C0      		rjmp .L55
- 388 011c 40E0      		ldi r20,0
- 389 011e 50E0      		ldi r21,0
- 390 0120 00C0      		rjmp .L25
- 391               	.L55:
- 392 0122 40E0      		ldi r20,0
- 393 0124 54E0      		ldi r21,lo8(4)
- 394               	.L25:
- 181:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 9)) |
- 395               		.loc 1 181 0
- 396 0126 242B      		or r18,r20
- 397 0128 352B      		or r19,r21
- 183:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<11)) |
- 398               		.loc 1 183 0
- 399 012a 199B      		sbis 0x3,1
- 400 012c 00C0      		rjmp .L56
- 401 012e 40E0      		ldi r20,0
- 402 0130 50E0      		ldi r21,0
- 403 0132 00C0      		rjmp .L26
- 404               	.L56:
- 405 0134 40E0      		ldi r20,0
- 406 0136 58E0      		ldi r21,lo8(8)
- 407               	.L26:
- 182:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<10)) |
- 408               		.loc 1 182 0
- 409 0138 242B      		or r18,r20
- 410 013a 352B      		or r19,r21
- 184:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<12)) |
- 411               		.loc 1 184 0
- 412 013c 1A9B      		sbis 0x3,2
- 413 013e 00C0      		rjmp .L57
- 414 0140 80E0      		ldi r24,0
- 415 0142 90E0      		ldi r25,0
- 416 0144 00C0      		rjmp .L27
- 417               	.L57:
- 418 0146 80E0      		ldi r24,0
- 419 0148 90E1      		ldi r25,lo8(16)
- 420               	.L27:
- 183:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<11)) |
- 421               		.loc 1 183 0
- 422 014a 282B      		or r18,r24
- 423 014c 392B      		or r19,r25
- 185:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<13)) |
- 424               		.loc 1 185 0
- 425 014e 1B9B      		sbis 0x3,3
- 426 0150 00C0      		rjmp .L58
- 427 0152 80E0      		ldi r24,0
- 428 0154 90E0      		ldi r25,0
- 429 0156 00C0      		rjmp .L28
- 430               	.L58:
- 431 0158 80E0      		ldi r24,0
- 432 015a 90E2      		ldi r25,lo8(32)
- 433               	.L28:
- 184:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<12)) |
- 434               		.loc 1 184 0
- 435 015c 282B      		or r18,r24
- 436 015e 392B      		or r19,r25
- 186:matrix.c      ****            (PINB&(1<<7) ? 0 : (1<<14));
- 437               		.loc 1 186 0
- 438 0160 83B1      		in r24,0x3
- 439 0162 9927      		clr r25
- 440 0164 87FD      		sbrc r24,7
- 441 0166 9095      		com r25
- 442 0168 8095      		com r24
- 443 016a 9095      		com r25
- 444 016c 8827      		clr r24
- 445 016e 990F      		lsl r25
- 446 0170 881F      		rol r24
- 447 0172 9927      		clr r25
- 448 0174 90E4      		ldi r25,0x40
- 449 0176 899F      		mul r24,r25
- 450 0178 902D      		mov r25,r0
- 451 017a 8827      		clr r24
- 452 017c 1124      		clr __zero_reg__
- 185:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<13)) |
- 453               		.loc 1 185 0
- 454 017e 282B      		or r18,r24
- 455 0180 392B      		or r19,r25
- 456               	.LBE47:
- 457               	.LBE46:
+ 261               		.loc 3 245 0
+ 262 0048 80EA      		ldi r24,lo8(-96)
+ 263 004a 8A95      		1: dec r24
+ 264 004c 01F4      		brne 1b
+ 265               	.LBE45:
+ 266               	.LBE44:
+ 267               	.LBB46:
+ 268               	.LBB47:
+ 173:matrix.c      ****            (PINB&(1<<7) ? 0 : (1<<0)) |
+ 269               		.loc 1 173 0
+ 270 004e 23B1      		in r18,0x3
+ 271 0050 3327      		clr r19
+ 272 0052 27FD      		sbrc r18,7
+ 273 0054 3095      		com r19
+ 274 0056 2095      		com r18
+ 275 0058 3095      		com r19
+ 276 005a 832F      		mov r24,r19
+ 277 005c 881F      		rol r24
+ 278 005e 8827      		clr r24
+ 279 0060 881F      		rol r24
+ 280 0062 90E0      		ldi r25,0
+ 174:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<1)) |
+ 281               		.loc 1 174 0
+ 282 0064 1B9B      		sbis 0x3,3
+ 283 0066 00C0      		rjmp .L48
+ 284 0068 60E0      		ldi r22,0
+ 285 006a 70E0      		ldi r23,0
+ 286 006c 00C0      		rjmp .L18
+ 287               	.L48:
+ 288 006e 62E0      		ldi r22,lo8(2)
+ 289 0070 70E0      		ldi r23,0
+ 290               	.L18:
+ 173:matrix.c      ****            (PINB&(1<<7) ? 0 : (1<<0)) |
+ 291               		.loc 1 173 0
+ 292 0072 862B      		or r24,r22
+ 293 0074 972B      		or r25,r23
+ 175:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<2)) |
+ 294               		.loc 1 175 0
+ 295 0076 1A9B      		sbis 0x3,2
+ 296 0078 00C0      		rjmp .L49
+ 297 007a 60E0      		ldi r22,0
+ 298 007c 70E0      		ldi r23,0
+ 299 007e 00C0      		rjmp .L19
+ 300               	.L49:
+ 301 0080 64E0      		ldi r22,lo8(4)
+ 302 0082 70E0      		ldi r23,0
+ 303               	.L19:
+ 174:matrix.c      ****            (PINB&(1<<3) ? 0 : (1<<1)) |
+ 304               		.loc 1 174 0
+ 305 0084 682B      		or r22,r24
+ 306 0086 792B      		or r23,r25
+ 176:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<3)) |
+ 307               		.loc 1 176 0
+ 308 0088 199B      		sbis 0x3,1
+ 309 008a 00C0      		rjmp .L50
+ 310 008c 40E0      		ldi r20,0
+ 311 008e 50E0      		ldi r21,0
+ 312 0090 00C0      		rjmp .L20
+ 313               	.L50:
+ 314 0092 48E0      		ldi r20,lo8(8)
+ 315 0094 50E0      		ldi r21,0
+ 316               	.L20:
+ 175:matrix.c      ****            (PINB&(1<<2) ? 0 : (1<<2)) |
+ 317               		.loc 1 175 0
+ 318 0096 9B01      		movw r18,r22
+ 319 0098 242B      		or r18,r20
+ 320 009a 352B      		or r19,r21
+ 177:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<4)) |
+ 321               		.loc 1 177 0
+ 322 009c 189B      		sbis 0x3,0
+ 323 009e 00C0      		rjmp .L51
+ 324 00a0 40E0      		ldi r20,0
+ 325 00a2 50E0      		ldi r21,0
+ 326 00a4 00C0      		rjmp .L21
+ 327               	.L51:
+ 328 00a6 40E1      		ldi r20,lo8(16)
+ 329 00a8 50E0      		ldi r21,0
+ 330               	.L21:
+ 176:matrix.c      ****            (PINB&(1<<1) ? 0 : (1<<3)) |
+ 331               		.loc 1 176 0
+ 332 00aa 242B      		or r18,r20
+ 333 00ac 352B      		or r19,r21
+ 178:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 5)) |
+ 334               		.loc 1 178 0
+ 335 00ae 89B1      		in r24,0x9
+ 336 00b0 9927      		clr r25
+ 337 00b2 87FD      		sbrc r24,7
+ 338 00b4 9095      		com r25
+ 339 00b6 8095      		com r24
+ 340 00b8 9095      		com r25
+ 341 00ba 8827      		clr r24
+ 342 00bc 990F      		lsl r25
+ 343 00be 881F      		rol r24
+ 344 00c0 9927      		clr r25
+ 345 00c2 75E0      		ldi r23,5
+ 346               		1:
+ 347 00c4 880F      		lsl r24
+ 348 00c6 991F      		rol r25
+ 349 00c8 7A95      		dec r23
+ 350 00ca 01F4      		brne 1b
+ 177:matrix.c      ****            (PINB&(1<<0) ? 0 : (1<<4)) |
+ 351               		.loc 1 177 0
+ 352 00cc 282B      		or r18,r24
+ 353 00ce 392B      		or r19,r25
+ 179:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 6)) |
+ 354               		.loc 1 179 0
+ 355 00d0 1C9B      		sbis 0x3,4
+ 356 00d2 00C0      		rjmp .L53
+ 357 00d4 80E0      		ldi r24,0
+ 358 00d6 90E0      		ldi r25,0
+ 359 00d8 00C0      		rjmp .L23
+ 360               	.L53:
+ 361 00da 80E4      		ldi r24,lo8(64)
+ 362 00dc 90E0      		ldi r25,0
+ 363               	.L23:
+ 178:matrix.c      ****            (PIND&(1<<7) ? 0 : (1<< 5)) |
+ 364               		.loc 1 178 0
+ 365 00de 282B      		or r18,r24
+ 366 00e0 392B      		or r19,r25
+ 180:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
+ 367               		.loc 1 180 0
+ 368 00e2 1D9B      		sbis 0x3,5
+ 369 00e4 00C0      		rjmp .L54
+ 370 00e6 80E0      		ldi r24,0
+ 371 00e8 90E0      		ldi r25,0
+ 372 00ea 00C0      		rjmp .L24
+ 373               	.L54:
+ 374 00ec 80E8      		ldi r24,lo8(-128)
+ 375 00ee 90E0      		ldi r25,0
+ 376               	.L24:
+ 179:matrix.c      ****            (PINB&(1<<4) ? 0 : (1<< 6)) |
+ 377               		.loc 1 179 0
+ 378 00f0 282B      		or r18,r24
+ 379 00f2 392B      		or r19,r25
+ 181:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 8)) |
+ 380               		.loc 1 181 0
+ 381 00f4 1E9B      		sbis 0x3,6
+ 382 00f6 00C0      		rjmp .L55
+ 383 00f8 80E0      		ldi r24,0
+ 384 00fa 90E0      		ldi r25,0
+ 385 00fc 00C0      		rjmp .L25
+ 386               	.L55:
+ 387 00fe 80E0      		ldi r24,0
+ 388 0100 91E0      		ldi r25,lo8(1)
+ 389               	.L25:
+ 180:matrix.c      ****            (PINB&(1<<5) ? 0 : (1<< 7)) |
+ 390               		.loc 1 180 0
+ 391 0102 282B      		or r18,r24
+ 392 0104 392B      		or r19,r25
+ 182:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 9)) |
+ 393               		.loc 1 182 0
+ 394 0106 8FB1      		in r24,0xf
+ 395 0108 9927      		clr r25
+ 396 010a 87FD      		sbrc r24,7
+ 397 010c 9095      		com r25
+ 398 010e 8095      		com r24
+ 399 0110 9095      		com r25
+ 400 0112 8827      		clr r24
+ 401 0114 990F      		lsl r25
+ 402 0116 881F      		rol r24
+ 403 0118 9927      		clr r25
+ 404 011a 982F      		mov r25,r24
+ 405 011c 8827      		clr r24
+ 406 011e 990F      		lsl r25
+ 181:matrix.c      ****            (PINB&(1<<6) ? 0 : (1<< 8)) |
+ 407               		.loc 1 181 0
+ 408 0120 282B      		or r18,r24
+ 409 0122 392B      		or r19,r25
+ 183:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 10)) |
+ 410               		.loc 1 183 0
+ 411 0124 7E9B      		sbis 0xf,6
+ 412 0126 00C0      		rjmp .L57
+ 413 0128 60E0      		ldi r22,0
+ 414 012a 70E0      		ldi r23,0
+ 415 012c 00C0      		rjmp .L27
+ 416               	.L57:
+ 417 012e 60E0      		ldi r22,0
+ 418 0130 74E0      		ldi r23,lo8(4)
+ 419               	.L27:
+ 182:matrix.c      ****            (PINF&(1<<7) ? 0 : (1<< 9)) |
+ 420               		.loc 1 182 0
+ 421 0132 262B      		or r18,r22
+ 422 0134 372B      		or r19,r23
+ 184:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 11)) |
+ 423               		.loc 1 184 0
+ 424 0136 7D9B      		sbis 0xf,5
+ 425 0138 00C0      		rjmp .L58
+ 426 013a 60E0      		ldi r22,0
+ 427 013c 70E0      		ldi r23,0
+ 428 013e 00C0      		rjmp .L28
+ 429               	.L58:
+ 430 0140 60E0      		ldi r22,0
+ 431 0142 78E0      		ldi r23,lo8(8)
+ 432               	.L28:
+ 183:matrix.c      ****            (PINF&(1<<6) ? 0 : (1<< 10)) |
+ 433               		.loc 1 183 0
+ 434 0144 262B      		or r18,r22
+ 435 0146 372B      		or r19,r23
+ 185:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 12)) |
+ 436               		.loc 1 185 0
+ 437 0148 7C9B      		sbis 0xf,4
+ 438 014a 00C0      		rjmp .L59
+ 439 014c 40E0      		ldi r20,0
+ 440 014e 50E0      		ldi r21,0
+ 441 0150 00C0      		rjmp .L29
+ 442               	.L59:
+ 443 0152 40E0      		ldi r20,0
+ 444 0154 50E1      		ldi r21,lo8(16)
+ 445               	.L29:
+ 184:matrix.c      ****            (PINF&(1<<5) ? 0 : (1<< 11)) |
+ 446               		.loc 1 184 0
+ 447 0156 242B      		or r18,r20
+ 448 0158 352B      		or r19,r21
+ 186:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 13)) |
+ 449               		.loc 1 186 0
+ 450 015a 799B      		sbis 0xf,1
+ 451 015c 00C0      		rjmp .L60
+ 452 015e 80E0      		ldi r24,0
+ 453 0160 90E0      		ldi r25,0
+ 454 0162 00C0      		rjmp .L30
+ 455               	.L60:
+ 456 0164 80E0      		ldi r24,0
+ 457 0166 90E2      		ldi r25,lo8(32)
+ 458               	.L30:
+ 185:matrix.c      ****            (PINF&(1<<4) ? 0 : (1<< 12)) |
+ 459               		.loc 1 185 0
+ 460 0168 282B      		or r18,r24
+ 461 016a 392B      		or r19,r25
+ 187:matrix.c      ****            (PINF&(1<<0) ? 0 : (1<< 14)) ;
+ 462               		.loc 1 187 0
+ 463 016c 789B      		sbis 0xf,0
+ 464 016e 00C0      		rjmp .L61
+ 465 0170 80E0      		ldi r24,0
+ 466 0172 90E0      		ldi r25,0
+ 467 0174 00C0      		rjmp .L31
+ 468               	.L61:
+ 469 0176 80E0      		ldi r24,0
+ 470 0178 90E4      		ldi r25,lo8(64)
+ 471               	.L31:
+ 186:matrix.c      ****            (PINF&(1<<1) ? 0 : (1<< 13)) |
+ 472               		.loc 1 186 0
+ 473 017a 282B      		or r18,r24
+ 474 017c 392B      		or r19,r25
+ 475               	.LBE47:
+ 476               	.LBE46:
   78:matrix.c      ****         if (matrix_debouncing[i] != cols) {
- 458               		.loc 1 78 0
- 459 0182 8881      		ld r24,Y
- 460 0184 9981      		ldd r25,Y+1
- 461 0186 8217      		cp r24,r18
- 462 0188 9307      		cpc r25,r19
- 463 018a 01F0      		breq .L30
+ 477               		.loc 1 78 0
+ 478 017e 8881      		ld r24,Y
+ 479 0180 9981      		ldd r25,Y+1
+ 480 0182 8217      		cp r24,r18
+ 481 0184 9307      		cpc r25,r19
+ 482 0186 01F0      		breq .L32
   79:matrix.c      ****             matrix_debouncing[i] = cols;
- 464               		.loc 1 79 0
- 465 018c 3983      		std Y+1,r19
- 466 018e 2883      		st Y,r18
+ 483               		.loc 1 79 0
+ 484 0188 3983      		std Y+1,r19
+ 485 018a 2883      		st Y,r18
   80:matrix.c      ****             if (debouncing) {
- 467               		.loc 1 80 0
- 468 0190 8091 0000 		lds r24,debouncing
- 469 0194 8823      		tst r24
- 470 0196 01F0      		breq .L32
+ 486               		.loc 1 80 0
+ 487 018c 8091 0000 		lds r24,debouncing
+ 488 0190 8823      		tst r24
+ 489 0192 01F0      		breq .L34
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 471               		.loc 1 81 0
- 472 0198 8091 0000 		lds r24,debug_config
- 473 019c 80FF      		sbrs r24,0
- 474 019e 00C0      		rjmp .L33
+ 490               		.loc 1 81 0
+ 491 0194 8091 0000 		lds r24,debug_config
+ 492 0198 80FF      		sbrs r24,0
+ 493 019a 00C0      		rjmp .L35
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 475               		.loc 1 81 0 is_stmt 0 discriminator 1
- 476 01a0 80E0      		ldi r24,lo8(__c.2325)
- 477 01a2 90E0      		ldi r25,hi8(__c.2325)
- 478 01a4 0E94 0000 		call xputs
- 479               	.LVL6:
- 480               	.L33:
+ 494               		.loc 1 81 0 is_stmt 0 discriminator 1
+ 495 019c 80E0      		ldi r24,lo8(__c.2327)
+ 496 019e 90E0      		ldi r25,hi8(__c.2327)
+ 497 01a0 0E94 0000 		call xputs
+ 498               	.LVL6:
+ 499               	.L35:
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 481               		.loc 1 81 0 discriminator 2
- 482 01a8 8091 0000 		lds r24,debug_config
- 483 01ac 80FF      		sbrs r24,0
- 484 01ae 00C0      		rjmp .L34
+ 500               		.loc 1 81 0 discriminator 2
+ 501 01a4 8091 0000 		lds r24,debug_config
+ 502 01a8 80FF      		sbrs r24,0
+ 503 01aa 00C0      		rjmp .L36
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 485               		.loc 1 81 0 discriminator 1
- 486 01b0 8091 0000 		lds r24,debouncing
- 487 01b4 1F92      		push __zero_reg__
- 488               	.LCFI6:
- 489               		.cfi_def_cfa_offset 9
- 490 01b6 8F93      		push r24
- 491               	.LCFI7:
- 492               		.cfi_def_cfa_offset 10
- 493 01b8 FF92      		push r15
- 494               	.LCFI8:
- 495               		.cfi_def_cfa_offset 11
- 496 01ba EF92      		push r14
- 497               	.LCFI9:
- 498               		.cfi_def_cfa_offset 12
- 499 01bc 0E94 0000 		call __xprintf
- 500               	.LVL7:
- 501 01c0 0F90      		pop __tmp_reg__
- 502 01c2 0F90      		pop __tmp_reg__
- 503 01c4 0F90      		pop __tmp_reg__
- 504 01c6 0F90      		pop __tmp_reg__
- 505               	.LCFI10:
- 506               		.cfi_def_cfa_offset 8
- 507               	.L34:
+ 504               		.loc 1 81 0 discriminator 1
+ 505 01ac 8091 0000 		lds r24,debouncing
+ 506 01b0 1F92      		push __zero_reg__
+ 507               	.LCFI5:
+ 508               		.cfi_def_cfa_offset 8
+ 509 01b2 8F93      		push r24
+ 510               	.LCFI6:
+ 511               		.cfi_def_cfa_offset 9
+ 512 01b4 FF92      		push r15
+ 513               	.LCFI7:
+ 514               		.cfi_def_cfa_offset 10
+ 515 01b6 EF92      		push r14
+ 516               	.LCFI8:
+ 517               		.cfi_def_cfa_offset 11
+ 518 01b8 0E94 0000 		call __xprintf
+ 519               	.LVL7:
+ 520 01bc 0F90      		pop __tmp_reg__
+ 521 01be 0F90      		pop __tmp_reg__
+ 522 01c0 0F90      		pop __tmp_reg__
+ 523 01c2 0F90      		pop __tmp_reg__
+ 524               	.LCFI9:
+ 525               		.cfi_def_cfa_offset 7
+ 526               	.L36:
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 508               		.loc 1 81 0 discriminator 2
- 509 01c8 8091 0000 		lds r24,debug_config
- 510 01cc 80FF      		sbrs r24,0
- 511 01ce 00C0      		rjmp .L32
+ 527               		.loc 1 81 0 discriminator 2
+ 528 01c4 8091 0000 		lds r24,debug_config
+ 529 01c8 80FF      		sbrs r24,0
+ 530 01ca 00C0      		rjmp .L34
   81:matrix.c      ****                 debug("bounce!: "); debug_hex(debouncing); debug("\n");
- 512               		.loc 1 81 0 discriminator 1
- 513 01d0 80E0      		ldi r24,lo8(__c.2329)
- 514 01d2 90E0      		ldi r25,hi8(__c.2329)
- 515 01d4 0E94 0000 		call xputs
- 516               	.LVL8:
- 517               	.L32:
+ 531               		.loc 1 81 0 discriminator 1
+ 532 01cc 80E0      		ldi r24,lo8(__c.2331)
+ 533 01ce 90E0      		ldi r25,hi8(__c.2331)
+ 534 01d0 0E94 0000 		call xputs
+ 535               	.LVL8:
+ 536               	.L34:
   83:matrix.c      ****             debouncing = DEBOUNCE;
- 518               		.loc 1 83 0 is_stmt 1
- 519 01d8 85E0      		ldi r24,lo8(5)
- 520 01da 8093 0000 		sts debouncing,r24
- 521               	.L30:
+ 537               		.loc 1 83 0 is_stmt 1
+ 538 01d4 85E0      		ldi r24,lo8(5)
+ 539 01d6 8093 0000 		sts debouncing,r24
+ 540               	.L32:
   85:matrix.c      ****         unselect_rows();
- 522               		.loc 1 85 0
- 523 01de 0E94 0000 		call unselect_rows
- 524               	.LVL9:
- 525               	.LBE41:
+ 541               		.loc 1 85 0
+ 542 01da 0E94 0000 		call unselect_rows
+ 543               	.LVL9:
+ 544               	.LBE41:
   74:matrix.c      ****     for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
- 526               		.loc 1 74 0
- 527 01e2 1F5F      		subi r17,lo8(-(1))
- 528               	.LVL10:
- 529 01e4 2296      		adiw r28,2
- 530 01e6 1530      		cpi r17,lo8(5)
- 531 01e8 01F0      		breq .+2
- 532 01ea 00C0      		rjmp .L37
- 533               	.LBE40:
+ 545               		.loc 1 74 0
+ 546 01de 1F5F      		subi r17,lo8(-(1))
+ 547               	.LVL10:
+ 548 01e0 2296      		adiw r28,2
+ 549 01e2 1530      		cpi r17,lo8(5)
+ 550 01e4 01F0      		breq .+2
+ 551 01e6 00C0      		rjmp .L39
+ 552               	.LBE40:
   88:matrix.c      ****     if (debouncing) {
- 534               		.loc 1 88 0
- 535 01ec 8091 0000 		lds r24,debouncing
- 536 01f0 8823      		tst r24
- 537 01f2 01F0      		breq .L39
+ 553               		.loc 1 88 0
+ 554 01e8 8091 0000 		lds r24,debouncing
+ 555 01ec 8823      		tst r24
+ 556 01ee 01F0      		breq .L41
   89:matrix.c      ****         if (--debouncing) {
- 538               		.loc 1 89 0
- 539 01f4 8150      		subi r24,lo8(-(-1))
- 540 01f6 8093 0000 		sts debouncing,r24
- 541 01fa 8823      		tst r24
- 542 01fc 01F0      		breq .L40
- 543               	.LVL11:
- 544               	.LBB48:
- 545               	.LBB49:
+ 557               		.loc 1 89 0
+ 558 01f0 8150      		subi r24,lo8(-(-1))
+ 559 01f2 8093 0000 		sts debouncing,r24
+ 560 01f6 8823      		tst r24
+ 561 01f8 01F0      		breq .L42
+ 562               	.LVL11:
+ 563               	.LBB48:
+ 564               	.LBB49:
  163:/usr/local/CrossPack-AVR-20131216/avr/include/util/delay.h **** 	__builtin_avr_delay_cycles(__ticks_dc);
- 546               		.loc 2 163 0
- 547 01fe 8FE9      		ldi r24,lo8(3999)
- 548 0200 9FE0      		ldi r25,hi8(3999)
- 549 0202 0197      		1: sbiw r24,1
- 550 0204 01F4      		brne 1b
- 551 0206 00C0      		rjmp .
- 552 0208 0000      		nop
- 553 020a 00C0      		rjmp .L39
- 554               	.LVL12:
- 555               	.L40:
- 556 020c A0E0      		ldi r26,lo8(matrix)
- 557 020e B0E0      		ldi r27,hi8(matrix)
- 558               	.LBE49:
- 559               	.LBE48:
+ 565               		.loc 3 163 0
+ 566 01fa 8FE9      		ldi r24,lo8(3999)
+ 567 01fc 9FE0      		ldi r25,hi8(3999)
+ 568 01fe 0197      		1: sbiw r24,1
+ 569 0200 01F4      		brne 1b
+ 570 0202 00C0      		rjmp .
+ 571 0204 0000      		nop
+ 572 0206 00C0      		rjmp .L41
+ 573               	.LVL12:
+ 574               	.L42:
+ 575 0208 A0E0      		ldi r26,lo8(matrix)
+ 576 020a B0E0      		ldi r27,hi8(matrix)
+ 577               	.LBE49:
+ 578               	.LBE48:
   89:matrix.c      ****         if (--debouncing) {
- 560               		.loc 1 89 0
- 561 0210 E0E0      		ldi r30,lo8(matrix_debouncing)
- 562 0212 F0E0      		ldi r31,hi8(matrix_debouncing)
- 563               	.L42:
- 564               	.LBB50:
+ 579               		.loc 1 89 0
+ 580 020c E0E0      		ldi r30,lo8(matrix_debouncing)
+ 581 020e F0E0      		ldi r31,hi8(matrix_debouncing)
+ 582               	.L44:
+ 583               	.LBB50:
   93:matrix.c      ****                 matrix[i] = matrix_debouncing[i];
- 565               		.loc 1 93 0 discriminator 2
- 566 0214 8191      		ld r24,Z+
- 567 0216 9191      		ld r25,Z+
- 568 0218 8D93      		st X+,r24
- 569 021a 9D93      		st X+,r25
- 570               	.LVL13:
+ 584               		.loc 1 93 0 discriminator 2
+ 585 0210 8191      		ld r24,Z+
+ 586 0212 9191      		ld r25,Z+
+ 587 0214 8D93      		st X+,r24
+ 588 0216 9D93      		st X+,r25
+ 589               	.LVL13:
   92:matrix.c      ****             for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
- 571               		.loc 1 92 0 discriminator 2
- 572 021c 90E0      		ldi r25,hi8(matrix_debouncing+10)
- 573 021e E030      		cpi r30,lo8(matrix_debouncing+10)
- 574 0220 F907      		cpc r31,r25
- 575 0222 01F4      		brne .L42
- 576               	.L39:
- 577               	.LBE50:
+ 590               		.loc 1 92 0 discriminator 2
+ 591 0218 90E0      		ldi r25,hi8(matrix_debouncing+10)
+ 592 021a E030      		cpi r30,lo8(matrix_debouncing+10)
+ 593 021c F907      		cpc r31,r25
+ 594 021e 01F4      		brne .L44
+ 595               	.L41:
+ 596               	.LBE50:
   98:matrix.c      ****     uint8_t layer = biton32(layer_state);
- 578               		.loc 1 98 0
- 579 0224 6091 0000 		lds r22,layer_state
- 580 0228 7091 0000 		lds r23,layer_state+1
- 581 022c 8091 0000 		lds r24,layer_state+2
- 582 0230 9091 0000 		lds r25,layer_state+3
- 583 0234 0E94 0000 		call biton32
- 584               	.LVL14:
+ 597               		.loc 1 98 0
+ 598 0220 6091 0000 		lds r22,layer_state
+ 599 0224 7091 0000 		lds r23,layer_state+1
+ 600 0228 8091 0000 		lds r24,layer_state+2
+ 601 022c 9091 0000 		lds r25,layer_state+3
+ 602 0230 0E94 0000 		call biton32
+ 603               	.LVL14:
   99:matrix.c      ****     switch (layer) {
- 585               		.loc 1 99 0
- 586 0238 8823      		tst r24
- 587 023a 01F0      		breq .L44
- 588 023c 8330      		cpi r24,lo8(3)
- 589 023e 00F4      		brsh .L43
+ 604               		.loc 1 99 0
+ 605 0234 8823      		tst r24
+ 606 0236 01F0      		breq .L46
+ 607 0238 8330      		cpi r24,lo8(3)
+ 608 023a 00F4      		brsh .L45
  102:matrix.c      ****             DDRC |= (1<<7);
- 590               		.loc 1 102 0
- 591 0240 3F9A      		sbi 0x7,7
+ 609               		.loc 1 102 0
+ 610 023c 3F9A      		sbi 0x7,7
  103:matrix.c      ****             PORTC |= (1<<7);
- 592               		.loc 1 103 0
- 593 0242 479A      		sbi 0x8,7
+ 611               		.loc 1 103 0
+ 612 023e 479A      		sbi 0x8,7
  104:matrix.c      ****             break;
- 594               		.loc 1 104 0
- 595 0244 00C0      		rjmp .L43
- 596               	.L44:
+ 613               		.loc 1 104 0
+ 614 0240 00C0      		rjmp .L45
+ 615               	.L46:
  106:matrix.c      ****             DDRC &= ~(1<<7);
- 597               		.loc 1 106 0
- 598 0246 3F98      		cbi 0x7,7
+ 616               		.loc 1 106 0
+ 617 0242 3F98      		cbi 0x7,7
  107:matrix.c      ****             PORTC &= ~(1<<7);
- 599               		.loc 1 107 0
- 600 0248 4798      		cbi 0x8,7
- 601               	.L43:
+ 618               		.loc 1 107 0
+ 619 0244 4798      		cbi 0x8,7
+ 620               	.L45:
  112:matrix.c      **** }
- 602               		.loc 1 112 0
- 603 024a 81E0      		ldi r24,lo8(1)
- 604               	.LVL15:
- 605               	/* epilogue start */
- 606 024c DF91      		pop r29
- 607 024e CF91      		pop r28
- 608 0250 1F91      		pop r17
- 609               	.LVL16:
- 610 0252 0F91      		pop r16
- 611 0254 FF90      		pop r15
- 612 0256 EF90      		pop r14
- 613 0258 0895      		ret
- 614               		.cfi_endproc
- 615               	.LFE13:
- 617               		.section	.text.matrix_is_modified,"ax",@progbits
- 618               	.global	matrix_is_modified
- 620               	matrix_is_modified:
- 621               	.LFB14:
+ 621               		.loc 1 112 0
+ 622 0246 81E0      		ldi r24,lo8(1)
+ 623               	.LVL15:
+ 624               	/* epilogue start */
+ 625 0248 DF91      		pop r29
+ 626 024a CF91      		pop r28
+ 627 024c 1F91      		pop r17
+ 628               	.LVL16:
+ 629 024e FF90      		pop r15
+ 630 0250 EF90      		pop r14
+ 631 0252 0895      		ret
+ 632               		.cfi_endproc
+ 633               	.LFE15:
+ 635               		.section	.text.matrix_is_modified,"ax",@progbits
+ 636               	.global	matrix_is_modified
+ 638               	matrix_is_modified:
+ 639               	.LFB16:
  115:matrix.c      **** {
- 622               		.loc 1 115 0
- 623               		.cfi_startproc
- 624               	/* prologue: function */
- 625               	/* frame size = 0 */
- 626               	/* stack size = 0 */
- 627               	.L__stack_usage = 0
+ 640               		.loc 1 115 0
+ 641               		.cfi_startproc
+ 642               	/* prologue: function */
+ 643               	/* frame size = 0 */
+ 644               	/* stack size = 0 */
+ 645               	.L__stack_usage = 0
  116:matrix.c      ****     if (debouncing) return false;
- 628               		.loc 1 116 0
- 629 0000 81E0      		ldi r24,lo8(1)
- 630 0002 9091 0000 		lds r25,debouncing
- 631 0006 9111      		cpse r25,__zero_reg__
- 632 0008 80E0      		ldi r24,0
- 633               	.L72:
+ 646               		.loc 1 116 0
+ 647 0000 81E0      		ldi r24,lo8(1)
+ 648 0002 9091 0000 		lds r25,debouncing
+ 649 0006 9111      		cpse r25,__zero_reg__
+ 650 0008 80E0      		ldi r24,0
+ 651               	.L74:
  118:matrix.c      **** }
- 634               		.loc 1 118 0
- 635 000a 0895      		ret
- 636               		.cfi_endproc
- 637               	.LFE14:
- 639               		.section	.text.matrix_is_on,"ax",@progbits
- 640               	.global	matrix_is_on
- 642               	matrix_is_on:
- 643               	.LFB15:
+ 652               		.loc 1 118 0
+ 653 000a 0895      		ret
+ 654               		.cfi_endproc
+ 655               	.LFE16:
+ 657               		.section	.text.matrix_is_on,"ax",@progbits
+ 658               	.global	matrix_is_on
+ 660               	matrix_is_on:
+ 661               	.LFB17:
  122:matrix.c      **** {
- 644               		.loc 1 122 0
- 645               		.cfi_startproc
- 646               	.LVL17:
- 647               	/* prologue: function */
- 648               	/* frame size = 0 */
- 649               	/* stack size = 0 */
- 650               	.L__stack_usage = 0
+ 662               		.loc 1 122 0
+ 663               		.cfi_startproc
+ 664               	.LVL17:
+ 665               	/* prologue: function */
+ 666               	/* frame size = 0 */
+ 667               	/* stack size = 0 */
+ 668               	.L__stack_usage = 0
  123:matrix.c      ****     return (matrix[row] & ((matrix_row_t)1<<col));
- 651               		.loc 1 123 0
- 652 0000 E82F      		mov r30,r24
- 653 0002 F0E0      		ldi r31,0
- 654 0004 EE0F      		lsl r30
- 655 0006 FF1F      		rol r31
- 656 0008 E050      		subi r30,lo8(-(matrix))
- 657 000a F040      		sbci r31,hi8(-(matrix))
- 658 000c 21E0      		ldi r18,lo8(1)
- 659 000e 30E0      		ldi r19,0
- 660 0010 00C0      		rjmp 2f
- 661               		1:
- 662 0012 220F      		lsl r18
- 663 0014 331F      		rol r19
- 664               		2:
- 665 0016 6A95      		dec r22
- 666 0018 02F4      		brpl 1b
- 667 001a 8081      		ld r24,Z
- 668 001c 9181      		ldd r25,Z+1
- 669               	.LVL18:
- 670 001e 2823      		and r18,r24
- 671 0020 3923      		and r19,r25
- 672 0022 81E0      		ldi r24,lo8(1)
- 673 0024 232B      		or r18,r19
- 674 0026 01F4      		brne .L77
- 675 0028 80E0      		ldi r24,0
- 676               	.L77:
+ 669               		.loc 1 123 0
+ 670 0000 E82F      		mov r30,r24
+ 671 0002 F0E0      		ldi r31,0
+ 672 0004 EE0F      		lsl r30
+ 673 0006 FF1F      		rol r31
+ 674 0008 E050      		subi r30,lo8(-(matrix))
+ 675 000a F040      		sbci r31,hi8(-(matrix))
+ 676 000c 21E0      		ldi r18,lo8(1)
+ 677 000e 30E0      		ldi r19,0
+ 678 0010 00C0      		rjmp 2f
+ 679               		1:
+ 680 0012 220F      		lsl r18
+ 681 0014 331F      		rol r19
+ 682               		2:
+ 683 0016 6A95      		dec r22
+ 684 0018 02F4      		brpl 1b
+ 685 001a 8081      		ld r24,Z
+ 686 001c 9181      		ldd r25,Z+1
+ 687               	.LVL18:
+ 688 001e 2823      		and r18,r24
+ 689 0020 3923      		and r19,r25
+ 690 0022 81E0      		ldi r24,lo8(1)
+ 691 0024 232B      		or r18,r19
+ 692 0026 01F4      		brne .L79
+ 693 0028 80E0      		ldi r24,0
+ 694               	.L79:
  124:matrix.c      **** }
- 677               		.loc 1 124 0
- 678 002a 0895      		ret
- 679               		.cfi_endproc
- 680               	.LFE15:
- 682               		.section	.text.matrix_get_row,"ax",@progbits
- 683               	.global	matrix_get_row
- 685               	matrix_get_row:
- 686               	.LFB16:
+ 695               		.loc 1 124 0
+ 696 002a 0895      		ret
+ 697               		.cfi_endproc
+ 698               	.LFE17:
+ 700               		.section	.text.matrix_get_row,"ax",@progbits
+ 701               	.global	matrix_get_row
+ 703               	matrix_get_row:
+ 704               	.LFB18:
  128:matrix.c      **** {
- 687               		.loc 1 128 0
- 688               		.cfi_startproc
- 689               	.LVL19:
- 690               	/* prologue: function */
- 691               	/* frame size = 0 */
- 692               	/* stack size = 0 */
- 693               	.L__stack_usage = 0
+ 705               		.loc 1 128 0
+ 706               		.cfi_startproc
+ 707               	.LVL19:
+ 708               	/* prologue: function */
+ 709               	/* frame size = 0 */
+ 710               	/* stack size = 0 */
+ 711               	.L__stack_usage = 0
  129:matrix.c      ****     return matrix[row];
- 694               		.loc 1 129 0
- 695 0000 E82F      		mov r30,r24
- 696 0002 F0E0      		ldi r31,0
- 697 0004 EE0F      		lsl r30
- 698 0006 FF1F      		rol r31
- 699               	.LVL20:
- 700 0008 E050      		subi r30,lo8(-(matrix))
- 701 000a F040      		sbci r31,hi8(-(matrix))
+ 712               		.loc 1 129 0
+ 713 0000 E82F      		mov r30,r24
+ 714 0002 F0E0      		ldi r31,0
+ 715 0004 EE0F      		lsl r30
+ 716 0006 FF1F      		rol r31
+ 717 0008 E050      		subi r30,lo8(-(matrix))
+ 718 000a F040      		sbci r31,hi8(-(matrix))
  130:matrix.c      **** }
- 702               		.loc 1 130 0
- 703 000c 8081      		ld r24,Z
- 704 000e 9181      		ldd r25,Z+1
- 705 0010 0895      		ret
- 706               		.cfi_endproc
- 707               	.LFE16:
- 709               		.section	.text.matrix_print,"ax",@progbits
- 710               	.global	matrix_print
- 712               	matrix_print:
- 713               	.LFB17:
+ 719               		.loc 1 130 0
+ 720 000c 8081      		ld r24,Z
+ 721 000e 9181      		ldd r25,Z+1
+ 722               	.LVL20:
+ 723 0010 0895      		ret
+ 724               		.cfi_endproc
+ 725               	.LFE18:
+ 727               		.section	.text.matrix_print,"ax",@progbits
+ 728               	.global	matrix_print
+ 730               	matrix_print:
+ 731               	.LFB19:
  133:matrix.c      **** {
- 714               		.loc 1 133 0
- 715               		.cfi_startproc
- 716 0000 CF92      		push r12
- 717               	.LCFI11:
- 718               		.cfi_def_cfa_offset 3
- 719               		.cfi_offset 12, -2
- 720 0002 DF92      		push r13
- 721               	.LCFI12:
- 722               		.cfi_def_cfa_offset 4
- 723               		.cfi_offset 13, -3
- 724 0004 EF92      		push r14
- 725               	.LCFI13:
- 726               		.cfi_def_cfa_offset 5
- 727               		.cfi_offset 14, -4
- 728 0006 FF92      		push r15
- 729               	.LCFI14:
- 730               		.cfi_def_cfa_offset 6
- 731               		.cfi_offset 15, -5
- 732 0008 0F93      		push r16
- 733               	.LCFI15:
- 734               		.cfi_def_cfa_offset 7
- 735               		.cfi_offset 16, -6
- 736 000a 1F93      		push r17
- 737               	.LCFI16:
- 738               		.cfi_def_cfa_offset 8
- 739               		.cfi_offset 17, -7
- 740 000c CF93      		push r28
- 741               	.LCFI17:
- 742               		.cfi_def_cfa_offset 9
- 743               		.cfi_offset 28, -8
- 744 000e DF93      		push r29
- 745               	.LCFI18:
- 746               		.cfi_def_cfa_offset 10
- 747               		.cfi_offset 29, -9
- 748               	/* prologue: function */
- 749               	/* frame size = 0 */
- 750               	/* stack size = 8 */
- 751               	.L__stack_usage = 8
+ 732               		.loc 1 133 0
+ 733               		.cfi_startproc
+ 734 0000 CF92      		push r12
+ 735               	.LCFI10:
+ 736               		.cfi_def_cfa_offset 3
+ 737               		.cfi_offset 12, -2
+ 738 0002 DF92      		push r13
+ 739               	.LCFI11:
+ 740               		.cfi_def_cfa_offset 4
+ 741               		.cfi_offset 13, -3
+ 742 0004 EF92      		push r14
+ 743               	.LCFI12:
+ 744               		.cfi_def_cfa_offset 5
+ 745               		.cfi_offset 14, -4
+ 746 0006 FF92      		push r15
+ 747               	.LCFI13:
+ 748               		.cfi_def_cfa_offset 6
+ 749               		.cfi_offset 15, -5
+ 750 0008 0F93      		push r16
+ 751               	.LCFI14:
+ 752               		.cfi_def_cfa_offset 7
+ 753               		.cfi_offset 16, -6
+ 754 000a 1F93      		push r17
+ 755               	.LCFI15:
+ 756               		.cfi_def_cfa_offset 8
+ 757               		.cfi_offset 17, -7
+ 758 000c CF93      		push r28
+ 759               	.LCFI16:
+ 760               		.cfi_def_cfa_offset 9
+ 761               		.cfi_offset 28, -8
+ 762 000e DF93      		push r29
+ 763               	.LCFI17:
+ 764               		.cfi_def_cfa_offset 10
+ 765               		.cfi_offset 29, -9
+ 766               	/* prologue: function */
+ 767               	/* frame size = 0 */
+ 768               	/* stack size = 8 */
+ 769               	.L__stack_usage = 8
  134:matrix.c      ****     print("\nr/c 0123456789ABCDEF\n");
- 752               		.loc 1 134 0
- 753 0010 80E0      		ldi r24,lo8(__c.2356)
- 754 0012 90E0      		ldi r25,hi8(__c.2356)
- 755 0014 0E94 0000 		call xputs
- 756 0018 90E0      		ldi r25,lo8(matrix)
- 757 001a E92E      		mov r14,r25
- 758 001c 90E0      		ldi r25,hi8(matrix)
- 759 001e F92E      		mov r15,r25
- 760 0020 C0E0      		ldi r28,0
- 761 0022 D0E0      		ldi r29,0
- 762               	.LBB51:
+ 770               		.loc 1 134 0
+ 771 0010 80E0      		ldi r24,lo8(__c.2358)
+ 772 0012 90E0      		ldi r25,hi8(__c.2358)
+ 773 0014 0E94 0000 		call xputs
+ 774 0018 C0E0      		ldi r28,lo8(matrix)
+ 775 001a EC2E      		mov r14,r28
+ 776 001c C0E0      		ldi r28,hi8(matrix)
+ 777 001e FC2E      		mov r15,r28
+ 778 0020 C0E0      		ldi r28,0
+ 779 0022 D0E0      		ldi r29,0
+ 780               	.LBB51:
  136:matrix.c      ****         phex(row); print(": ");
- 763               		.loc 1 136 0
- 764 0024 20E0      		ldi r18,lo8(__c.2359)
- 765 0026 C22E      		mov r12,r18
- 766 0028 20E0      		ldi r18,hi8(__c.2359)
- 767 002a D22E      		mov r13,r18
+ 781               		.loc 1 136 0
+ 782 0024 10E0      		ldi r17,lo8(__c.2361)
+ 783 0026 C12E      		mov r12,r17
+ 784 0028 10E0      		ldi r17,hi8(__c.2361)
+ 785 002a D12E      		mov r13,r17
  137:matrix.c      ****         pbin_reverse16(matrix_get_row(row));
- 768               		.loc 1 137 0
- 769 002c 00E0      		ldi r16,lo8(__c.2363)
- 770 002e 10E0      		ldi r17,hi8(__c.2363)
- 771               	.L81:
+ 786               		.loc 1 137 0
+ 787 002c 00E0      		ldi r16,lo8(__c.2365)
+ 788 002e 10E0      		ldi r17,hi8(__c.2365)
+ 789               	.L83:
  136:matrix.c      ****         phex(row); print(": ");
- 772               		.loc 1 136 0 discriminator 2
- 773 0030 DF93      		push r29
- 774               	.LCFI19:
- 775               		.cfi_def_cfa_offset 11
- 776 0032 CF93      		push r28
- 777               	.LCFI20:
- 778               		.cfi_def_cfa_offset 12
- 779 0034 DF92      		push r13
- 780               	.LCFI21:
- 781               		.cfi_def_cfa_offset 13
- 782 0036 CF92      		push r12
- 783               	.LCFI22:
- 784               		.cfi_def_cfa_offset 14
- 785 0038 0E94 0000 		call __xprintf
- 786 003c 80E0      		ldi r24,lo8(__c.2361)
- 787 003e 90E0      		ldi r25,hi8(__c.2361)
- 788 0040 0E94 0000 		call xputs
+ 790               		.loc 1 136 0 discriminator 2
+ 791 0030 DF93      		push r29
+ 792               	.LCFI18:
+ 793               		.cfi_def_cfa_offset 11
+ 794 0032 CF93      		push r28
+ 795               	.LCFI19:
+ 796               		.cfi_def_cfa_offset 12
+ 797 0034 DF92      		push r13
+ 798               	.LCFI20:
+ 799               		.cfi_def_cfa_offset 13
+ 800 0036 CF92      		push r12
+ 801               	.LCFI21:
+ 802               		.cfi_def_cfa_offset 14
+ 803 0038 0E94 0000 		call __xprintf
+ 804 003c 80E0      		ldi r24,lo8(__c.2363)
+ 805 003e 90E0      		ldi r25,hi8(__c.2363)
+ 806 0040 0E94 0000 		call xputs
  137:matrix.c      ****         pbin_reverse16(matrix_get_row(row));
- 789               		.loc 1 137 0 discriminator 2
- 790 0044 F701      		movw r30,r14
- 791 0046 8191      		ld r24,Z+
- 792 0048 9191      		ld r25,Z+
- 793 004a 7F01      		movw r14,r30
- 794 004c 0E94 0000 		call bitrev16
- 795 0050 9F93      		push r25
- 796               	.LCFI23:
- 797               		.cfi_def_cfa_offset 15
- 798 0052 8F93      		push r24
- 799               	.LCFI24:
- 800               		.cfi_def_cfa_offset 16
- 801 0054 1F93      		push r17
- 802               	.LCFI25:
- 803               		.cfi_def_cfa_offset 17
- 804 0056 0F93      		push r16
- 805               	.LCFI26:
- 806               		.cfi_def_cfa_offset 18
- 807 0058 0E94 0000 		call __xprintf
+ 807               		.loc 1 137 0 discriminator 2
+ 808 0044 F701      		movw r30,r14
+ 809 0046 8191      		ld r24,Z+
+ 810 0048 9191      		ld r25,Z+
+ 811 004a 7F01      		movw r14,r30
+ 812 004c 0E94 0000 		call bitrev16
+ 813 0050 9F93      		push r25
+ 814               	.LCFI22:
+ 815               		.cfi_def_cfa_offset 15
+ 816 0052 8F93      		push r24
+ 817               	.LCFI23:
+ 818               		.cfi_def_cfa_offset 16
+ 819 0054 1F93      		push r17
+ 820               	.LCFI24:
+ 821               		.cfi_def_cfa_offset 17
+ 822 0056 0F93      		push r16
+ 823               	.LCFI25:
+ 824               		.cfi_def_cfa_offset 18
+ 825 0058 0E94 0000 		call __xprintf
  138:matrix.c      ****         print("\n");
- 808               		.loc 1 138 0 discriminator 2
- 809 005c 80E0      		ldi r24,lo8(__c.2365)
- 810 005e 90E0      		ldi r25,hi8(__c.2365)
- 811 0060 0E94 0000 		call xputs
- 812 0064 2196      		adiw r28,1
+ 826               		.loc 1 138 0 discriminator 2
+ 827 005c 80E0      		ldi r24,lo8(__c.2367)
+ 828 005e 90E0      		ldi r25,hi8(__c.2367)
+ 829 0060 0E94 0000 		call xputs
+ 830 0064 2196      		adiw r28,1
  135:matrix.c      ****     for (uint8_t row = 0; row < MATRIX_ROWS; row++) {
- 813               		.loc 1 135 0 discriminator 2
- 814 0066 8DB7      		in r24,__SP_L__
- 815 0068 9EB7      		in r25,__SP_H__
- 816 006a 0896      		adiw r24,8
- 817 006c 0FB6      		in __tmp_reg__,__SREG__
- 818 006e F894      		cli
- 819 0070 9EBF      		out __SP_H__,r25
- 820 0072 0FBE      		out __SREG__,__tmp_reg__
- 821 0074 8DBF      		out __SP_L__,r24
- 822               	.LCFI27:
- 823               		.cfi_def_cfa_offset 10
- 824 0076 C530      		cpi r28,5
- 825 0078 D105      		cpc r29,__zero_reg__
- 826 007a 01F4      		brne .L81
- 827               	/* epilogue start */
- 828               	.LBE51:
+ 831               		.loc 1 135 0 discriminator 2
+ 832 0066 8DB7      		in r24,__SP_L__
+ 833 0068 9EB7      		in r25,__SP_H__
+ 834 006a 0896      		adiw r24,8
+ 835 006c 0FB6      		in __tmp_reg__,__SREG__
+ 836 006e F894      		cli
+ 837 0070 9EBF      		out __SP_H__,r25
+ 838 0072 0FBE      		out __SREG__,__tmp_reg__
+ 839 0074 8DBF      		out __SP_L__,r24
+ 840               	.LCFI26:
+ 841               		.cfi_def_cfa_offset 10
+ 842 0076 C530      		cpi r28,5
+ 843 0078 D105      		cpc r29,__zero_reg__
+ 844 007a 01F4      		brne .L83
+ 845               	/* epilogue start */
+ 846               	.LBE51:
  140:matrix.c      **** }
- 829               		.loc 1 140 0
- 830 007c DF91      		pop r29
- 831 007e CF91      		pop r28
- 832 0080 1F91      		pop r17
- 833 0082 0F91      		pop r16
- 834 0084 FF90      		pop r15
- 835 0086 EF90      		pop r14
- 836 0088 DF90      		pop r13
- 837 008a CF90      		pop r12
- 838 008c 0895      		ret
- 839               		.cfi_endproc
- 840               	.LFE17:
- 842               		.section	.text.matrix_key_count,"ax",@progbits
- 843               	.global	matrix_key_count
- 845               	matrix_key_count:
- 846               	.LFB18:
+ 847               		.loc 1 140 0
+ 848 007c DF91      		pop r29
+ 849 007e CF91      		pop r28
+ 850 0080 1F91      		pop r17
+ 851 0082 0F91      		pop r16
+ 852 0084 FF90      		pop r15
+ 853 0086 EF90      		pop r14
+ 854 0088 DF90      		pop r13
+ 855 008a CF90      		pop r12
+ 856 008c 0895      		ret
+ 857               		.cfi_endproc
+ 858               	.LFE19:
+ 860               		.section	.text.matrix_key_count,"ax",@progbits
+ 861               	.global	matrix_key_count
+ 863               	matrix_key_count:
+ 864               	.LFB20:
  143:matrix.c      **** {
- 847               		.loc 1 143 0
- 848               		.cfi_startproc
- 849 0000 1F93      		push r17
- 850               	.LCFI28:
- 851               		.cfi_def_cfa_offset 3
- 852               		.cfi_offset 17, -2
- 853 0002 CF93      		push r28
- 854               	.LCFI29:
- 855               		.cfi_def_cfa_offset 4
- 856               		.cfi_offset 28, -3
- 857 0004 DF93      		push r29
- 858               	.LCFI30:
- 859               		.cfi_def_cfa_offset 5
- 860               		.cfi_offset 29, -4
- 861               	/* prologue: function */
- 862               	/* frame size = 0 */
- 863               	/* stack size = 3 */
- 864               	.L__stack_usage = 3
- 865               	.LVL21:
- 866 0006 C0E0      		ldi r28,lo8(matrix)
- 867 0008 D0E0      		ldi r29,hi8(matrix)
+ 865               		.loc 1 143 0
+ 866               		.cfi_startproc
+ 867 0000 1F93      		push r17
+ 868               	.LCFI27:
+ 869               		.cfi_def_cfa_offset 3
+ 870               		.cfi_offset 17, -2
+ 871 0002 CF93      		push r28
+ 872               	.LCFI28:
+ 873               		.cfi_def_cfa_offset 4
+ 874               		.cfi_offset 28, -3
+ 875 0004 DF93      		push r29
+ 876               	.LCFI29:
+ 877               		.cfi_def_cfa_offset 5
+ 878               		.cfi_offset 29, -4
+ 879               	/* prologue: function */
+ 880               	/* frame size = 0 */
+ 881               	/* stack size = 3 */
+ 882               	.L__stack_usage = 3
+ 883               	.LVL21:
+ 884 0006 C0E0      		ldi r28,lo8(matrix)
+ 885 0008 D0E0      		ldi r29,hi8(matrix)
  144:matrix.c      ****     uint8_t count = 0;
- 868               		.loc 1 144 0
- 869 000a 10E0      		ldi r17,0
- 870               	.LVL22:
- 871               	.L84:
- 872               	.LBB52:
+ 886               		.loc 1 144 0
+ 887 000a 10E0      		ldi r17,0
+ 888               	.LVL22:
+ 889               	.L86:
+ 890               	.LBB52:
  146:matrix.c      ****         count += bitpop16(matrix[i]);
- 873               		.loc 1 146 0 discriminator 2
- 874 000c 8991      		ld r24,Y+
- 875 000e 9991      		ld r25,Y+
- 876 0010 0E94 0000 		call bitpop16
- 877               	.LVL23:
- 878 0014 180F      		add r17,r24
- 879               	.LVL24:
+ 891               		.loc 1 146 0 discriminator 2
+ 892 000c 8991      		ld r24,Y+
+ 893 000e 9991      		ld r25,Y+
+ 894 0010 0E94 0000 		call bitpop16
+ 895               	.LVL23:
+ 896 0014 180F      		add r17,r24
+ 897               	.LVL24:
  145:matrix.c      ****     for (uint8_t i = 0; i < MATRIX_ROWS; i++) {
- 880               		.loc 1 145 0 discriminator 2
- 881 0016 80E0      		ldi r24,hi8(matrix+10)
- 882 0018 C030      		cpi r28,lo8(matrix+10)
- 883 001a D807      		cpc r29,r24
- 884 001c 01F4      		brne .L84
- 885               	.LBE52:
+ 898               		.loc 1 145 0 discriminator 2
+ 899 0016 80E0      		ldi r24,hi8(matrix+10)
+ 900 0018 C030      		cpi r28,lo8(matrix+10)
+ 901 001a D807      		cpc r29,r24
+ 902 001c 01F4      		brne .L86
+ 903               	.LBE52:
  149:matrix.c      **** }
- 886               		.loc 1 149 0
- 887 001e 812F      		mov r24,r17
- 888               	/* epilogue start */
- 889 0020 DF91      		pop r29
- 890 0022 CF91      		pop r28
- 891 0024 1F91      		pop r17
- 892               	.LVL25:
- 893 0026 0895      		ret
- 894               		.cfi_endproc
- 895               	.LFE18:
- 897               		.section	.progmem.data.__c.2365,"a",@progbits
- 900               	__c.2365:
- 901 0000 0A00      		.string	"\n"
- 902               		.section	.progmem.data.__c.2363,"a",@progbits
- 905               	__c.2363:
- 906 0000 2530 3136 		.string	"%016b"
- 906      6200 
- 907               		.section	.progmem.data.__c.2361,"a",@progbits
- 910               	__c.2361:
- 911 0000 3A20 00   		.string	": "
- 912               		.section	.progmem.data.__c.2359,"a",@progbits
- 915               	__c.2359:
- 916 0000 2530 3258 		.string	"%02X"
- 916      00
- 917               		.section	.progmem.data.__c.2356,"a",@progbits
- 920               	__c.2356:
- 921 0000 0A72 2F63 		.string	"\nr/c 0123456789ABCDEF\n"
- 921      2030 3132 
- 921      3334 3536 
- 921      3738 3941 
- 921      4243 4445 
- 922               		.section	.progmem.data.__c.2329,"a",@progbits
- 925               	__c.2329:
- 926 0000 0A00      		.string	"\n"
- 927               		.section	.progmem.data.__c.2327,"a",@progbits
- 930               	__c.2327:
- 931 0000 2530 3258 		.string	"%02X"
+ 904               		.loc 1 149 0
+ 905 001e 812F      		mov r24,r17
+ 906               	/* epilogue start */
+ 907 0020 DF91      		pop r29
+ 908 0022 CF91      		pop r28
+ 909 0024 1F91      		pop r17
+ 910               	.LVL25:
+ 911 0026 0895      		ret
+ 912               		.cfi_endproc
+ 913               	.LFE20:
+ 915               		.section	.progmem.data,"a",@progbits
+ 918               	__c.2367:
+ 919 0000 0A00      		.string	"\n"
+ 922               	__c.2365:
+ 923 0002 2530 3136 		.string	"%016b"
+ 923      6200 
+ 926               	__c.2363:
+ 927 0008 3A20 00   		.string	": "
+ 930               	__c.2361:
+ 931 000b 2530 3258 		.string	"%02X"
  931      00
- 932               		.section	.progmem.data.__c.2325,"a",@progbits
- 935               	__c.2325:
- 936 0000 626F 756E 		.string	"bounce!: "
- 936      6365 213A 
- 936      2000 
- 937               		.section	.bss.matrix_debouncing,"aw",@nobits
- 940               	matrix_debouncing:
- 941 0000 0000 0000 		.zero	10
- 941      0000 0000 
- 941      0000 
- 942               		.section	.bss.matrix,"aw",@nobits
- 945               	matrix:
- 946 0000 0000 0000 		.zero	10
- 946      0000 0000 
- 946      0000 
- 947               		.section	.data.debouncing,"aw",@progbits
- 950               	debouncing:
- 951 0000 05        		.byte	5
- 952               		.text
- 953               	.Letext0:
- 954               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
- 955               		.file 4 "../../tmk_core/common/debug.h"
- 956               		.file 5 "../../tmk_core/common/matrix.h"
- 957               		.file 6 "../../tmk_core/common/action_layer.h"
- 958               		.file 7 "../../tmk_core/common/avr/xprintf.h"
- 959               		.file 8 "../../tmk_core/common/util.h"
+ 934               	__c.2358:
+ 935 0010 0A72 2F63 		.string	"\nr/c 0123456789ABCDEF\n"
+ 935      2030 3132 
+ 935      3334 3536 
+ 935      3738 3941 
+ 935      4243 4445 
+ 938               	__c.2331:
+ 939 0027 0A00      		.string	"\n"
+ 942               	__c.2329:
+ 943 0029 2530 3258 		.string	"%02X"
+ 943      00
+ 946               	__c.2327:
+ 947 002e 626F 756E 		.string	"bounce!: "
+ 947      6365 213A 
+ 947      2000 
+ 948               		.local	matrix_debouncing
+ 949               		.comm	matrix_debouncing,10,1
+ 950               		.local	matrix
+ 951               		.comm	matrix,10,1
+ 952               		.data
+ 955               	debouncing:
+ 956 0000 05        		.byte	5
+ 957               		.text
+ 958               	.Letext0:
+ 959               		.file 4 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 960               		.file 5 "../../common/debug.h"
+ 961               		.file 6 "../../common/matrix.h"
+ 962               		.file 7 "../../common/action_layer.h"
+ 963               		.file 8 "../../common/avr/xprintf.h"
+ 964               		.file 9 "../../common/util.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 matrix.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:12     .text.unselect_rows:00000000 unselect_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:40     .text.matrix_rows:00000000 matrix_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:57     .text.matrix_cols:00000000 matrix_cols
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:74     .text.matrix_init:00000000 matrix_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:945    .bss.matrix:00000000 matrix
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:940    .bss.matrix_debouncing:00000000 matrix_debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:146    .text.matrix_scan:00000000 matrix_scan
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:930    .progmem.data.__c.2327:00000000 __c.2327
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:950    .data.debouncing:00000000 debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:935    .progmem.data.__c.2325:00000000 __c.2325
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:925    .progmem.data.__c.2329:00000000 __c.2329
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:620    .text.matrix_is_modified:00000000 matrix_is_modified
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:642    .text.matrix_is_on:00000000 matrix_is_on
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:685    .text.matrix_get_row:00000000 matrix_get_row
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:712    .text.matrix_print:00000000 matrix_print
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:920    .progmem.data.__c.2356:00000000 __c.2356
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:915    .progmem.data.__c.2359:00000000 __c.2359
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:905    .progmem.data.__c.2363:00000000 __c.2363
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:910    .progmem.data.__c.2361:00000000 __c.2361
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:900    .progmem.data.__c.2365:00000000 __c.2365
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccelydPr.s:845    .text.matrix_key_count:00000000 matrix_key_count
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:12     .text.unselect_rows:00000000 unselect_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:40     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:56     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:71     .text.matrix_rows:00000000 matrix_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:88     .text.matrix_cols:00000000 matrix_cols
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:105    .text.matrix_init:00000000 matrix_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:949    .bss:0000000a matrix
+                             .bss:00000000 matrix_debouncing
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:168    .text.matrix_scan:00000000 matrix_scan
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:942    .progmem.data:00000029 __c.2329
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:955    .data:00000000 debouncing
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:946    .progmem.data:0000002e __c.2327
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:938    .progmem.data:00000027 __c.2331
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:638    .text.matrix_is_modified:00000000 matrix_is_modified
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:660    .text.matrix_is_on:00000000 matrix_is_on
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:703    .text.matrix_get_row:00000000 matrix_get_row
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:730    .text.matrix_print:00000000 matrix_print
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:934    .progmem.data:00000010 __c.2358
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:930    .progmem.data:0000000b __c.2361
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:922    .progmem.data:00000002 __c.2365
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:926    .progmem.data:00000008 __c.2363
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:918    .progmem.data:00000000 __c.2367
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBTHUGa.s:863    .text.matrix_key_count:00000000 matrix_key_count
 
 UNDEFINED SYMBOLS
 debug_config

@@ -7,171 +7,265 @@
    7               		.text
    8               	.Ltext0:
    9               		.cfi_sections	.debug_frame
-  10               	.global	fn_actions
-  11               		.section	.progmem.data.fn_actions,"a",@progbits
-  14               	fn_actions:
-  15 0000 F1A1      		.word	-24079
-  16               	.global	keymaps
-  17               		.section	.progmem.data.keymaps,"a",@progbits
-  20               	keymaps:
-  21 0000 29        		.byte	41
-  22 0001 1E        		.byte	30
-  23 0002 1F        		.byte	31
-  24 0003 20        		.byte	32
-  25 0004 21        		.byte	33
-  26 0005 22        		.byte	34
-  27 0006 23        		.byte	35
-  28 0007 24        		.byte	36
-  29 0008 25        		.byte	37
-  30 0009 26        		.byte	38
-  31 000a 27        		.byte	39
-  32 000b 2D        		.byte	45
-  33 000c 2E        		.byte	46
-  34 000d 31        		.byte	49
-  35 000e 2B        		.byte	43
-  36 000f 14        		.byte	20
-  37 0010 1A        		.byte	26
-  38 0011 08        		.byte	8
-  39 0012 15        		.byte	21
-  40 0013 17        		.byte	23
-  41 0014 1C        		.byte	28
-  42 0015 18        		.byte	24
-  43 0016 0C        		.byte	12
-  44 0017 12        		.byte	18
-  45 0018 13        		.byte	19
-  46 0019 2F        		.byte	47
-  47 001a 30        		.byte	48
-  48 001b 2A        		.byte	42
-  49 001c C1        		.byte	-63
-  50 001d 04        		.byte	4
-  51 001e 16        		.byte	22
-  52 001f 07        		.byte	7
-  53 0020 09        		.byte	9
-  54 0021 0A        		.byte	10
-  55 0022 0B        		.byte	11
-  56 0023 0D        		.byte	13
-  57 0024 0E        		.byte	14
-  58 0025 0F        		.byte	15
-  59 0026 33        		.byte	51
-  60 0027 34        		.byte	52
-  61 0028 28        		.byte	40
-  62 0029 4B        		.byte	75
-  63 002a E1        		.byte	-31
-  64 002b 1D        		.byte	29
-  65 002c 1B        		.byte	27
-  66 002d 06        		.byte	6
-  67 002e 19        		.byte	25
-  68 002f 05        		.byte	5
-  69 0030 11        		.byte	17
-  70 0031 10        		.byte	16
-  71 0032 36        		.byte	54
-  72 0033 37        		.byte	55
-  73 0034 38        		.byte	56
-  74 0035 E5        		.byte	-27
-  75 0036 52        		.byte	82
-  76 0037 4E        		.byte	78
-  77 0038 E0        		.byte	-32
-  78 0039 E2        		.byte	-30
-  79 003a E3        		.byte	-29
-  80 003b 2C        		.byte	44
-  81 003c E7        		.byte	-25
-  82 003d E6        		.byte	-26
-  83 003e 00        		.byte	0
-  84 003f 00        		.byte	0
-  85 0040 E4        		.byte	-28
-  86 0041 00        		.byte	0
-  87 0042 00        		.byte	0
-  88 0043 00        		.byte	0
-  89 0044 50        		.byte	80
-  90 0045 51        		.byte	81
-  91 0046 35        		.byte	53
-  92 0047 3A        		.byte	58
-  93 0048 3B        		.byte	59
-  94 0049 3C        		.byte	60
-  95 004a 3D        		.byte	61
-  96 004b 3E        		.byte	62
-  97 004c 3F        		.byte	63
-  98 004d 40        		.byte	64
-  99 004e 41        		.byte	65
- 100 004f 42        		.byte	66
- 101 0050 43        		.byte	67
- 102 0051 44        		.byte	68
- 103 0052 45        		.byte	69
- 104 0053 01        		.byte	1
- 105 0054 01        		.byte	1
- 106 0055 01        		.byte	1
- 107 0056 01        		.byte	1
- 108 0057 01        		.byte	1
- 109 0058 01        		.byte	1
- 110 0059 01        		.byte	1
- 111 005a 01        		.byte	1
- 112 005b 01        		.byte	1
- 113 005c 01        		.byte	1
- 114 005d 01        		.byte	1
- 115 005e 01        		.byte	1
- 116 005f 01        		.byte	1
- 117 0060 01        		.byte	1
- 118 0061 01        		.byte	1
- 119 0062 01        		.byte	1
- 120 0063 01        		.byte	1
- 121 0064 01        		.byte	1
- 122 0065 01        		.byte	1
- 123 0066 01        		.byte	1
- 124 0067 01        		.byte	1
- 125 0068 01        		.byte	1
- 126 0069 01        		.byte	1
- 127 006a 01        		.byte	1
- 128 006b 01        		.byte	1
- 129 006c 01        		.byte	1
- 130 006d 01        		.byte	1
- 131 006e 01        		.byte	1
- 132 006f A8        		.byte	-88
- 133 0070 01        		.byte	1
- 134 0071 01        		.byte	1
- 135 0072 01        		.byte	1
- 136 0073 01        		.byte	1
- 137 0074 01        		.byte	1
- 138 0075 01        		.byte	1
- 139 0076 01        		.byte	1
- 140 0077 01        		.byte	1
- 141 0078 01        		.byte	1
- 142 0079 01        		.byte	1
- 143 007a 01        		.byte	1
- 144 007b 01        		.byte	1
- 145 007c 4B        		.byte	75
- 146 007d 01        		.byte	1
- 147 007e 01        		.byte	1
- 148 007f 01        		.byte	1
- 149 0080 01        		.byte	1
- 150 0081 2C        		.byte	44
- 151 0082 01        		.byte	1
- 152 0083 01        		.byte	1
- 153 0084 00        		.byte	0
- 154 0085 00        		.byte	0
- 155 0086 01        		.byte	1
- 156 0087 00        		.byte	0
- 157 0088 00        		.byte	0
- 158 0089 00        		.byte	0
- 159 008a 01        		.byte	1
- 160 008b 4E        		.byte	78
- 161               		.comm	keymap_config,1,1
- 162               		.text
- 163               	.Letext0:
- 164               		.file 1 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
- 165               		.file 2 "../../tmk_core/common/keycode.h"
- 166               		.file 3 "../../tmk_core/common/action_code.h"
- 167               		.file 4 "../../tmk_core/common/keymap.h"
- 168               		.file 5 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
- 169               		.file 6 "keymap_poker.c"
+  10               		.section	.text.matrix_power_up,"ax",@progbits
+  11               		.weak	matrix_power_up
+  13               	matrix_power_up:
+  14               	.LFB4:
+  15               		.file 1 "../../common/keyboard.h"
+   1:../../common/keyboard.h **** /*
+   2:../../common/keyboard.h **** Copyright 2011,2012,2013 Jun Wako <wakojun@gmail.com>
+   3:../../common/keyboard.h **** 
+   4:../../common/keyboard.h **** This program is free software: you can redistribute it and/or modify
+   5:../../common/keyboard.h **** it under the terms of the GNU General Public License as published by
+   6:../../common/keyboard.h **** the Free Software Foundation, either version 2 of the License, or
+   7:../../common/keyboard.h **** (at your option) any later version.
+   8:../../common/keyboard.h **** 
+   9:../../common/keyboard.h **** This program is distributed in the hope that it will be useful,
+  10:../../common/keyboard.h **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../common/keyboard.h **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../common/keyboard.h **** GNU General Public License for more details.
+  13:../../common/keyboard.h **** 
+  14:../../common/keyboard.h **** You should have received a copy of the GNU General Public License
+  15:../../common/keyboard.h **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../common/keyboard.h **** */
+  17:../../common/keyboard.h **** 
+  18:../../common/keyboard.h **** #ifndef KEYBOARD_H
+  19:../../common/keyboard.h **** #define KEYBOARD_H
+  20:../../common/keyboard.h **** 
+  21:../../common/keyboard.h **** #include <stdbool.h>
+  22:../../common/keyboard.h **** #include <stdint.h>
+  23:../../common/keyboard.h **** 
+  24:../../common/keyboard.h **** 
+  25:../../common/keyboard.h **** #ifdef __cplusplus
+  26:../../common/keyboard.h **** extern "C" {
+  27:../../common/keyboard.h **** #endif
+  28:../../common/keyboard.h **** 
+  29:../../common/keyboard.h **** /* key matrix position */
+  30:../../common/keyboard.h **** typedef struct {
+  31:../../common/keyboard.h ****     uint8_t col;
+  32:../../common/keyboard.h ****     uint8_t row;
+  33:../../common/keyboard.h **** } keypos_t;
+  34:../../common/keyboard.h **** 
+  35:../../common/keyboard.h **** /* key event */
+  36:../../common/keyboard.h **** typedef struct {
+  37:../../common/keyboard.h ****     keypos_t key;
+  38:../../common/keyboard.h ****     bool     pressed;
+  39:../../common/keyboard.h ****     uint16_t time;
+  40:../../common/keyboard.h **** } keyevent_t;
+  41:../../common/keyboard.h **** 
+  42:../../common/keyboard.h **** /* equivalent test of keypos_t */
+  43:../../common/keyboard.h **** #define KEYEQ(keya, keyb)       ((keya).row == (keyb).row && (keya).col == (keyb).col)
+  44:../../common/keyboard.h **** 
+  45:../../common/keyboard.h **** /* Rules for No Event:
+  46:../../common/keyboard.h ****  * 1) (time == 0) to handle (keyevent_t){} as empty event
+  47:../../common/keyboard.h ****  * 2) Matrix(255, 255) to make TICK event available
+  48:../../common/keyboard.h ****  */
+  49:../../common/keyboard.h **** static inline bool IS_NOEVENT(keyevent_t event) { return event.time == 0 || (event.key.row == 255 &
+  50:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
+  51:../../common/keyboard.h **** static inline bool IS_RELEASED(keyevent_t event) { return (!IS_NOEVENT(event) && !event.pressed); }
+  52:../../common/keyboard.h **** 
+  53:../../common/keyboard.h **** /* Tick event */
+  54:../../common/keyboard.h **** #define TICK                    (keyevent_t){           \
+  55:../../common/keyboard.h ****     .key = (keypos_t){ .row = 255, .col = 255 },           \
+  56:../../common/keyboard.h ****     .pressed = false,                                   \
+  57:../../common/keyboard.h ****     .time = (timer_read() | 1)                          \
+  58:../../common/keyboard.h **** }
+  59:../../common/keyboard.h **** 
+  60:../../common/keyboard.h **** 
+  61:../../common/keyboard.h **** void keyboard_init(void);
+  62:../../common/keyboard.h **** void keyboard_task(void);
+  63:../../common/keyboard.h **** void keyboard_set_leds(uint8_t leds);
+  64:../../common/keyboard.h **** 
+  65:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_up(void) {}
+  16               		.loc 1 65 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  22 0000 0895      		ret
+  23               		.cfi_endproc
+  24               	.LFE4:
+  26               		.section	.text.matrix_power_down,"ax",@progbits
+  27               		.weak	matrix_power_down
+  29               	matrix_power_down:
+  30               	.LFB5:
+  66:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_down(void) {}
+  31               		.loc 1 66 0
+  32               		.cfi_startproc
+  33               	/* prologue: function */
+  34               	/* frame size = 0 */
+  35               	/* stack size = 0 */
+  36               	.L__stack_usage = 0
+  37 0000 0895      		ret
+  38               		.cfi_endproc
+  39               	.LFE5:
+  41               	.global	fn_actions
+  42               		.section	.progmem.data,"a",@progbits
+  45               	fn_actions:
+  46 0000 F1A1      		.word	-24079
+  47               	.global	keymaps
+  50               	keymaps:
+  51 0002 29        		.byte	41
+  52 0003 1E        		.byte	30
+  53 0004 1F        		.byte	31
+  54 0005 20        		.byte	32
+  55 0006 21        		.byte	33
+  56 0007 22        		.byte	34
+  57 0008 23        		.byte	35
+  58 0009 24        		.byte	36
+  59 000a 25        		.byte	37
+  60 000b 26        		.byte	38
+  61 000c 27        		.byte	39
+  62 000d 2D        		.byte	45
+  63 000e 2E        		.byte	46
+  64 000f 31        		.byte	49
+  65 0010 2B        		.byte	43
+  66 0011 14        		.byte	20
+  67 0012 1A        		.byte	26
+  68 0013 08        		.byte	8
+  69 0014 15        		.byte	21
+  70 0015 17        		.byte	23
+  71 0016 1C        		.byte	28
+  72 0017 18        		.byte	24
+  73 0018 0C        		.byte	12
+  74 0019 12        		.byte	18
+  75 001a 13        		.byte	19
+  76 001b 2F        		.byte	47
+  77 001c 30        		.byte	48
+  78 001d 2A        		.byte	42
+  79 001e C1        		.byte	-63
+  80 001f 04        		.byte	4
+  81 0020 16        		.byte	22
+  82 0021 07        		.byte	7
+  83 0022 09        		.byte	9
+  84 0023 0A        		.byte	10
+  85 0024 0B        		.byte	11
+  86 0025 0D        		.byte	13
+  87 0026 0E        		.byte	14
+  88 0027 0F        		.byte	15
+  89 0028 33        		.byte	51
+  90 0029 34        		.byte	52
+  91 002a 28        		.byte	40
+  92 002b 4B        		.byte	75
+  93 002c E1        		.byte	-31
+  94 002d 1D        		.byte	29
+  95 002e 1B        		.byte	27
+  96 002f 06        		.byte	6
+  97 0030 19        		.byte	25
+  98 0031 05        		.byte	5
+  99 0032 11        		.byte	17
+ 100 0033 10        		.byte	16
+ 101 0034 36        		.byte	54
+ 102 0035 37        		.byte	55
+ 103 0036 38        		.byte	56
+ 104 0037 E5        		.byte	-27
+ 105 0038 52        		.byte	82
+ 106 0039 4E        		.byte	78
+ 107 003a E0        		.byte	-32
+ 108 003b E2        		.byte	-30
+ 109 003c E3        		.byte	-29
+ 110 003d 2C        		.byte	44
+ 111 003e E7        		.byte	-25
+ 112 003f E6        		.byte	-26
+ 113 0040 00        		.byte	0
+ 114 0041 00        		.byte	0
+ 115 0042 E4        		.byte	-28
+ 116 0043 00        		.byte	0
+ 117 0044 00        		.byte	0
+ 118 0045 00        		.byte	0
+ 119 0046 50        		.byte	80
+ 120 0047 51        		.byte	81
+ 121 0048 35        		.byte	53
+ 122 0049 3A        		.byte	58
+ 123 004a 3B        		.byte	59
+ 124 004b 3C        		.byte	60
+ 125 004c 3D        		.byte	61
+ 126 004d 3E        		.byte	62
+ 127 004e 3F        		.byte	63
+ 128 004f 40        		.byte	64
+ 129 0050 41        		.byte	65
+ 130 0051 42        		.byte	66
+ 131 0052 43        		.byte	67
+ 132 0053 44        		.byte	68
+ 133 0054 45        		.byte	69
+ 134 0055 01        		.byte	1
+ 135 0056 01        		.byte	1
+ 136 0057 01        		.byte	1
+ 137 0058 01        		.byte	1
+ 138 0059 01        		.byte	1
+ 139 005a 01        		.byte	1
+ 140 005b 01        		.byte	1
+ 141 005c 01        		.byte	1
+ 142 005d 01        		.byte	1
+ 143 005e 01        		.byte	1
+ 144 005f 01        		.byte	1
+ 145 0060 01        		.byte	1
+ 146 0061 01        		.byte	1
+ 147 0062 01        		.byte	1
+ 148 0063 01        		.byte	1
+ 149 0064 01        		.byte	1
+ 150 0065 01        		.byte	1
+ 151 0066 01        		.byte	1
+ 152 0067 01        		.byte	1
+ 153 0068 01        		.byte	1
+ 154 0069 01        		.byte	1
+ 155 006a 01        		.byte	1
+ 156 006b 01        		.byte	1
+ 157 006c 01        		.byte	1
+ 158 006d 01        		.byte	1
+ 159 006e 01        		.byte	1
+ 160 006f 01        		.byte	1
+ 161 0070 01        		.byte	1
+ 162 0071 A8        		.byte	-88
+ 163 0072 01        		.byte	1
+ 164 0073 01        		.byte	1
+ 165 0074 01        		.byte	1
+ 166 0075 01        		.byte	1
+ 167 0076 01        		.byte	1
+ 168 0077 01        		.byte	1
+ 169 0078 01        		.byte	1
+ 170 0079 01        		.byte	1
+ 171 007a 01        		.byte	1
+ 172 007b 01        		.byte	1
+ 173 007c 01        		.byte	1
+ 174 007d 01        		.byte	1
+ 175 007e 4B        		.byte	75
+ 176 007f 01        		.byte	1
+ 177 0080 01        		.byte	1
+ 178 0081 01        		.byte	1
+ 179 0082 01        		.byte	1
+ 180 0083 2C        		.byte	44
+ 181 0084 01        		.byte	1
+ 182 0085 01        		.byte	1
+ 183 0086 00        		.byte	0
+ 184 0087 00        		.byte	0
+ 185 0088 01        		.byte	1
+ 186 0089 00        		.byte	0
+ 187 008a 00        		.byte	0
+ 188 008b 00        		.byte	0
+ 189 008c 01        		.byte	1
+ 190 008d 4E        		.byte	78
+ 191               		.comm	keymap_config,1,1
+ 192               		.text
+ 193               	.Letext0:
+ 194               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 195               		.file 3 "../../common/keycode.h"
+ 196               		.file 4 "../../common/action_code.h"
+ 197               		.file 5 "../../common/keymap.h"
+ 198               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 199               		.file 7 "keymap_poker.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_poker.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:14     .progmem.data.fn_actions:00000000 fn_actions
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cccyMp43.s:20     .progmem.data.keymaps:00000000 keymaps
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:45     .progmem.data:00000000 fn_actions
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTVwhfM.s:50     .progmem.data:00000002 keymaps
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS
