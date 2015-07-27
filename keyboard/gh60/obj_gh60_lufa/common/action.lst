@@ -2817,25 +2817,25 @@
  2053               		.file 14 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 action.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:44     .text.action_exec:00000000 action_exec
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:125    .text.register_code:00000000 register_code
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:442    .text.unregister_code:00000000 unregister_code
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:577    .text.register_mods:00000000 register_mods
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:603    .text.unregister_mods:00000000 unregister_mods
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:629    .text.process_action:00000000 process_action
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:1827   .text.clear_keyboard_but_mods:00000000 clear_keyboard_but_mods
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:1866   .text.clear_keyboard:00000000 clear_keyboard
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:1886   .text.is_tap_key:00000000 is_tap_key
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:1944   .text.debug_event:00000000 debug_event
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:1985   .text.debug_record:00000000 debug_record
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc4ZgfGw.s:2027   .text.debug_action:00000000 debug_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:44     .text.action_exec:00000000 action_exec
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:125    .text.register_code:00000000 register_code
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:442    .text.unregister_code:00000000 unregister_code
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:577    .text.register_mods:00000000 register_mods
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:603    .text.unregister_mods:00000000 unregister_mods
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:629    .text.process_action:00000000 process_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:1827   .text.clear_keyboard_but_mods:00000000 clear_keyboard_but_mods
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:1866   .text.clear_keyboard:00000000 clear_keyboard
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:1886   .text.is_tap_key:00000000 is_tap_key
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:1944   .text.debug_event:00000000 debug_event
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:1985   .text.debug_record:00000000 debug_record
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccW2ghff.s:2027   .text.debug_action:00000000 debug_action
 
 UNDEFINED SYMBOLS
 action_tapping_process
