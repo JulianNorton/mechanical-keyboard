@@ -1,42 +1,40 @@
-obj_gh60_lufa/common/action_tapping.o: \
- ../../tmk_core/common/action_tapping.c config.h \
- ../../tmk_core/common/action.h ../../tmk_core/common/keyboard.h \
- ../../tmk_core/common/keycode.h ../../tmk_core/common/action_code.h \
- ../../tmk_core/common/action_macro.h ../../tmk_core/common/progmem.h \
- ../../tmk_core/common/action_layer.h \
- ../../tmk_core/common/action_tapping.h ../../tmk_core/common/timer.h \
- ../../tmk_core/common/avr/timer_avr.h ../../tmk_core/common/nodebug.h \
- ../../tmk_core/common/debug.h ../../tmk_core/common/print.h \
- ../../tmk_core/common/util.h ../../tmk_core/common/avr/xprintf.h
+obj_gh60_lufa/common/action_tapping.o: ../../common/action_tapping.c \
+ config.h ../../common/action.h ../../common/keyboard.h \
+ ../../common/keycode.h ../../common/action_code.h \
+ ../../common/action_macro.h ../../common/progmem.h \
+ ../../common/action_layer.h ../../common/action_tapping.h \
+ ../../common/timer.h ../../common/avr/timer_avr.h ../../common/nodebug.h \
+ ../../common/debug.h ../../common/print.h ../../common/util.h \
+ ../../common/avr/xprintf.h
 
 config.h:
 
-../../tmk_core/common/action.h:
+../../common/action.h:
 
-../../tmk_core/common/keyboard.h:
+../../common/keyboard.h:
 
-../../tmk_core/common/keycode.h:
+../../common/keycode.h:
 
-../../tmk_core/common/action_code.h:
+../../common/action_code.h:
 
-../../tmk_core/common/action_macro.h:
+../../common/action_macro.h:
 
-../../tmk_core/common/progmem.h:
+../../common/progmem.h:
 
-../../tmk_core/common/action_layer.h:
+../../common/action_layer.h:
 
-../../tmk_core/common/action_tapping.h:
+../../common/action_tapping.h:
 
-../../tmk_core/common/timer.h:
+../../common/timer.h:
 
-../../tmk_core/common/avr/timer_avr.h:
+../../common/avr/timer_avr.h:
 
-../../tmk_core/common/nodebug.h:
+../../common/nodebug.h:
 
-../../tmk_core/common/debug.h:
+../../common/debug.h:
 
-../../tmk_core/common/print.h:
+../../common/print.h:
 
-../../tmk_core/common/util.h:
+../../common/util.h:
 
-../../tmk_core/common/avr/xprintf.h:
+../../common/avr/xprintf.h:

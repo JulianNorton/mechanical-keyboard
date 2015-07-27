@@ -1,288 +1,281 @@
 obj_gh60_lufa/protocol/lufa/descriptor.o: \
- ../../tmk_core/protocol/lufa/descriptor.c config.h \
- ../../tmk_core/common/util.h ../../tmk_core/common/report.h \
- ../../tmk_core/common/keycode.h \
- ../../tmk_core/protocol/lufa/descriptor.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/USB.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Architectures.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/BoardTypes.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/ArchitectureSpecific.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/CompilerSpecific.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Attributes.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Endianness.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/../../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBController.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Events.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBTask.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/USBInterrupt_AVR8.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../../../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Events.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBController.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Device.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Events.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBInterrupt.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/Device_AVR8.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../StdDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Endpoint.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBTask.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBController.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../EndpointStream.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/EndpointStream_AVR8.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdRequestType.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBController.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBInterrupt.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Device.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Endpoint.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/EndpointStream.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/AndroidAccessoryClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/../Core/USBMode.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/AudioClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/AudioClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../../USB.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/../../Core/StdDescriptors.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/CDCClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/CDCClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/HIDClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/HIDClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDParser.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/../../../../Common/Common.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDReportData.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/MassStorageClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/MassStorageClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/MassStorageClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/MIDIClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/MIDIClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/MIDIClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/PrinterClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/PrinterClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/PrinterClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/RNDISClass.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/RNDISClassDevice.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/RNDISClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h \
- ../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/StillImageClass.h \
- ../../tmk_core/protocol/lufa/descriptor.h
+ ../../protocol/lufa/descriptor.c config.h ../../common/util.h \
+ ../../common/report.h ../../common/keycode.h \
+ ../../protocol/lufa/descriptor.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/USB.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Architectures.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/BoardTypes.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/ArchitectureSpecific.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/CompilerSpecific.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Attributes.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Endianness.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/../../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBController.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Events.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBTask.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/USBInterrupt_AVR8.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../../../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Events.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBController.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Device.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Events.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBInterrupt.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Device_AVR8.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../StdDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Endpoint.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBTask.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBController.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../EndpointStream.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/EndpointStream_AVR8.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdRequestType.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/HostStandardReq.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBController.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBInterrupt.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Device.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Endpoint.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/EndpointStream.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/AndroidAccessoryClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/../Core/USBMode.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/AudioClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/AudioClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../../USB.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/../../Core/StdDescriptors.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/CDCClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/CDCClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/HIDClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/HIDClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDParser.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/../../../../Common/Common.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDReportData.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/MassStorageClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/MassStorageClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/MassStorageClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/MIDIClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/MIDIClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/MIDIClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/PrinterClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/RNDISClass.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/RNDISClassDevice.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/RNDISClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h \
+ ../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/StillImageClass.h \
+ ../../protocol/lufa/descriptor.h
 
 config.h:
 
-../../tmk_core/common/util.h:
+../../common/util.h:
 
-../../tmk_core/common/report.h:
+../../common/report.h:
 
-../../tmk_core/common/keycode.h:
+../../common/keycode.h:
 
-../../tmk_core/protocol/lufa/descriptor.h:
+../../protocol/lufa/descriptor.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/USB.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/USB.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Architectures.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Architectures.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/BoardTypes.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/BoardTypes.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/ArchitectureSpecific.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/ArchitectureSpecific.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/CompilerSpecific.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/CompilerSpecific.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Attributes.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Attributes.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/../../Common/Endianness.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/../../Common/Endianness.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/../../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/../../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBController.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBController.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Events.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Events.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../../../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBTask.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBTask.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/USBInterrupt_AVR8.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/USBInterrupt_AVR8.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../../../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../../../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Events.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Events.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBController.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBController.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Device.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Device.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Events.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Events.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBInterrupt.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Endpoint_AVR8.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBInterrupt.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBInterrupt.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/Device_AVR8.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/Device_AVR8.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../StdDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../StdDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Endpoint.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Endpoint.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../Endpoint.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdRequestType.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBTask.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBTask.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../USBController.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../USBController.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../EndpointStream.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../EndpointStream.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/AVR8/../AVR8/EndpointStream_AVR8.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/EndpointStream_AVR8.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdRequestType.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdRequestType.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Events.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/StdDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/StdDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/ConfigDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/HostStandardReq.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/HostStandardReq.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBController.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBController.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBInterrupt.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBInterrupt.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Device.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Device.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/Endpoint.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Endpoint.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/DeviceStandardReq.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/EndpointStream.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/EndpointStream.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/AndroidAccessoryClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/AndroidAccessoryClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/../Core/USBMode.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/../Core/USBMode.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/AudioClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/AudioClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/AudioClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/AudioClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../../USB.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../../USB.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/../../Core/StdDescriptors.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/../../Core/StdDescriptors.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/CDCClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/CDCClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/CDCClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/CDCClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/HIDClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/HIDClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/HIDClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/HIDClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDParser.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDParser.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/../../../../Common/Common.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/../../../../Common/Common.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDReportData.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDReportData.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/HIDClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/MassStorageClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/MassStorageClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/MassStorageClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/MassStorageClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/MassStorageClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/MassStorageClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/MIDIClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/MIDIClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/MIDIClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/MIDIClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/MIDIClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/MIDIClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/AudioClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/PrinterClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/PrinterClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/PrinterClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/RNDISClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/PrinterClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/RNDISClassDevice.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/RNDISClass.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/RNDISClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/RNDISClassDevice.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/RNDISClassCommon.h:
+../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/StillImageClass.h:
 
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/Device/../Common/CDCClassCommon.h:
-
-../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Class/StillImageClass.h:
-
-../../tmk_core/protocol/lufa/descriptor.h:
+../../protocol/lufa/descriptor.h:

@@ -1,11 +1,10 @@
-obj_gh60_lufa/common/print.o: ../../tmk_core/common/print.c config.h \
- ../../tmk_core/common/print.h ../../tmk_core/common/util.h \
- ../../tmk_core/common/avr/xprintf.h
+obj_gh60_lufa/common/print.o: ../../common/print.c config.h \
+ ../../common/print.h ../../common/util.h ../../common/avr/xprintf.h
 
 config.h:
 
-../../tmk_core/common/print.h:
+../../common/print.h:
 
-../../tmk_core/common/util.h:
+../../common/util.h:
 
-../../tmk_core/common/avr/xprintf.h:
+../../common/avr/xprintf.h:

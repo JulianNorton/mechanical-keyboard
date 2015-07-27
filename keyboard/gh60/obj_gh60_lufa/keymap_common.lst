@@ -7,11 +7,104 @@
    7               		.text
    8               	.Ltext0:
    9               		.cfi_sections	.debug_frame
-  10               		.section	.text.keymap_key_to_keycode,"ax",@progbits
-  11               	.global	keymap_key_to_keycode
-  13               	keymap_key_to_keycode:
-  14               	.LFB103:
-  15               		.file 1 "keymap_common.c"
+  10               		.section	.text.matrix_power_up,"ax",@progbits
+  11               		.weak	matrix_power_up
+  13               	matrix_power_up:
+  14               	.LFB4:
+  15               		.file 1 "../../common/keyboard.h"
+   1:../../common/keyboard.h **** /*
+   2:../../common/keyboard.h **** Copyright 2011,2012,2013 Jun Wako <wakojun@gmail.com>
+   3:../../common/keyboard.h **** 
+   4:../../common/keyboard.h **** This program is free software: you can redistribute it and/or modify
+   5:../../common/keyboard.h **** it under the terms of the GNU General Public License as published by
+   6:../../common/keyboard.h **** the Free Software Foundation, either version 2 of the License, or
+   7:../../common/keyboard.h **** (at your option) any later version.
+   8:../../common/keyboard.h **** 
+   9:../../common/keyboard.h **** This program is distributed in the hope that it will be useful,
+  10:../../common/keyboard.h **** but WITHOUT ANY WARRANTY; without even the implied warranty of
+  11:../../common/keyboard.h **** MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  12:../../common/keyboard.h **** GNU General Public License for more details.
+  13:../../common/keyboard.h **** 
+  14:../../common/keyboard.h **** You should have received a copy of the GNU General Public License
+  15:../../common/keyboard.h **** along with this program.  If not, see <http://www.gnu.org/licenses/>.
+  16:../../common/keyboard.h **** */
+  17:../../common/keyboard.h **** 
+  18:../../common/keyboard.h **** #ifndef KEYBOARD_H
+  19:../../common/keyboard.h **** #define KEYBOARD_H
+  20:../../common/keyboard.h **** 
+  21:../../common/keyboard.h **** #include <stdbool.h>
+  22:../../common/keyboard.h **** #include <stdint.h>
+  23:../../common/keyboard.h **** 
+  24:../../common/keyboard.h **** 
+  25:../../common/keyboard.h **** #ifdef __cplusplus
+  26:../../common/keyboard.h **** extern "C" {
+  27:../../common/keyboard.h **** #endif
+  28:../../common/keyboard.h **** 
+  29:../../common/keyboard.h **** /* key matrix position */
+  30:../../common/keyboard.h **** typedef struct {
+  31:../../common/keyboard.h ****     uint8_t col;
+  32:../../common/keyboard.h ****     uint8_t row;
+  33:../../common/keyboard.h **** } keypos_t;
+  34:../../common/keyboard.h **** 
+  35:../../common/keyboard.h **** /* key event */
+  36:../../common/keyboard.h **** typedef struct {
+  37:../../common/keyboard.h ****     keypos_t key;
+  38:../../common/keyboard.h ****     bool     pressed;
+  39:../../common/keyboard.h ****     uint16_t time;
+  40:../../common/keyboard.h **** } keyevent_t;
+  41:../../common/keyboard.h **** 
+  42:../../common/keyboard.h **** /* equivalent test of keypos_t */
+  43:../../common/keyboard.h **** #define KEYEQ(keya, keyb)       ((keya).row == (keyb).row && (keya).col == (keyb).col)
+  44:../../common/keyboard.h **** 
+  45:../../common/keyboard.h **** /* Rules for No Event:
+  46:../../common/keyboard.h ****  * 1) (time == 0) to handle (keyevent_t){} as empty event
+  47:../../common/keyboard.h ****  * 2) Matrix(255, 255) to make TICK event available
+  48:../../common/keyboard.h ****  */
+  49:../../common/keyboard.h **** static inline bool IS_NOEVENT(keyevent_t event) { return event.time == 0 || (event.key.row == 255 &
+  50:../../common/keyboard.h **** static inline bool IS_PRESSED(keyevent_t event) { return (!IS_NOEVENT(event) && event.pressed); }
+  51:../../common/keyboard.h **** static inline bool IS_RELEASED(keyevent_t event) { return (!IS_NOEVENT(event) && !event.pressed); }
+  52:../../common/keyboard.h **** 
+  53:../../common/keyboard.h **** /* Tick event */
+  54:../../common/keyboard.h **** #define TICK                    (keyevent_t){           \
+  55:../../common/keyboard.h ****     .key = (keypos_t){ .row = 255, .col = 255 },           \
+  56:../../common/keyboard.h ****     .pressed = false,                                   \
+  57:../../common/keyboard.h ****     .time = (timer_read() | 1)                          \
+  58:../../common/keyboard.h **** }
+  59:../../common/keyboard.h **** 
+  60:../../common/keyboard.h **** 
+  61:../../common/keyboard.h **** void keyboard_init(void);
+  62:../../common/keyboard.h **** void keyboard_task(void);
+  63:../../common/keyboard.h **** void keyboard_set_leds(uint8_t leds);
+  64:../../common/keyboard.h **** 
+  65:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_up(void) {}
+  16               		.loc 1 65 0
+  17               		.cfi_startproc
+  18               	/* prologue: function */
+  19               	/* frame size = 0 */
+  20               	/* stack size = 0 */
+  21               	.L__stack_usage = 0
+  22 0000 0895      		ret
+  23               		.cfi_endproc
+  24               	.LFE4:
+  26               		.section	.text.matrix_power_down,"ax",@progbits
+  27               		.weak	matrix_power_down
+  29               	matrix_power_down:
+  30               	.LFB5:
+  66:../../common/keyboard.h **** __attribute__ ((weak)) void matrix_power_down(void) {}
+  31               		.loc 1 66 0
+  32               		.cfi_startproc
+  33               	/* prologue: function */
+  34               	/* frame size = 0 */
+  35               	/* stack size = 0 */
+  36               	.L__stack_usage = 0
+  37 0000 0895      		ret
+  38               		.cfi_endproc
+  39               	.LFE5:
+  41               		.section	.text.keymap_key_to_keycode,"ax",@progbits
+  42               	.global	keymap_key_to_keycode
+  44               	keymap_key_to_keycode:
+  45               	.LFB104:
+  46               		.file 2 "keymap_common.c"
    1:keymap_common.c **** /*
    2:keymap_common.c **** Copyright 2012,2013 Jun Wako <wakojun@gmail.com>
    3:keymap_common.c **** 
@@ -34,100 +127,101 @@
   20:keymap_common.c **** /* translates key to keycode */
   21:keymap_common.c **** uint8_t keymap_key_to_keycode(uint8_t layer, keypos_t key)
   22:keymap_common.c **** {
-  16               		.loc 1 22 0
-  17               		.cfi_startproc
-  18               	.LVL0:
-  19               	/* prologue: function */
-  20               	/* frame size = 0 */
-  21               	/* stack size = 0 */
-  22               	.L__stack_usage = 0
-  23               	.LBB2:
+  47               		.loc 2 22 0
+  48               		.cfi_startproc
+  49               	.LVL0:
+  50               	/* prologue: function */
+  51               	/* frame size = 0 */
+  52               	/* stack size = 0 */
+  53               	.L__stack_usage = 0
+  54               	.LBB2:
   23:keymap_common.c ****     return pgm_read_byte(&keymaps[(layer)][(key.row)][(key.col)]);
-  24               		.loc 1 23 0
-  25 0000 9EE0      		ldi r25,lo8(14)
-  26 0002 799F      		mul r23,r25
-  27 0004 F001      		movw r30,r0
-  28 0006 1124      		clr __zero_reg__
-  29 0008 96E4      		ldi r25,lo8(70)
-  30 000a 899F      		mul r24,r25
-  31 000c E00D      		add r30,r0
-  32 000e F11D      		adc r31,r1
-  33 0010 1124      		clr __zero_reg__
-  34 0012 E60F      		add r30,r22
-  35 0014 F11D      		adc r31,__zero_reg__
-  36 0016 E050      		subi r30,lo8(-(keymaps))
-  37 0018 F040      		sbci r31,hi8(-(keymaps))
-  38               	/* #APP */
-  39               	 ;  23 "keymap_common.c" 1
-  40 001a 8491      		lpm r24, Z
-  41               		
-  42               	 ;  0 "" 2
-  43               	.LVL1:
-  44               	/* #NOAPP */
-  45               	.LBE2:
+  55               		.loc 2 23 0
+  56 0000 9EE0      		ldi r25,lo8(14)
+  57 0002 799F      		mul r23,r25
+  58 0004 F001      		movw r30,r0
+  59 0006 1124      		clr __zero_reg__
+  60 0008 96E4      		ldi r25,lo8(70)
+  61 000a 899F      		mul r24,r25
+  62 000c E00D      		add r30,r0
+  63 000e F11D      		adc r31,r1
+  64 0010 1124      		clr __zero_reg__
+  65 0012 E60F      		add r30,r22
+  66 0014 F11D      		adc r31,__zero_reg__
+  67 0016 E050      		subi r30,lo8(-(keymaps))
+  68 0018 F040      		sbci r31,hi8(-(keymaps))
+  69               	/* #APP */
+  70               	 ;  23 "keymap_common.c" 1
+  71 001a 8491      		lpm r24, Z
+  72               		
+  73               	 ;  0 "" 2
+  74               	.LVL1:
+  75               	/* #NOAPP */
+  76               	.LBE2:
   24:keymap_common.c **** }
-  46               		.loc 1 24 0
-  47 001c 0895      		ret
-  48               		.cfi_endproc
-  49               	.LFE103:
-  51               		.section	.text.keymap_fn_to_action,"ax",@progbits
-  52               	.global	keymap_fn_to_action
-  54               	keymap_fn_to_action:
-  55               	.LFB104:
+  77               		.loc 2 24 0
+  78 001c 0895      		ret
+  79               		.cfi_endproc
+  80               	.LFE104:
+  82               		.section	.text.keymap_fn_to_action,"ax",@progbits
+  83               	.global	keymap_fn_to_action
+  85               	keymap_fn_to_action:
+  86               	.LFB105:
   25:keymap_common.c **** 
   26:keymap_common.c **** /* translates Fn keycode to action */
   27:keymap_common.c **** action_t keymap_fn_to_action(uint8_t keycode)
   28:keymap_common.c **** {
-  56               		.loc 1 28 0
-  57               		.cfi_startproc
-  58               	.LVL2:
-  59               	/* prologue: function */
-  60               	/* frame size = 0 */
-  61               	/* stack size = 0 */
-  62               	.L__stack_usage = 0
-  63               	.LBB3:
+  87               		.loc 2 28 0
+  88               		.cfi_startproc
+  89               	.LVL2:
+  90               	/* prologue: function */
+  91               	/* frame size = 0 */
+  92               	/* stack size = 0 */
+  93               	.L__stack_usage = 0
+  94               	.LBB3:
   29:keymap_common.c ****     return (action_t){ .code = pgm_read_word(&fn_actions[FN_INDEX(keycode)]) };
-  64               		.loc 1 29 0
-  65 0000 E82F      		mov r30,r24
-  66 0002 F0E0      		ldi r31,0
-  67 0004 EE0F      		lsl r30
-  68 0006 FF1F      		rol r31
-  69               	.LVL3:
-  70 0008 E050      		subi r30,lo8(-(fn_actions-384))
-  71 000a F040      		sbci r31,hi8(-(fn_actions-384))
-  72               	.LVL4:
-  73               	.LBE3:
+  95               		.loc 2 29 0
+  96 0000 E82F      		mov r30,r24
+  97 0002 F0E0      		ldi r31,0
+  98 0004 EE0F      		lsl r30
+  99 0006 FF1F      		rol r31
+ 100               	.LVL3:
+ 101 0008 E050      		subi r30,lo8(-(fn_actions-384))
+ 102 000a F040      		sbci r31,hi8(-(fn_actions-384))
+ 103               	.LVL4:
+ 104               	.LBE3:
   30:keymap_common.c **** }
-  74               		.loc 1 30 0
-  75               	/* #APP */
-  76               	 ;  29 "keymap_common.c" 1
-  77 000c 8591      		lpm r24, Z+
-  78 000e 9491      		lpm r25, Z
-  79               		
-  80               	 ;  0 "" 2
-  81               	/* #NOAPP */
-  82 0010 0895      		ret
-  83               		.cfi_endproc
-  84               	.LFE104:
-  86               		.comm	keymap_config,1,1
-  87               		.text
-  88               	.Letext0:
-  89               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
-  90               		.file 3 "../../tmk_core/common/keyboard.h"
-  91               		.file 4 "../../tmk_core/common/action_code.h"
-  92               		.file 5 "../../tmk_core/common/keymap.h"
-  93               		.file 6 "../../tmk_core/protocol/lufa/LUFA-git/LUFA/Drivers/USB/Core/USBTask.h"
-  94               		.file 7 "keymap_common.h"
-  95               		.file 8 "../../tmk_core/common/keycode.h"
+ 105               		.loc 2 30 0
+ 106               	/* #APP */
+ 107               	 ;  29 "keymap_common.c" 1
+ 108 000c 8591      		lpm r24, Z+
+ 109 000e 9491      		lpm r25, Z
+ 110               		
+ 111               	 ;  0 "" 2
+ 112               	/* #NOAPP */
+ 113 0010 0895      		ret
+ 114               		.cfi_endproc
+ 115               	.LFE105:
+ 117               		.comm	keymap_config,1,1
+ 118               		.text
+ 119               	.Letext0:
+ 120               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 121               		.file 4 "../../common/action_code.h"
+ 122               		.file 5 "../../common/keymap.h"
+ 123               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 124               		.file 7 "keymap_common.h"
+ 125               		.file 8 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_common.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:13     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccPnLvvJ.s:54     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:44     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEsiCvu.s:85     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS

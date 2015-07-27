@@ -1,6 +1,6 @@
-obj_gh60_lufa/common/avr/eeconfig.o: ../../tmk_core/common/avr/eeconfig.c \
- config.h ../../tmk_core/common/eeconfig.h
+obj_gh60_lufa/common/avr/eeconfig.o: ../../common/avr/eeconfig.c config.h \
+ ../../common/eeconfig.h
 
 config.h:
 
-../../tmk_core/common/eeconfig.h:
+../../common/eeconfig.h:

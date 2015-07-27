@@ -1,13 +1,13 @@
-obj_gh60_lufa/common/debug.o: ../../tmk_core/common/debug.c config.h \
- ../../tmk_core/common/debug.h ../../tmk_core/common/print.h \
- ../../tmk_core/common/util.h ../../tmk_core/common/avr/xprintf.h
+obj_gh60_lufa/common/debug.o: ../../common/debug.c config.h \
+ ../../common/debug.h ../../common/print.h ../../common/util.h \
+ ../../common/avr/xprintf.h
 
 config.h:
 
-../../tmk_core/common/debug.h:
+../../common/debug.h:
 
-../../tmk_core/common/print.h:
+../../common/print.h:
 
-../../tmk_core/common/util.h:
+../../common/util.h:
 
-../../tmk_core/common/avr/xprintf.h:
+../../common/avr/xprintf.h:
