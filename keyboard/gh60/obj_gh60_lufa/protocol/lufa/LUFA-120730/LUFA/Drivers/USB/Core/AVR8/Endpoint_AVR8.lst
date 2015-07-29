@@ -1447,16 +1447,16 @@
  543               		.file 8 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Endpoint_AVR8.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:13     .text.Endpoint_ConfigureEndpoint_Prv:00000000 Endpoint_ConfigureEndpoint_Prv
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:139    .text.Endpoint_ConfigureEndpointTable:00000000 Endpoint_ConfigureEndpointTable
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:291    .text.Endpoint_ClearEndpoints:00000000 Endpoint_ClearEndpoints
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:342    .text.Endpoint_ClearStatusStage:00000000 Endpoint_ClearStatusStage
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccb7GDN8.s:412    .text.Endpoint_WaitUntilReady:00000000 Endpoint_WaitUntilReady
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:13     .text.Endpoint_ConfigureEndpoint_Prv:00000000 Endpoint_ConfigureEndpoint_Prv
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:139    .text.Endpoint_ConfigureEndpointTable:00000000 Endpoint_ConfigureEndpointTable
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:291    .text.Endpoint_ClearEndpoints:00000000 Endpoint_ClearEndpoints
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:342    .text.Endpoint_ClearStatusStage:00000000 Endpoint_ClearStatusStage
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccecplAk.s:412    .text.Endpoint_WaitUntilReady:00000000 Endpoint_WaitUntilReady
 
 UNDEFINED SYMBOLS
 USB_ControlRequest

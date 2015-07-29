@@ -489,19 +489,19 @@
  388               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 timer.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:13     .text.timer_init:00000000 timer_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:40     .text.timer_clear:00000000 timer_clear
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:384    .bss:00000000 timer_count
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:71     .text.timer_read:00000000 timer_read
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:103    .text.timer_read32:00000000 timer_read32
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:136    .text.timer_elapsed:00000000 timer_elapsed
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:225    .text.timer_elapsed32:00000000 timer_elapsed32
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccw7o2R6.s:319    .text.__vector_21:00000000 __vector_21
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:13     .text.timer_init:00000000 timer_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:40     .text.timer_clear:00000000 timer_clear
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:384    .bss:00000000 timer_count
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:71     .text.timer_read:00000000 timer_read
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:103    .text.timer_read32:00000000 timer_read32
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:136    .text.timer_elapsed:00000000 timer_elapsed
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:225    .text.timer_elapsed32:00000000 timer_elapsed32
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclA83wk.s:319    .text.__vector_21:00000000 __vector_21
 
 UNDEFINED SYMBOLS
 __do_clear_bss

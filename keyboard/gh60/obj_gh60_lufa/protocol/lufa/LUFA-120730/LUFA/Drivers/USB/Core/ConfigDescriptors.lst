@@ -856,15 +856,15 @@
  444               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../StdDescriptors.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 ConfigDescriptors.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:12     .text.USB_GetNextDescriptor:00000000 USB_GetNextDescriptor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:72     .text.USB_GetNextDescriptorOfType:00000000 USB_GetNextDescriptorOfType
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:156    .text.USB_GetNextDescriptorOfTypeBefore:00000000 USB_GetNextDescriptorOfTypeBefore
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:249    .text.USB_GetNextDescriptorOfTypeAfter:00000000 USB_GetNextDescriptorOfTypeAfter
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cch7qg1L.s:326    .text.USB_GetNextDescriptorComp:00000000 USB_GetNextDescriptorComp
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:12     .text.USB_GetNextDescriptor:00000000 USB_GetNextDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:72     .text.USB_GetNextDescriptorOfType:00000000 USB_GetNextDescriptorOfType
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:156    .text.USB_GetNextDescriptorOfTypeBefore:00000000 USB_GetNextDescriptorOfTypeBefore
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:249    .text.USB_GetNextDescriptorOfTypeAfter:00000000 USB_GetNextDescriptorOfTypeAfter
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc04cxTL.s:326    .text.USB_GetNextDescriptorComp:00000000 USB_GetNextDescriptorComp
 
 NO UNDEFINED SYMBOLS

@@ -213,22 +213,22 @@
   19               	/* stack size = 0 */
   20               	.L__stack_usage = 0
  196:matrix.c      ****     // Hi-Z(DDR:0, PORT:0) to unselect
- 197:matrix.c      ****     DDRB  &= ~0b01110000;
+ 197:matrix.c      ****     DDRC  &= ~0b01000000;
   21               		.loc 1 197 0
-  22 0000 84B1      		in r24,0x4
-  23 0002 8F78      		andi r24,lo8(-113)
-  24 0004 84B9      		out 0x4,r24
- 198:matrix.c      ****     PORTB &= ~0b01110000;
-  25               		.loc 1 198 0
-  26 0006 85B1      		in r24,0x5
-  27 0008 8F78      		andi r24,lo8(-113)
-  28 000a 85B9      		out 0x5,r24
- 199:matrix.c      ****     DDRD  &= ~0b10000000;
-  29               		.loc 1 199 0
-  30 000c 5798      		cbi 0xa,7
- 200:matrix.c      ****     PORTD &= ~0b10000000;
-  31               		.loc 1 200 0
-  32 000e 5F98      		cbi 0xb,7
+  22 0000 3E98      		cbi 0x7,6
+ 198:matrix.c      ****     PORTC &= ~0b01000000;
+  23               		.loc 1 198 0
+  24 0002 4698      		cbi 0x8,6
+ 199:matrix.c      ****     DDRD  &= ~0b00001111;
+  25               		.loc 1 199 0
+  26 0004 8AB1      		in r24,0xa
+  27 0006 807F      		andi r24,lo8(-16)
+  28 0008 8AB9      		out 0xa,r24
+ 200:matrix.c      ****     PORTD &= ~0b00001111;
+  29               		.loc 1 200 0
+  30 000a 8BB1      		in r24,0xb
+  31 000c 807F      		andi r24,lo8(-16)
+  32 000e 8BB9      		out 0xb,r24
   33 0010 0895      		ret
   34               		.cfi_endproc
   35               	.LFE23:
@@ -1565,34 +1565,34 @@
  964               		.file 9 "../../common/util.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 matrix.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:12     .text.unselect_rows:00000000 unselect_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:40     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:56     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:71     .text.matrix_rows:00000000 matrix_rows
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:88     .text.matrix_cols:00000000 matrix_cols
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:105    .text.matrix_init:00000000 matrix_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:949    .bss:0000000a matrix
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:12     .text.unselect_rows:00000000 unselect_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:40     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:56     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:71     .text.matrix_rows:00000000 matrix_rows
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:88     .text.matrix_cols:00000000 matrix_cols
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:105    .text.matrix_init:00000000 matrix_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:949    .bss:0000000a matrix
                              .bss:00000000 matrix_debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:168    .text.matrix_scan:00000000 matrix_scan
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:942    .progmem.data:00000029 __c.2329
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:955    .data:00000000 debouncing
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:946    .progmem.data:0000002e __c.2327
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:938    .progmem.data:00000027 __c.2331
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:638    .text.matrix_is_modified:00000000 matrix_is_modified
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:660    .text.matrix_is_on:00000000 matrix_is_on
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:703    .text.matrix_get_row:00000000 matrix_get_row
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:730    .text.matrix_print:00000000 matrix_print
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:934    .progmem.data:00000010 __c.2358
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:930    .progmem.data:0000000b __c.2361
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:922    .progmem.data:00000002 __c.2365
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:926    .progmem.data:00000008 __c.2363
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:918    .progmem.data:00000000 __c.2367
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmugLvm.s:863    .text.matrix_key_count:00000000 matrix_key_count
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:168    .text.matrix_scan:00000000 matrix_scan
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:942    .progmem.data:00000029 __c.2329
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:955    .data:00000000 debouncing
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:946    .progmem.data:0000002e __c.2327
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:938    .progmem.data:00000027 __c.2331
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:638    .text.matrix_is_modified:00000000 matrix_is_modified
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:660    .text.matrix_is_on:00000000 matrix_is_on
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:703    .text.matrix_get_row:00000000 matrix_get_row
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:730    .text.matrix_print:00000000 matrix_print
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:934    .progmem.data:00000010 __c.2358
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:930    .progmem.data:0000000b __c.2361
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:922    .progmem.data:00000002 __c.2365
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:926    .progmem.data:00000008 __c.2363
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:918    .progmem.data:00000000 __c.2367
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3qy10A.s:863    .text.matrix_key_count:00000000 matrix_key_count
 
 UNDEFINED SYMBOLS
 debug_config

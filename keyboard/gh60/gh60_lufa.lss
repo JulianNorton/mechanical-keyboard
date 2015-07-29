@@ -1375,9 +1375,9 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      e00:	30 39 36 0a 00                                      096..
 
 00000e05 <__c.4912>:
-     e05:	42 55 49 4c 44 3a 20 63 66 30 31 62 62 39 2d 64     BUILD: cf01bb9-d
-     e15:	69 72 74 79 20 28 30 38 3a 31 35 3a 33 33 20 4a     irty (08:15:33 J
-     e25:	75 6c 20 32 37 20 32 30 31 35 29 0a 00              ul 27 2015)..
+     e05:	42 55 49 4c 44 3a 20 64 35 35 38 33 65 30 2d 64     BUILD: d5583e0-d
+     e15:	69 72 74 79 20 28 32 30 3a 32 38 3a 34 32 20 4a     irty (20:28:42 J
+     e25:	75 6c 20 32 38 20 32 30 31 35 29 0a 00              ul 28 2015)..
 
 00000e32 <__c.4910>:
      e32:	56 49 44 3a 20 30 78 46 45 45 44 28 6a 75 6c 69     VID: 0xFEED(juli
@@ -1988,18 +1988,18 @@ action_t keymap_fn_to_action(uint8_t keycode)
 static void unselect_rows(void)
 {
     // Hi-Z(DDR:0, PORT:0) to unselect
-    DDRB  &= ~0b01110000;
-    11da:	84 b1       	in	r24, 0x04	; 4
-    11dc:	8f 78       	andi	r24, 0x8F	; 143
-    11de:	84 b9       	out	0x04, r24	; 4
-    PORTB &= ~0b01110000;
-    11e0:	85 b1       	in	r24, 0x05	; 5
-    11e2:	8f 78       	andi	r24, 0x8F	; 143
-    11e4:	85 b9       	out	0x05, r24	; 5
-    DDRD  &= ~0b10000000;
-    11e6:	57 98       	cbi	0x0a, 7	; 10
-    PORTD &= ~0b10000000;
-    11e8:	5f 98       	cbi	0x0b, 7	; 11
+    DDRC  &= ~0b01000000;
+    11da:	3e 98       	cbi	0x07, 6	; 7
+    PORTC &= ~0b01000000;
+    11dc:	46 98       	cbi	0x08, 6	; 8
+    DDRD  &= ~0b00001111;
+    11de:	8a b1       	in	r24, 0x0a	; 10
+    11e0:	80 7f       	andi	r24, 0xF0	; 240
+    11e2:	8a b9       	out	0x0a, r24	; 10
+    PORTD &= ~0b00001111;
+    11e4:	8b b1       	in	r24, 0x0b	; 11
+    11e6:	80 7f       	andi	r24, 0xF0	; 240
+    11e8:	8b b9       	out	0x0b, r24	; 11
     11ea:	08 95       	ret
 
 000011ec <matrix_init>:

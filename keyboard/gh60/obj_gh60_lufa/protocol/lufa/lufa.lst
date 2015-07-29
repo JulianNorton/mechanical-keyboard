@@ -6368,42 +6368,42 @@
  1537               		.file 23 "../../common/print.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 lufa.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:12     .text.keyboard_leds:00000000 keyboard_leds
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1505   .bss:00000012 keyboard_led_stats
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:30     .text.sendchar:00000000 sendchar
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:12     .text.keyboard_leds:00000000 keyboard_leds
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1505   .bss:00000012 keyboard_led_stats
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:30     .text.sendchar:00000000 sendchar
                              .bss:00000001 timeouted.4656
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:222    .text.send_consumer:00000000 send_consumer
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:336    .text.send_system:00000000 send_system
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:452    .text.send_mouse:00000000 send_mouse
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:536    .text.send_keyboard:00000000 send_keyboard
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1473   .bss:00000002 keyboard_report_sent
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:709    .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:725    .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:740    .text.EVENT_USB_Device_Connect:00000000 EVENT_USB_Device_Connect
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1492   .progmem.data:00000036 __c.4564
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:783    .text.EVENT_USB_Device_Disconnect:00000000 EVENT_USB_Device_Disconnect
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1488   .progmem.data:00000032 __c.4569
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:805    .text.EVENT_USB_Device_Reset:00000000 EVENT_USB_Device_Reset
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1484   .progmem.data:0000002e __c.4574
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:824    .text.EVENT_USB_Device_Suspend:00000000 EVENT_USB_Device_Suspend
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1480   .progmem.data:0000002a __c.4578
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:846    .text.EVENT_USB_Device_WakeUp:00000000 EVENT_USB_Device_WakeUp
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1476   .progmem.data:00000026 __c.4582
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:868    .text.EVENT_USB_Device_StartOfFrame:00000000 EVENT_USB_Device_StartOfFrame
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:988    .text.EVENT_USB_Device_ConfigurationChanged:00000000 EVENT_USB_Device_ConfigurationChanged
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1049   .text.EVENT_USB_Device_ControlRequest:00000000 EVENT_USB_Device_ControlRequest
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1511   .data:0000000a keyboard_protocol
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1517   .bss:00000000 keyboard_idle
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1328   .text.startup.main:00000000 main
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1470   .progmem.data:00000015 __c.4674
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1498   .data:00000000 lufa_driver
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1466   .progmem.data:00000004 __c.4676
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUBDVRH.s:1462   .progmem.data:00000000 __c.4678
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:222    .text.send_consumer:00000000 send_consumer
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:336    .text.send_system:00000000 send_system
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:452    .text.send_mouse:00000000 send_mouse
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:536    .text.send_keyboard:00000000 send_keyboard
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1473   .bss:00000002 keyboard_report_sent
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:709    .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:725    .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:740    .text.EVENT_USB_Device_Connect:00000000 EVENT_USB_Device_Connect
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1492   .progmem.data:00000036 __c.4564
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:783    .text.EVENT_USB_Device_Disconnect:00000000 EVENT_USB_Device_Disconnect
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1488   .progmem.data:00000032 __c.4569
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:805    .text.EVENT_USB_Device_Reset:00000000 EVENT_USB_Device_Reset
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1484   .progmem.data:0000002e __c.4574
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:824    .text.EVENT_USB_Device_Suspend:00000000 EVENT_USB_Device_Suspend
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1480   .progmem.data:0000002a __c.4578
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:846    .text.EVENT_USB_Device_WakeUp:00000000 EVENT_USB_Device_WakeUp
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1476   .progmem.data:00000026 __c.4582
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:868    .text.EVENT_USB_Device_StartOfFrame:00000000 EVENT_USB_Device_StartOfFrame
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:988    .text.EVENT_USB_Device_ConfigurationChanged:00000000 EVENT_USB_Device_ConfigurationChanged
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1049   .text.EVENT_USB_Device_ControlRequest:00000000 EVENT_USB_Device_ControlRequest
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1511   .data:0000000a keyboard_protocol
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1517   .bss:00000000 keyboard_idle
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1328   .text.startup.main:00000000 main
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1470   .progmem.data:00000015 __c.4674
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1498   .data:00000000 lufa_driver
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1466   .progmem.data:00000004 __c.4676
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccel8KPk.s:1462   .progmem.data:00000000 __c.4678
 
 UNDEFINED SYMBOLS
 USB_DeviceState

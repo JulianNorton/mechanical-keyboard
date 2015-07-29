@@ -272,21 +272,21 @@
  252               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/avr/eeprom.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 eeconfig.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:13     .text.eeconfig_init:00000000 eeconfig_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:59     .text.eeconfig_enable:00000000 eeconfig_enable
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:80     .text.eeconfig_disable:00000000 eeconfig_disable
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:101    .text.eeconfig_is_enabled:00000000 eeconfig_is_enabled
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:129    .text.eeconfig_read_debug:00000000 eeconfig_read_debug
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:148    .text.eeconfig_write_debug:00000000 eeconfig_write_debug
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:170    .text.eeconfig_read_default_layer:00000000 eeconfig_read_default_layer
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:189    .text.eeconfig_write_default_layer:00000000 eeconfig_write_default_layer
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:211    .text.eeconfig_read_keymap:00000000 eeconfig_read_keymap
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccSi5ldr.s:230    .text.eeconfig_write_keymap:00000000 eeconfig_write_keymap
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:13     .text.eeconfig_init:00000000 eeconfig_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:59     .text.eeconfig_enable:00000000 eeconfig_enable
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:80     .text.eeconfig_disable:00000000 eeconfig_disable
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:101    .text.eeconfig_is_enabled:00000000 eeconfig_is_enabled
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:129    .text.eeconfig_read_debug:00000000 eeconfig_read_debug
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:148    .text.eeconfig_write_debug:00000000 eeconfig_write_debug
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:170    .text.eeconfig_read_default_layer:00000000 eeconfig_read_default_layer
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:189    .text.eeconfig_write_default_layer:00000000 eeconfig_write_default_layer
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:211    .text.eeconfig_read_keymap:00000000 eeconfig_read_keymap
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccjB16FJ.s:230    .text.eeconfig_write_keymap:00000000 eeconfig_write_keymap
 
 UNDEFINED SYMBOLS
 __eewr_word_m32u4

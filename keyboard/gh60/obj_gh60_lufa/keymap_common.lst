@@ -213,15 +213,15 @@
  125               		.file 8 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_common.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:44     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccXQvYft.s:85     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:44     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccQ6jDHV.s:85     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS
