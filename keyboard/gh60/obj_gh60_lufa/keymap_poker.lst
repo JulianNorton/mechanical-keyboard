@@ -119,7 +119,7 @@
   61 000c 27        		.byte	39
   62 000d 2D        		.byte	45
   63 000e 2E        		.byte	46
-  64 000f 31        		.byte	49
+  64 000f 2A        		.byte	42
   65 0010 2B        		.byte	43
   66 0011 14        		.byte	20
   67 0012 1A        		.byte	26
@@ -133,7 +133,7 @@
   75 001a 13        		.byte	19
   76 001b 2F        		.byte	47
   77 001c 30        		.byte	48
-  78 001d 2A        		.byte	42
+  78 001d 31        		.byte	49
   79 001e C1        		.byte	-63
   80 001f 04        		.byte	4
   81 0020 16        		.byte	22
@@ -147,7 +147,7 @@
   89 0028 33        		.byte	51
   90 0029 34        		.byte	52
   91 002a 28        		.byte	40
-  92 002b 4B        		.byte	75
+  92 002b 20        		.byte	32
   93 002c E1        		.byte	-31
   94 002d 1D        		.byte	29
   95 002e 1B        		.byte	27
@@ -161,7 +161,7 @@
  103 0036 38        		.byte	56
  104 0037 E5        		.byte	-27
  105 0038 52        		.byte	82
- 106 0039 4E        		.byte	78
+ 106 0039 21        		.byte	33
  107 003a E0        		.byte	-32
  108 003b E2        		.byte	-30
  109 003c E3        		.byte	-29
@@ -176,96 +176,26 @@
  118 0045 00        		.byte	0
  119 0046 50        		.byte	80
  120 0047 51        		.byte	81
- 121 0048 35        		.byte	53
- 122 0049 3A        		.byte	58
- 123 004a 3B        		.byte	59
- 124 004b 3C        		.byte	60
- 125 004c 3D        		.byte	61
- 126 004d 3E        		.byte	62
- 127 004e 3F        		.byte	63
- 128 004f 40        		.byte	64
- 129 0050 41        		.byte	65
- 130 0051 42        		.byte	66
- 131 0052 43        		.byte	67
- 132 0053 44        		.byte	68
- 133 0054 45        		.byte	69
- 134 0055 01        		.byte	1
- 135 0056 01        		.byte	1
- 136 0057 01        		.byte	1
- 137 0058 01        		.byte	1
- 138 0059 01        		.byte	1
- 139 005a 01        		.byte	1
- 140 005b 01        		.byte	1
- 141 005c 01        		.byte	1
- 142 005d 01        		.byte	1
- 143 005e 01        		.byte	1
- 144 005f 01        		.byte	1
- 145 0060 01        		.byte	1
- 146 0061 01        		.byte	1
- 147 0062 01        		.byte	1
- 148 0063 01        		.byte	1
- 149 0064 01        		.byte	1
- 150 0065 01        		.byte	1
- 151 0066 01        		.byte	1
- 152 0067 01        		.byte	1
- 153 0068 01        		.byte	1
- 154 0069 01        		.byte	1
- 155 006a 01        		.byte	1
- 156 006b 01        		.byte	1
- 157 006c 01        		.byte	1
- 158 006d 01        		.byte	1
- 159 006e 01        		.byte	1
- 160 006f 01        		.byte	1
- 161 0070 01        		.byte	1
- 162 0071 A8        		.byte	-88
- 163 0072 01        		.byte	1
- 164 0073 01        		.byte	1
- 165 0074 01        		.byte	1
- 166 0075 01        		.byte	1
- 167 0076 01        		.byte	1
- 168 0077 01        		.byte	1
- 169 0078 01        		.byte	1
- 170 0079 01        		.byte	1
- 171 007a 01        		.byte	1
- 172 007b 01        		.byte	1
- 173 007c 01        		.byte	1
- 174 007d 01        		.byte	1
- 175 007e 4B        		.byte	75
- 176 007f 01        		.byte	1
- 177 0080 01        		.byte	1
- 178 0081 01        		.byte	1
- 179 0082 01        		.byte	1
- 180 0083 2C        		.byte	44
- 181 0084 01        		.byte	1
- 182 0085 01        		.byte	1
- 183 0086 00        		.byte	0
- 184 0087 00        		.byte	0
- 185 0088 01        		.byte	1
- 186 0089 00        		.byte	0
- 187 008a 00        		.byte	0
- 188 008b 00        		.byte	0
- 189 008c 01        		.byte	1
- 190 008d 4E        		.byte	78
- 191               		.comm	keymap_config,1,1
- 192               		.text
- 193               	.Letext0:
- 194               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
- 195               		.file 3 "../../common/keycode.h"
- 196               		.file 4 "../../common/action_code.h"
- 197               		.file 5 "../../common/keymap.h"
- 198               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
- 199               		.file 7 "keymap_poker.c"
+ 121               		.comm	keymap_config,1,1
+ 122               		.text
+ 123               	.Letext0:
+ 124               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+ 125               		.file 3 "../../common/keycode.h"
+ 126               		.file 4 "../../common/action_code.h"
+ 127               		.file 5 "../../common/keymap.h"
+ 128               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
+ 129               		.file 7 "keymap_poker.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_poker.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:45     .progmem.data:00000000 fn_actions
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8xZGcV.s:50     .progmem.data:00000002 keymaps
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:45     .progmem.data:00000000 fn_actions
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc2XiO5r.s:50     .progmem.data:00000002 keymaps
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS

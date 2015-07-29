@@ -686,19 +686,19 @@
  597               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 util.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:13     .text.bitpop:00000000 bitpop
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:50     .text.bitpop16:00000000 bitpop16
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:88     .text.bitpop32:00000000 bitpop32
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:145    .text.biton:00000000 biton
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:197    .text.biton16:00000000 biton16
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:274    .text.biton32:00000000 biton32
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:424    .text.bitrev:00000000 bitrev
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:467    .text.bitrev16:00000000 bitrev16
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCyyFqr.s:525    .text.bitrev32:00000000 bitrev32
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:13     .text.bitpop:00000000 bitpop
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:50     .text.bitpop16:00000000 bitpop16
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:88     .text.bitpop32:00000000 bitpop32
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:145    .text.biton:00000000 biton
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:197    .text.biton16:00000000 biton16
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:274    .text.biton32:00000000 biton32
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:424    .text.bitrev:00000000 bitrev
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:467    .text.bitrev16:00000000 bitrev16
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccBSa74E.s:525    .text.bitrev32:00000000 bitrev32
 
 NO UNDEFINED SYMBOLS

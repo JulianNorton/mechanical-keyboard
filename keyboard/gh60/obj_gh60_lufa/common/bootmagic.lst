@@ -1073,18 +1073,18 @@
  656               		.file 14 "../../common/action_layer.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 bootmagic.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:12     .text.scan_keycode:00000000 scan_keycode
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:147    .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:163    .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:178    .text.bootmagic_scan_keycode:00000000 bootmagic_scan_keycode
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:222    .text.bootmagic:00000000 bootmagic
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:641    .progmem.data:00000007 __c.4608
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccNH8Xh9.s:637    .progmem.data:00000000 __c.4614
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:12     .text.scan_keycode:00000000 scan_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:147    .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:163    .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:178    .text.bootmagic_scan_keycode:00000000 bootmagic_scan_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:222    .text.bootmagic:00000000 bootmagic
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:641    .progmem.data:00000007 __c.4608
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccp6ZUCC.s:637    .progmem.data:00000000 __c.4614
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS

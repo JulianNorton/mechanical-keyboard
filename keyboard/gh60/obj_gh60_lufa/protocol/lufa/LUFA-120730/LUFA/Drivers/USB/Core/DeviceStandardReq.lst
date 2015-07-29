@@ -2388,12 +2388,12 @@
  731               		.file 11 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 DeviceStandardReq.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0GERgr.s:13     .text.USB_Device_ProcessControlRequest:00000000 USB_Device_ProcessControlRequest
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccs3grHd.s:13     .text.USB_Device_ProcessControlRequest:00000000 USB_Device_ProcessControlRequest
                             *COM*:00000001 USB_Device_CurrentlySelfPowered
                             *COM*:00000001 USB_Device_RemoteWakeupEnabled
                             *COM*:00000001 USB_Device_ConfigurationNumber
