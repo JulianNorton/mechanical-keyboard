@@ -507,11 +507,11 @@
   63               		.file 3 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 Device_AVR8.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccCLlWgT.s:13     .text.USB_Device_SendRemoteWakeup:00000000 USB_Device_SendRemoteWakeup
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccsE5NvX.s:13     .text.USB_Device_SendRemoteWakeup:00000000 USB_Device_SendRemoteWakeup
 
 NO UNDEFINED SYMBOLS

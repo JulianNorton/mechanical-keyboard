@@ -378,14 +378,14 @@
  144               		.file 5 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 bootloader.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:13     .text.bootloader_jump:00000000 bootloader_jump
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:138    .noinit:00000000 reset_key
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccbpltLU.s:78     .init3:00000000 bootloader_jump_after_watchdog_reset
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:13     .text.bootloader_jump:00000000 bootloader_jump
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:138    .noinit:00000000 reset_key
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccoYKucu.s:78     .init3:00000000 bootloader_jump_after_watchdog_reset
 
 UNDEFINED SYMBOLS
 USB_Disable
