@@ -317,10 +317,10 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      166:	f1 a1       	ldd	r31, Z+33	; 0x21
 
 00000168 <keymaps>:
-     168:	29 1e 1f 20 21 22 23 24 25 26 27 2d 2e 2a 2b 14     ).. !"#$%&'-.*+.
+     168:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e     ................
 				ReportSize     -= 1;
 				ReportData     += 1;
-     178:	1a 08 15 17 1c 18 0c 12 13 2f 30 31 35 04 16 07     ........./015...
+     178:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 35 04 16 07     ............5...
 				break;
 		}
 
@@ -1382,8 +1382,8 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      dba:	30 39 36 0a 00                                      096..
 
 00000dbf <__c.4912>:
-     dbf:	42 55 49 4c 44 3a 20 61 61 33 65 32 63 36 2d 64     BUILD: aa3e2c6-d
-     dcf:	69 72 74 79 20 28 32 32 3a 31 32 3a 32 32 20 4a     irty (22:12:22 J
+     dbf:	42 55 49 4c 44 3a 20 35 35 62 30 30 65 37 2d 64     BUILD: 55b00e7-d
+     dcf:	69 72 74 79 20 28 32 32 3a 33 32 3a 32 32 20 4a     irty (22:32:22 J
      ddf:	75 6c 20 32 38 20 32 30 31 35 29 0a 00              ul 28 2015)..
 
 00000dec <__c.4910>:

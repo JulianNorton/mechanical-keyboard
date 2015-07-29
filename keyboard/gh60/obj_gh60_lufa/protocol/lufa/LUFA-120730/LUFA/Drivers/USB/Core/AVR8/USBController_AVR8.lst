@@ -1533,14 +1533,14 @@
  281               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 USBController_AVR8.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:13     .text.USB_Disable:00000000 USB_Disable
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:82     .text.USB_ResetInterface:00000000 USB_ResetInterface
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5fCK8I.s:246    .text.USB_Init:00000000 USB_Init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:13     .text.USB_Disable:00000000 USB_Disable
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:82     .text.USB_ResetInterface:00000000 USB_ResetInterface
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccaKBI6w.s:246    .text.USB_Init:00000000 USB_Init
 
 UNDEFINED SYMBOLS
 USB_INT_DisableAllInterrupts

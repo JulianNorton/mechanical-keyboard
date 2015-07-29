@@ -1,8 +1,8 @@
 #include "keymap_common.h"
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    KEYMAP(ESC,  1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS, EQL, BSPC, GRV, \
-           TAB,  Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC, RBRC, BSLS, GRV,     \
+    KEYMAP(1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, \
+           1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1,   1, \
            GRV,  A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN, QUOT, ENT, GRV,           \
            LSFT, Z,   X,   C,   V,   B,   N,   M,  COMM, DOT, SLSH, RSFT,  UP, GRV,           \
            LCTL, LALT, LGUI,       SPC,       RGUI, RALT, RCTRL, LEFT, DOWN, RIGHT),

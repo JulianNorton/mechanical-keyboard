@@ -106,34 +106,34 @@
   46 0000 F1A1      		.word	-24079
   47               	.global	keymaps
   50               	keymaps:
-  51 0002 29        		.byte	41
+  51 0002 1E        		.byte	30
   52 0003 1E        		.byte	30
-  53 0004 1F        		.byte	31
-  54 0005 20        		.byte	32
-  55 0006 21        		.byte	33
-  56 0007 22        		.byte	34
-  57 0008 23        		.byte	35
-  58 0009 24        		.byte	36
-  59 000a 25        		.byte	37
-  60 000b 26        		.byte	38
-  61 000c 27        		.byte	39
-  62 000d 2D        		.byte	45
-  63 000e 2E        		.byte	46
-  64 000f 2A        		.byte	42
-  65 0010 2B        		.byte	43
-  66 0011 14        		.byte	20
-  67 0012 1A        		.byte	26
-  68 0013 08        		.byte	8
-  69 0014 15        		.byte	21
-  70 0015 17        		.byte	23
-  71 0016 1C        		.byte	28
-  72 0017 18        		.byte	24
-  73 0018 0C        		.byte	12
-  74 0019 12        		.byte	18
-  75 001a 13        		.byte	19
-  76 001b 2F        		.byte	47
-  77 001c 30        		.byte	48
-  78 001d 31        		.byte	49
+  53 0004 1E        		.byte	30
+  54 0005 1E        		.byte	30
+  55 0006 1E        		.byte	30
+  56 0007 1E        		.byte	30
+  57 0008 1E        		.byte	30
+  58 0009 1E        		.byte	30
+  59 000a 1E        		.byte	30
+  60 000b 1E        		.byte	30
+  61 000c 1E        		.byte	30
+  62 000d 1E        		.byte	30
+  63 000e 1E        		.byte	30
+  64 000f 1E        		.byte	30
+  65 0010 1E        		.byte	30
+  66 0011 1E        		.byte	30
+  67 0012 1E        		.byte	30
+  68 0013 1E        		.byte	30
+  69 0014 1E        		.byte	30
+  70 0015 1E        		.byte	30
+  71 0016 1E        		.byte	30
+  72 0017 1E        		.byte	30
+  73 0018 1E        		.byte	30
+  74 0019 1E        		.byte	30
+  75 001a 1E        		.byte	30
+  76 001b 1E        		.byte	30
+  77 001c 1E        		.byte	30
+  78 001d 1E        		.byte	30
   79 001e 35        		.byte	53
   80 001f 04        		.byte	4
   81 0020 16        		.byte	22
@@ -187,15 +187,15 @@
  129               		.file 7 "keymap_poker.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_poker.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:45     .progmem.data:00000000 fn_actions
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8lN31E.s:50     .progmem.data:00000002 keymaps
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:45     .progmem.data:00000000 fn_actions
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc3Xpejs.s:50     .progmem.data:00000002 keymaps
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS
