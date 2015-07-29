@@ -134,48 +134,48 @@
   76 001b 1E        		.byte	30
   77 001c 1E        		.byte	30
   78 001d 1E        		.byte	30
-  79 001e 35        		.byte	53
-  80 001f 04        		.byte	4
-  81 0020 16        		.byte	22
-  82 0021 07        		.byte	7
-  83 0022 09        		.byte	9
-  84 0023 0A        		.byte	10
-  85 0024 0B        		.byte	11
-  86 0025 0D        		.byte	13
-  87 0026 0E        		.byte	14
-  88 0027 0F        		.byte	15
-  89 0028 33        		.byte	51
-  90 0029 34        		.byte	52
-  91 002a 28        		.byte	40
-  92 002b 35        		.byte	53
-  93 002c E1        		.byte	-31
-  94 002d 1D        		.byte	29
-  95 002e 1B        		.byte	27
-  96 002f 06        		.byte	6
-  97 0030 19        		.byte	25
-  98 0031 05        		.byte	5
-  99 0032 11        		.byte	17
- 100 0033 10        		.byte	16
- 101 0034 36        		.byte	54
- 102 0035 37        		.byte	55
- 103 0036 38        		.byte	56
- 104 0037 E5        		.byte	-27
- 105 0038 52        		.byte	82
- 106 0039 35        		.byte	53
- 107 003a E0        		.byte	-32
- 108 003b E2        		.byte	-30
- 109 003c E3        		.byte	-29
- 110 003d 2C        		.byte	44
- 111 003e E7        		.byte	-25
- 112 003f E6        		.byte	-26
- 113 0040 00        		.byte	0
+  79 001e 1E        		.byte	30
+  80 001f 1E        		.byte	30
+  81 0020 1E        		.byte	30
+  82 0021 1E        		.byte	30
+  83 0022 1E        		.byte	30
+  84 0023 1E        		.byte	30
+  85 0024 1E        		.byte	30
+  86 0025 1E        		.byte	30
+  87 0026 1E        		.byte	30
+  88 0027 1E        		.byte	30
+  89 0028 1E        		.byte	30
+  90 0029 1E        		.byte	30
+  91 002a 00        		.byte	0
+  92 002b 1E        		.byte	30
+  93 002c 1E        		.byte	30
+  94 002d 00        		.byte	0
+  95 002e 1E        		.byte	30
+  96 002f 1E        		.byte	30
+  97 0030 1E        		.byte	30
+  98 0031 1E        		.byte	30
+  99 0032 1E        		.byte	30
+ 100 0033 1E        		.byte	30
+ 101 0034 1E        		.byte	30
+ 102 0035 1E        		.byte	30
+ 103 0036 1E        		.byte	30
+ 104 0037 1E        		.byte	30
+ 105 0038 1E        		.byte	30
+ 106 0039 1E        		.byte	30
+ 107 003a 1E        		.byte	30
+ 108 003b 1E        		.byte	30
+ 109 003c 1E        		.byte	30
+ 110 003d 00        		.byte	0
+ 111 003e 00        		.byte	0
+ 112 003f 00        		.byte	0
+ 113 0040 1E        		.byte	30
  114 0041 00        		.byte	0
- 115 0042 E4        		.byte	-28
- 116 0043 00        		.byte	0
- 117 0044 00        		.byte	0
- 118 0045 00        		.byte	0
- 119 0046 50        		.byte	80
- 120 0047 51        		.byte	81
+ 115 0042 00        		.byte	0
+ 116 0043 1E        		.byte	30
+ 117 0044 1E        		.byte	30
+ 118 0045 1E        		.byte	30
+ 119 0046 1E        		.byte	30
+ 120 0047 1E        		.byte	30
  121               		.comm	keymap_config,1,1
  122               		.text
  123               	.Letext0:
@@ -187,15 +187,15 @@
  129               		.file 7 "keymap_poker.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_poker.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:45     .progmem.data:00000000 fn_actions
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cchz2iAF.s:50     .progmem.data:00000002 keymaps
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:45     .progmem.data:00000000 fn_actions
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:50     .progmem.data:00000002 keymaps
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS

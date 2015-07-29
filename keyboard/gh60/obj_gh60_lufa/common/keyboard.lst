@@ -715,20 +715,20 @@
  483               		.file 14 "../../common/host.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 keyboard.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:44     .text.keyboard_init:00000000 keyboard_init
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:68     .text.keyboard_set_leds:00000000 keyboard_set_leds
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:463    .progmem.data:00000007 __c.4664
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:459    .progmem.data:00000002 __c.4666
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:455    .progmem.data:00000000 __c.4668
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:148    .text.keyboard_task:00000000 keyboard_task
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnzXtsI.s:466    .bss:00000001 matrix_prev.4644
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:44     .text.keyboard_init:00000000 keyboard_init
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:68     .text.keyboard_set_leds:00000000 keyboard_set_leds
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:463    .progmem.data:00000007 __c.4664
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:459    .progmem.data:00000002 __c.4666
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:455    .progmem.data:00000000 __c.4668
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:148    .text.keyboard_task:00000000 keyboard_task
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc61M2pT.s:466    .bss:00000001 matrix_prev.4644
                              .bss:00000000 led_status.4645
                             *COM*:00000001 keymap_config
 

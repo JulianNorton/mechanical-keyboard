@@ -320,20 +320,20 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      168:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e     ................
 				ReportSize     -= 1;
 				ReportData     += 1;
-     178:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 35 04 16 07     ............5...
+     178:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e     ................
 				break;
 		}
 
 		switch (HIDReportItem & (HID_RI_TYPE_MASK | HID_RI_TAG_MASK))
-     188:	09 0a 0b 0d 0e 0f 33 34 28 35 e1 1d 1b 06 19 05     ......34(5......
-     198:	11 10 36 37 38 e5 52 35 e0 e2 e3 2c e7 e6 00 00     ..678.R5...,....
+     188:	1e 1e 1e 1e 1e 1e 1e 1e 00 1e 1e 00 1e 1e 1e 1e     ................
+     198:	1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 1e 00 00 00 1e 00     ................
 				break;
 			case HID_RI_USAGE_PAGE(0):
 				if ((HIDReportItem & HID_RI_DATA_SIZE_MASK) == HID_RI_DATA_BITS_32)
 				  CurrStateTable->Attributes.Usage.Page = (ReportItemData >> 16);
 
 				CurrStateTable->Attributes.Usage.Page       = ReportItemData;
-     1a8:	e4 00 00 00 50 51                                   ....PQ
+     1a8:	00 1e 1e 1e 1e 1e                                   ......
 
 000001ae <__c.2367>:
 				ReportSize     -= 1;
@@ -1382,9 +1382,9 @@ uint8_t USB_ProcessHIDReport(const uint8_t* ReportData,
      dba:	30 39 36 0a 00                                      096..
 
 00000dbf <__c.4912>:
-     dbf:	42 55 49 4c 44 3a 20 63 62 64 37 37 63 62 2d 64     BUILD: cbd77cb-d
-     dcf:	69 72 74 79 20 28 32 32 3a 34 31 3a 35 33 20 4a     irty (22:41:53 J
-     ddf:	75 6c 20 32 38 20 32 30 31 35 29 0a 00              ul 28 2015)..
+     dbf:	42 55 49 4c 44 3a 20 31 64 35 37 31 62 37 2d 64     BUILD: 1d571b7-d
+     dcf:	69 72 74 79 20 28 30 39 3a 33 34 3a 31 34 20 4a     irty (09:34:14 J
+     ddf:	75 6c 20 32 39 20 32 30 31 35 29 0a 00              ul 29 2015)..
 
 00000dec <__c.4910>:
      dec:	56 49 44 3a 20 30 78 46 45 45 44 28 6a 75 6c 69     VID: 0xFEED(juli
