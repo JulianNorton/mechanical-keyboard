@@ -980,30 +980,30 @@
  790               		.file 5 "../../common/action.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 action_layer.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:44     .text.default_layer_debug:00000000 default_layer_debug
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:60     .text.default_layer_set:00000000 default_layer_set
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:784    .bss:00000004 default_layer_state
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:87     .text.default_layer_or:00000000 default_layer_or
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:142    .text.default_layer_and:00000000 default_layer_and
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:197    .text.default_layer_xor:00000000 default_layer_xor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:252    .text.layer_clear:00000000 layer_clear
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:779    .bss:00000000 layer_state
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:279    .text.layer_move:00000000 layer_move
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:320    .text.layer_on:00000000 layer_on
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:371    .text.layer_off:00000000 layer_off
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:426    .text.layer_invert:00000000 layer_invert
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:477    .text.layer_or:00000000 layer_or
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:532    .text.layer_and:00000000 layer_and
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:587    .text.layer_xor:00000000 layer_xor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:642    .text.layer_debug:00000000 layer_debug
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc16LCQb.s:657    .text.layer_switch_get_action:00000000 layer_switch_get_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:44     .text.default_layer_debug:00000000 default_layer_debug
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:60     .text.default_layer_set:00000000 default_layer_set
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:784    .bss:00000004 default_layer_state
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:87     .text.default_layer_or:00000000 default_layer_or
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:142    .text.default_layer_and:00000000 default_layer_and
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:197    .text.default_layer_xor:00000000 default_layer_xor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:252    .text.layer_clear:00000000 layer_clear
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:779    .bss:00000000 layer_state
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:279    .text.layer_move:00000000 layer_move
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:320    .text.layer_on:00000000 layer_on
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:371    .text.layer_off:00000000 layer_off
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:426    .text.layer_invert:00000000 layer_invert
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:477    .text.layer_or:00000000 layer_or
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:532    .text.layer_and:00000000 layer_and
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:587    .text.layer_xor:00000000 layer_xor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:642    .text.layer_debug:00000000 layer_debug
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccmJKlT2.s:657    .text.layer_switch_get_action:00000000 layer_switch_get_action
 
 UNDEFINED SYMBOLS
 clear_keyboard_but_mods

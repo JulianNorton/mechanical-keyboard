@@ -2237,15 +2237,15 @@
  1750               		.file 4 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 HIDParser.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:13     .text.USB_ProcessHIDReport:00000000 USB_ProcessHIDReport
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:1300   .text.USB_GetHIDReportItemInfo:00000000 USB_GetHIDReportItemInfo
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:1465   .text.USB_SetHIDReportItemInfo:00000000 USB_SetHIDReportItemInfo
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccRixPId.s:1665   .text.USB_GetHIDReportSize:00000000 USB_GetHIDReportSize
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:13     .text.USB_ProcessHIDReport:00000000 USB_ProcessHIDReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:1300   .text.USB_GetHIDReportItemInfo:00000000 USB_GetHIDReportItemInfo
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:1465   .text.USB_SetHIDReportItemInfo:00000000 USB_SetHIDReportItemInfo
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccTxkVS6.s:1665   .text.USB_GetHIDReportSize:00000000 USB_GetHIDReportSize
 
 UNDEFINED SYMBOLS
 CALLBACK_HIDParser_FilterHIDReportItem

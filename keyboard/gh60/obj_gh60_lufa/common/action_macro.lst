@@ -661,14 +661,14 @@
  341               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 action_macro.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccGQvIvP.s:44     .text.action_macro_play:00000000 action_macro_play
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccocrNm5.s:44     .text.action_macro_play:00000000 action_macro_play
 
 UNDEFINED SYMBOLS
 unregister_code
