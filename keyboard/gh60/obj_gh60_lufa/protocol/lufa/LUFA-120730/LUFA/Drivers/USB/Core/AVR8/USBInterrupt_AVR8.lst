@@ -2516,15 +2516,15 @@
  659               		.file 11 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../AVR8/../Events.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 USBInterrupt_AVR8.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:13     .text.USB_INT_DisableAllInterrupts:00000000 USB_INT_DisableAllInterrupts
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:37     .text.USB_INT_ClearAllInterrupts:00000000 USB_INT_ClearAllInterrupts
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:56     .text.__vector_10:00000000 __vector_10
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccrOC45j.s:492    .text.__vector_11:00000000 __vector_11
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:13     .text.USB_INT_DisableAllInterrupts:00000000 USB_INT_DisableAllInterrupts
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:37     .text.USB_INT_ClearAllInterrupts:00000000 USB_INT_ClearAllInterrupts
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:56     .text.__vector_10:00000000 __vector_10
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccH3ZRts.s:492    .text.__vector_11:00000000 __vector_11
 
 UNDEFINED SYMBOLS
 EVENT_USB_Device_StartOfFrame

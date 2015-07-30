@@ -458,27 +458,27 @@
  379               		.file 7 "../../common/avr/xprintf.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 host.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:13     .text.host_set_driver:00000000 host_set_driver
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:363    .bss:00000004 driver
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:33     .text.host_get_driver:00000000 host_get_driver
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:51     .text.host_keyboard_leds:00000000 host_keyboard_leds
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:80     .text.host_keyboard_send:00000000 host_keyboard_send
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:358    .progmem.data:00000008 __c.4327
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:354    .progmem.data:00000002 __c.4330
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:350    .progmem.data:00000000 __c.4335
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:212    .text.host_mouse_send:00000000 host_mouse_send
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:240    .text.host_system_send:00000000 host_system_send
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:361    .bss:00000002 last_system_report
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:277    .text.host_consumer_send:00000000 host_consumer_send
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:13     .text.host_set_driver:00000000 host_set_driver
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:363    .bss:00000004 driver
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:33     .text.host_get_driver:00000000 host_get_driver
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:51     .text.host_keyboard_leds:00000000 host_keyboard_leds
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:80     .text.host_keyboard_send:00000000 host_keyboard_send
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:358    .progmem.data:00000008 __c.4327
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:354    .progmem.data:00000002 __c.4330
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:350    .progmem.data:00000000 __c.4335
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:212    .text.host_mouse_send:00000000 host_mouse_send
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:240    .text.host_system_send:00000000 host_system_send
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:361    .bss:00000002 last_system_report
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:277    .text.host_consumer_send:00000000 host_consumer_send
                              .bss:00000000 last_consumer_report
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:314    .text.host_last_sysytem_report:00000000 host_last_sysytem_report
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:332    .text.host_last_consumer_report:00000000 host_last_consumer_report
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclkvFLh.s:370    .data:00000000 keyboard_nkro
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:314    .text.host_last_sysytem_report:00000000 host_last_sysytem_report
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:332    .text.host_last_consumer_report:00000000 host_last_consumer_report
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccLfdVBJ.s:370    .data:00000000 keyboard_nkro
 
 UNDEFINED SYMBOLS
 debug_config

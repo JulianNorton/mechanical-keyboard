@@ -1334,43 +1334,43 @@
  1150               		.file 7 "../../common/timer.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 mousekey.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:12     .text.move_unit:00000000 move_unit
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1105   .bss:00000002 mousekey_accel
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1125   .data:00000003 mk_max_speed
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1138   .bss:00000003 mousekey_repeat
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1120   .data:00000002 mk_time_to_max
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:123    .text.wheel_unit:00000000 wheel_unit
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1115   .data:00000001 mk_wheel_max_speed
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1110   .data:00000000 mk_wheel_time_to_max
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:219    .text.mousekey_on:00000000 mousekey_on
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1140   .bss:00000004 mouse_report
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:401    .text.mousekey_off:00000000 mousekey_off
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:608    .text.mousekey_send:00000000 mousekey_send
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1102   .progmem.data:00000027 __c.4379
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1098   .progmem.data:00000022 __c.4381
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1094   .progmem.data:00000020 __c.4383
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1090   .progmem.data:0000001d __c.4385
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1086   .progmem.data:0000001b __c.4387
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1082   .progmem.data:00000018 __c.4389
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1078   .progmem.data:00000016 __c.4391
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1074   .progmem.data:00000013 __c.4393
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1070   .progmem.data:00000011 __c.4395
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1066   .progmem.data:0000000e __c.4397
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1062   .progmem.data:0000000b __c.4399
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1058   .progmem.data:00000008 __c.4401
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1054   .progmem.data:00000006 __c.4403
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1050   .progmem.data:00000003 __c.4405
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1046   .progmem.data:00000000 __c.4407
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:12     .text.move_unit:00000000 move_unit
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1105   .bss:00000002 mousekey_accel
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1125   .data:00000003 mk_max_speed
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1138   .bss:00000003 mousekey_repeat
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1120   .data:00000002 mk_time_to_max
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:123    .text.wheel_unit:00000000 wheel_unit
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1115   .data:00000001 mk_wheel_max_speed
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1110   .data:00000000 mk_wheel_time_to_max
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:219    .text.mousekey_on:00000000 mousekey_on
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1140   .bss:00000004 mouse_report
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:401    .text.mousekey_off:00000000 mousekey_off
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:608    .text.mousekey_send:00000000 mousekey_send
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1102   .progmem.data:00000027 __c.4379
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1098   .progmem.data:00000022 __c.4381
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1094   .progmem.data:00000020 __c.4383
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1090   .progmem.data:0000001d __c.4385
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1086   .progmem.data:0000001b __c.4387
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1082   .progmem.data:00000018 __c.4389
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1078   .progmem.data:00000016 __c.4391
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1074   .progmem.data:00000013 __c.4393
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1070   .progmem.data:00000011 __c.4395
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1066   .progmem.data:0000000e __c.4397
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1062   .progmem.data:0000000b __c.4399
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1058   .progmem.data:00000008 __c.4401
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1054   .progmem.data:00000006 __c.4403
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1050   .progmem.data:00000003 __c.4405
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1046   .progmem.data:00000000 __c.4407
                              .bss:00000000 last_timer
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:813    .text.mousekey_task:00000000 mousekey_task
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1130   .data:00000004 mk_interval
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1135   .data:00000005 mk_delay
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccnsA3Hd.s:1018   .text.mousekey_clear:00000000 mousekey_clear
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:813    .text.mousekey_task:00000000 mousekey_task
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1130   .data:00000004 mk_interval
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1135   .data:00000005 mk_delay
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccqldnJU.s:1018   .text.mousekey_clear:00000000 mousekey_clear
 
 UNDEFINED SYMBOLS
 __divmodhi4

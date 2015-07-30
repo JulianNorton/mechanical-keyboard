@@ -43,40 +43,19 @@
   20               	/* frame size = 0 */
   21               	/* stack size = 0 */
   22               	.L__stack_usage = 0
-  25:led.c         ****     if (usb_led & (1<<USB_LED_FUNCTION)) {
-  23               		.loc 1 25 0
-  24 0000 85FF      		sbrs r24,5
-  25 0002 00C0      		rjmp .L2
-  26:led.c         ****         // Output high.
-  27:led.c         ****         DDRF |= (1<<0);
-  26               		.loc 1 27 0
-  27 0004 809A      		sbi 0x10,0
-  28:led.c         ****         PORTF |= (1<<0);
-  28               		.loc 1 28 0
-  29 0006 889A      		sbi 0x11,0
-  30 0008 0895      		ret
-  31               	.L2:
-  29:led.c         ****     } else {
-  30:led.c         ****         // Output low.
-  31:led.c         ****         DDRF &= ~(1<<0);
-  32               		.loc 1 31 0
-  33 000a 8098      		cbi 0x10,0
-  32:led.c         ****         PORTF &= ~(1<<0);
-  34               		.loc 1 32 0
-  35 000c 8898      		cbi 0x11,0
-  36 000e 0895      		ret
-  37               		.cfi_endproc
-  38               	.LFE0:
-  40               		.text
-  41               	.Letext0:
-  42               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
+  23 0000 0895      		ret
+  24               		.cfi_endproc
+  25               	.LFE0:
+  27               		.text
+  28               	.Letext0:
+  29               		.file 2 "/usr/local/CrossPack-AVR-20131216/avr/include/stdint.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 led.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc8vQi0Y.s:13     .text.led_set:00000000 led_set
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccHGRiCS.s:13     .text.led_set:00000000 led_set
 
 NO UNDEFINED SYMBOLS

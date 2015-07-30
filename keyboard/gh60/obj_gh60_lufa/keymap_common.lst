@@ -137,11 +137,11 @@
   54               	.LBB2:
   23:keymap_common.c ****     return pgm_read_byte(&keymaps[(layer)][(key.row)][(key.col)]);
   55               		.loc 2 23 0
-  56 0000 9EE0      		ldi r25,lo8(14)
+  56 0000 9FE0      		ldi r25,lo8(15)
   57 0002 799F      		mul r23,r25
   58 0004 F001      		movw r30,r0
   59 0006 1124      		clr __zero_reg__
-  60 0008 96E4      		ldi r25,lo8(70)
+  60 0008 9BE4      		ldi r25,lo8(75)
   61 000a 899F      		mul r24,r25
   62 000c E00D      		add r30,r0
   63 000e F11D      		adc r31,r1
@@ -213,15 +213,15 @@
  125               		.file 8 "../../common/keycode.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_common.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:44     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc0AM5CV.s:85     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:44     .text.keymap_key_to_keycode:00000000 keymap_key_to_keycode
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cc5RZ1Y0.s:85     .text.keymap_fn_to_action:00000000 keymap_fn_to_action
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS
