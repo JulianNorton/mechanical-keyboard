@@ -106,76 +106,76 @@
   46 0000 F1A1      		.word	-24079
   47               	.global	keymaps
   50               	keymaps:
-  51 0002 1E        		.byte	30
+  51 0002 27        		.byte	39
   52 0003 1E        		.byte	30
-  53 0004 1E        		.byte	30
-  54 0005 1E        		.byte	30
-  55 0006 1E        		.byte	30
-  56 0007 1E        		.byte	30
-  57 0008 1E        		.byte	30
-  58 0009 1E        		.byte	30
-  59 000a 1E        		.byte	30
-  60 000b 1E        		.byte	30
-  61 000c 1E        		.byte	30
+  53 0004 1F        		.byte	31
+  54 0005 20        		.byte	32
+  55 0006 21        		.byte	33
+  56 0007 22        		.byte	34
+  57 0008 23        		.byte	35
+  58 0009 24        		.byte	36
+  59 000a 25        		.byte	37
+  60 000b 26        		.byte	38
+  61 000c 27        		.byte	39
   62 000d 1E        		.byte	30
-  63 000e 1E        		.byte	30
-  64 000f 1E        		.byte	30
-  65 0010 1E        		.byte	30
+  63 000e 1F        		.byte	31
+  64 000f 20        		.byte	32
+  65 0010 27        		.byte	39
   66 0011 1E        		.byte	30
-  67 0012 1E        		.byte	30
-  68 0013 1E        		.byte	30
-  69 0014 1E        		.byte	30
-  70 0015 1E        		.byte	30
-  71 0016 1E        		.byte	30
-  72 0017 1E        		.byte	30
-  73 0018 1E        		.byte	30
-  74 0019 1E        		.byte	30
-  75 001a 1E        		.byte	30
+  67 0012 1F        		.byte	31
+  68 0013 20        		.byte	32
+  69 0014 21        		.byte	33
+  70 0015 22        		.byte	34
+  71 0016 23        		.byte	35
+  72 0017 24        		.byte	36
+  73 0018 25        		.byte	37
+  74 0019 26        		.byte	38
+  75 001a 27        		.byte	39
   76 001b 1E        		.byte	30
-  77 001c 1E        		.byte	30
-  78 001d 1E        		.byte	30
-  79 001e 1E        		.byte	30
+  77 001c 1F        		.byte	31
+  78 001d 20        		.byte	32
+  79 001e 27        		.byte	39
   80 001f 1E        		.byte	30
-  81 0020 1E        		.byte	30
-  82 0021 1E        		.byte	30
-  83 0022 1E        		.byte	30
-  84 0023 1E        		.byte	30
-  85 0024 1E        		.byte	30
-  86 0025 1E        		.byte	30
-  87 0026 1E        		.byte	30
-  88 0027 1E        		.byte	30
-  89 0028 1E        		.byte	30
+  81 0020 1F        		.byte	31
+  82 0021 20        		.byte	32
+  83 0022 21        		.byte	33
+  84 0023 22        		.byte	34
+  85 0024 23        		.byte	35
+  86 0025 24        		.byte	36
+  87 0026 25        		.byte	37
+  88 0027 26        		.byte	38
+  89 0028 27        		.byte	39
   90 0029 1E        		.byte	30
   91 002a 00        		.byte	0
-  92 002b 1E        		.byte	30
-  93 002c 1E        		.byte	30
+  92 002b 20        		.byte	32
+  93 002c 27        		.byte	39
   94 002d 00        		.byte	0
-  95 002e 1E        		.byte	30
-  96 002f 1E        		.byte	30
-  97 0030 1E        		.byte	30
-  98 0031 1E        		.byte	30
-  99 0032 1E        		.byte	30
- 100 0033 1E        		.byte	30
- 101 0034 1E        		.byte	30
- 102 0035 1E        		.byte	30
- 103 0036 1E        		.byte	30
+  95 002e 1F        		.byte	31
+  96 002f 20        		.byte	32
+  97 0030 21        		.byte	33
+  98 0031 22        		.byte	34
+  99 0032 23        		.byte	35
+ 100 0033 24        		.byte	36
+ 101 0034 25        		.byte	37
+ 102 0035 26        		.byte	38
+ 103 0036 27        		.byte	39
  104 0037 1E        		.byte	30
- 105 0038 1E        		.byte	30
- 106 0039 1E        		.byte	30
- 107 003a 1E        		.byte	30
+ 105 0038 1F        		.byte	31
+ 106 0039 20        		.byte	32
+ 107 003a 27        		.byte	39
  108 003b 1E        		.byte	30
- 109 003c 1E        		.byte	30
+ 109 003c 1F        		.byte	31
  110 003d 00        		.byte	0
  111 003e 00        		.byte	0
  112 003f 00        		.byte	0
- 113 0040 1E        		.byte	30
+ 113 0040 23        		.byte	35
  114 0041 00        		.byte	0
  115 0042 00        		.byte	0
- 116 0043 1E        		.byte	30
- 117 0044 1E        		.byte	30
+ 116 0043 26        		.byte	38
+ 117 0044 27        		.byte	39
  118 0045 1E        		.byte	30
- 119 0046 1E        		.byte	30
- 120 0047 1E        		.byte	30
+ 119 0046 1F        		.byte	31
+ 120 0047 20        		.byte	32
  121               		.comm	keymap_config,1,1
  122               		.text
  123               	.Letext0:
@@ -187,15 +187,15 @@
  129               		.file 7 "keymap_poker.c"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap_poker.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:13     .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:29     .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:45     .progmem.data:00000000 fn_actions
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//cclsndhh.s:50     .progmem.data:00000002 keymaps
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:13     .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:29     .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:45     .progmem.data:00000000 fn_actions
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccMYistv.s:50     .progmem.data:00000002 keymaps
                             *COM*:00000001 keymap_config
 
 UNDEFINED SYMBOLS

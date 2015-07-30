@@ -608,12 +608,12 @@
  104               		.file 6 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/../DeviceStandardReq.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 USBTask.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccFafIxj.s:13     .text.USB_USBTask:00000000 USB_USBTask
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccEAwmjF.s:13     .text.USB_USBTask:00000000 USB_USBTask
                             *COM*:00000001 USB_DeviceState
                             *COM*:00000008 USB_ControlRequest
                             *COM*:00000001 USB_IsInitialized

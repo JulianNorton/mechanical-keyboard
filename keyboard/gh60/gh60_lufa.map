@@ -567,7 +567,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000     0x591c
+.text           0x00000000     0x5946
  *(.vectors)
  .vectors       0x00000000       0xac /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
                 0x00000000                __vectors
@@ -718,455 +718,455 @@ END GROUP
                 0x000011a6       0x38 obj_gh60_lufa/matrix.o
                 0x000011a6                matrix_init
  .text.matrix_scan
-                0x000011de      0x10e obj_gh60_lufa/matrix.o
+                0x000011de      0x138 obj_gh60_lufa/matrix.o
                 0x000011de                matrix_scan
  .text.matrix_get_row
-                0x000012ec       0x12 obj_gh60_lufa/matrix.o
-                0x000012ec                matrix_get_row
+                0x00001316       0x12 obj_gh60_lufa/matrix.o
+                0x00001316                matrix_get_row
  .text.matrix_print
-                0x000012fe       0x8e obj_gh60_lufa/matrix.o
-                0x000012fe                matrix_print
- .text.led_set  0x0000138c       0x10 obj_gh60_lufa/led.o
-                0x0000138c                led_set
+                0x00001328       0x8e obj_gh60_lufa/matrix.o
+                0x00001328                matrix_print
+ .text.led_set  0x000013b6       0x10 obj_gh60_lufa/led.o
+                0x000013b6                led_set
  .text.keyboard_leds
-                0x0000139c        0x6 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x000013c6        0x6 obj_gh60_lufa/protocol/lufa/lufa.o
  .text.sendchar
-                0x000013a2       0xa8 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x000013a2                sendchar
+                0x000013cc       0xa8 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x000013cc                sendchar
  .text.send_consumer
-                0x0000144a       0x66 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001474       0x66 obj_gh60_lufa/protocol/lufa/lufa.o
  .text.send_system
-                0x000014b0       0x68 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x000014da       0x68 obj_gh60_lufa/protocol/lufa/lufa.o
  .text.send_mouse
-                0x00001518       0x46 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001542       0x46 obj_gh60_lufa/protocol/lufa/lufa.o
  .text.send_keyboard
-                0x0000155e       0x9c obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001588       0x9c obj_gh60_lufa/protocol/lufa/lufa.o
  .text.EVENT_USB_Device_Connect
-                0x000015fa       0x24 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x000015fa                EVENT_USB_Device_Connect
+                0x00001624       0x24 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001624                EVENT_USB_Device_Connect
  .text.EVENT_USB_Device_Disconnect
-                0x0000161e        0xe obj_gh60_lufa/protocol/lufa/lufa.o
-                0x0000161e                EVENT_USB_Device_Disconnect
+                0x00001648        0xe obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001648                EVENT_USB_Device_Disconnect
  .text.EVENT_USB_Device_Reset
-                0x0000162c        0x8 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x0000162c                EVENT_USB_Device_Reset
+                0x00001656        0x8 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001656                EVENT_USB_Device_Reset
  .text.EVENT_USB_Device_Suspend
-                0x00001634        0xc obj_gh60_lufa/protocol/lufa/lufa.o
-                0x00001634                EVENT_USB_Device_Suspend
+                0x0000165e        0xc obj_gh60_lufa/protocol/lufa/lufa.o
+                0x0000165e                EVENT_USB_Device_Suspend
  .text.EVENT_USB_Device_WakeUp
-                0x00001640        0xc obj_gh60_lufa/protocol/lufa/lufa.o
-                0x00001640                EVENT_USB_Device_WakeUp
+                0x0000166a        0xc obj_gh60_lufa/protocol/lufa/lufa.o
+                0x0000166a                EVENT_USB_Device_WakeUp
  .text.EVENT_USB_Device_StartOfFrame
-                0x0000164c       0x5c obj_gh60_lufa/protocol/lufa/lufa.o
-                0x0000164c                EVENT_USB_Device_StartOfFrame
+                0x00001676       0x5c obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001676                EVENT_USB_Device_StartOfFrame
  .text.EVENT_USB_Device_ConfigurationChanged
-                0x000016a8       0x32 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x000016a8                EVENT_USB_Device_ConfigurationChanged
+                0x000016d2       0x32 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x000016d2                EVENT_USB_Device_ConfigurationChanged
  .text.EVENT_USB_Device_ControlRequest
-                0x000016da      0x172 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x000016da                EVENT_USB_Device_ControlRequest
+                0x00001704      0x172 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001704                EVENT_USB_Device_ControlRequest
  .text.startup.main
-                0x0000184c       0x98 obj_gh60_lufa/protocol/lufa/lufa.o
-                0x0000184c                main
+                0x00001876       0x98 obj_gh60_lufa/protocol/lufa/lufa.o
+                0x00001876                main
  .text.CALLBACK_USB_GetDescriptor
-                0x000018e4       0xb2 obj_gh60_lufa/protocol/lufa/descriptor.o
-                0x000018e4                CALLBACK_USB_GetDescriptor
+                0x0000190e       0xb2 obj_gh60_lufa/protocol/lufa/descriptor.o
+                0x0000190e                CALLBACK_USB_GetDescriptor
  .text.USB_Device_SendRemoteWakeup
-                0x00001996       0x2c obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
-                0x00001996                USB_Device_SendRemoteWakeup
+                0x000019c0       0x2c obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+                0x000019c0                USB_Device_SendRemoteWakeup
  .text.Endpoint_ConfigureEndpoint_Prv
-                0x000019c2       0x6a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x000019c2                Endpoint_ConfigureEndpoint_Prv
+                0x000019ec       0x6a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x000019ec                Endpoint_ConfigureEndpoint_Prv
  .text.Endpoint_ClearStatusStage
-                0x00001a2c       0x42 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x00001a2c                Endpoint_ClearStatusStage
+                0x00001a56       0x42 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x00001a56                Endpoint_ClearStatusStage
  .text.Endpoint_WaitUntilReady
-                0x00001a6e       0x60 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
-                0x00001a6e                Endpoint_WaitUntilReady
+                0x00001a98       0x60 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+                0x00001a98                Endpoint_WaitUntilReady
  .text.USB_Disable
-                0x00001ace       0x34 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001ace                USB_Disable
+                0x00001af8       0x34 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001af8                USB_Disable
  .text.USB_ResetInterface
-                0x00001b02       0x86 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001b02                USB_ResetInterface
+                0x00001b2c       0x86 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001b2c                USB_ResetInterface
  .text.USB_Init
-                0x00001b88       0x18 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
-                0x00001b88                USB_Init
+                0x00001bb2       0x18 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+                0x00001bb2                USB_Init
  .text.USB_INT_DisableAllInterrupts
-                0x00001ba0       0x10 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001ba0                USB_INT_DisableAllInterrupts
+                0x00001bca       0x10 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001bca                USB_INT_DisableAllInterrupts
  .text.USB_INT_ClearAllInterrupts
-                0x00001bb0        0xa obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001bb0                USB_INT_ClearAllInterrupts
+                0x00001bda        0xa obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001bda                USB_INT_ClearAllInterrupts
  .text.__vector_10
-                0x00001bba      0x1a0 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001bba                __vector_10
+                0x00001be4      0x1a0 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001be4                __vector_10
  .text.__vector_11
-                0x00001d5a       0x78 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
-                0x00001d5a                __vector_11
+                0x00001d84       0x78 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+                0x00001d84                __vector_11
  .text.Endpoint_Write_Stream_LE
-                0x00001dd2       0x92 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00001dd2                Endpoint_Write_Stream_LE
+                0x00001dfc       0x92 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x00001dfc                Endpoint_Write_Stream_LE
  .text.Endpoint_Write_Control_Stream_LE
-                0x00001e64       0xb6 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00001e64                Endpoint_Write_Control_Stream_LE
+                0x00001e8e       0xb6 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x00001e8e                Endpoint_Write_Control_Stream_LE
  .text.Endpoint_Write_Control_PStream_LE
-                0x00001f1a       0xbc obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
-                0x00001f1a                Endpoint_Write_Control_PStream_LE
+                0x00001f44       0xbc obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+                0x00001f44                Endpoint_Write_Control_PStream_LE
  .text.USB_Device_ProcessControlRequest
-                0x00001fd6      0x2a2 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
-                0x00001fd6                USB_Device_ProcessControlRequest
+                0x00002000      0x2a2 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+                0x00002000                USB_Device_ProcessControlRequest
  .text.host_set_driver
-                0x00002278        0xa obj_gh60_lufa/common/host.o
-                0x00002278                host_set_driver
+                0x000022a2        0xa obj_gh60_lufa/common/host.o
+                0x000022a2                host_set_driver
  .text.host_get_driver
-                0x00002282        0xa obj_gh60_lufa/common/host.o
-                0x00002282                host_get_driver
+                0x000022ac        0xa obj_gh60_lufa/common/host.o
+                0x000022ac                host_get_driver
  .text.host_keyboard_leds
-                0x0000228c       0x18 obj_gh60_lufa/common/host.o
-                0x0000228c                host_keyboard_leds
+                0x000022b6       0x18 obj_gh60_lufa/common/host.o
+                0x000022b6                host_keyboard_leds
  .text.host_keyboard_send
-                0x000022a4       0x8a obj_gh60_lufa/common/host.o
-                0x000022a4                host_keyboard_send
+                0x000022ce       0x8a obj_gh60_lufa/common/host.o
+                0x000022ce                host_keyboard_send
  .text.host_mouse_send
-                0x0000232e       0x16 obj_gh60_lufa/common/host.o
-                0x0000232e                host_mouse_send
+                0x00002358       0x16 obj_gh60_lufa/common/host.o
+                0x00002358                host_mouse_send
  .text.host_system_send
-                0x00002344       0x2c obj_gh60_lufa/common/host.o
-                0x00002344                host_system_send
+                0x0000236e       0x2c obj_gh60_lufa/common/host.o
+                0x0000236e                host_system_send
  .text.host_consumer_send
-                0x00002370       0x2c obj_gh60_lufa/common/host.o
-                0x00002370                host_consumer_send
+                0x0000239a       0x2c obj_gh60_lufa/common/host.o
+                0x0000239a                host_consumer_send
  .text.keyboard_init
-                0x0000239c        0xc obj_gh60_lufa/common/keyboard.o
-                0x0000239c                keyboard_init
+                0x000023c6        0xc obj_gh60_lufa/common/keyboard.o
+                0x000023c6                keyboard_init
  .text.keyboard_set_leds
-                0x000023a8       0x50 obj_gh60_lufa/common/keyboard.o
-                0x000023a8                keyboard_set_leds
+                0x000023d2       0x50 obj_gh60_lufa/common/keyboard.o
+                0x000023d2                keyboard_set_leds
  .text.keyboard_task
-                0x000023f8      0x172 obj_gh60_lufa/common/keyboard.o
-                0x000023f8                keyboard_task
+                0x00002422      0x172 obj_gh60_lufa/common/keyboard.o
+                0x00002422                keyboard_task
  .text.action_exec
-                0x0000256a       0x5c obj_gh60_lufa/common/action.o
-                0x0000256a                action_exec
+                0x00002594       0x5c obj_gh60_lufa/common/action.o
+                0x00002594                action_exec
  .text.register_code
-                0x000025c6      0x190 obj_gh60_lufa/common/action.o
-                0x000025c6                register_code
+                0x000025f0      0x190 obj_gh60_lufa/common/action.o
+                0x000025f0                register_code
  .text.unregister_code
-                0x00002756       0x9e obj_gh60_lufa/common/action.o
-                0x00002756                unregister_code
+                0x00002780       0x9e obj_gh60_lufa/common/action.o
+                0x00002780                unregister_code
  .text.register_mods
-                0x000027f4        0xe obj_gh60_lufa/common/action.o
-                0x000027f4                register_mods
+                0x0000281e        0xe obj_gh60_lufa/common/action.o
+                0x0000281e                register_mods
  .text.unregister_mods
-                0x00002802        0xe obj_gh60_lufa/common/action.o
-                0x00002802                unregister_mods
+                0x0000282c        0xe obj_gh60_lufa/common/action.o
+                0x0000282c                unregister_mods
  .text.process_action
-                0x00002810      0x60c obj_gh60_lufa/common/action.o
-                0x00002810                process_action
+                0x0000283a      0x60c obj_gh60_lufa/common/action.o
+                0x0000283a                process_action
  .text.clear_keyboard_but_mods
-                0x00002e1c       0x24 obj_gh60_lufa/common/action.o
-                0x00002e1c                clear_keyboard_but_mods
+                0x00002e46       0x24 obj_gh60_lufa/common/action.o
+                0x00002e46                clear_keyboard_but_mods
  .text.clear_keyboard
-                0x00002e40        0x8 obj_gh60_lufa/common/action.o
-                0x00002e40                clear_keyboard
+                0x00002e6a        0x8 obj_gh60_lufa/common/action.o
+                0x00002e6a                clear_keyboard
  .text.is_tap_key
-                0x00002e48       0x42 obj_gh60_lufa/common/action.o
-                0x00002e48                is_tap_key
+                0x00002e72       0x42 obj_gh60_lufa/common/action.o
+                0x00002e72                is_tap_key
  .text.debug_event
-                0x00002e8a       0x1e obj_gh60_lufa/common/action.o
-                0x00002e8a                debug_event
+                0x00002eb4       0x1e obj_gh60_lufa/common/action.o
+                0x00002eb4                debug_event
  .text.debug_record
-                0x00002ea8       0x20 obj_gh60_lufa/common/action.o
-                0x00002ea8                debug_record
+                0x00002ed2       0x20 obj_gh60_lufa/common/action.o
+                0x00002ed2                debug_record
  .text.debug_waiting_buffer
-                0x00002ec8       0x42 obj_gh60_lufa/common/action_tapping.o
+                0x00002ef2       0x42 obj_gh60_lufa/common/action_tapping.o
  .text.debug_tapping_key
-                0x00002f0a       0x1c obj_gh60_lufa/common/action_tapping.o
+                0x00002f34       0x1c obj_gh60_lufa/common/action_tapping.o
  .text.waiting_buffer_scan_tap
-                0x00002f26       0xd0 obj_gh60_lufa/common/action_tapping.o
+                0x00002f50       0xd0 obj_gh60_lufa/common/action_tapping.o
  .text.process_tapping
-                0x00002ff6      0x3da obj_gh60_lufa/common/action_tapping.o
+                0x00003020      0x3da obj_gh60_lufa/common/action_tapping.o
  .text.action_tapping_process
-                0x000033d0      0x15a obj_gh60_lufa/common/action_tapping.o
-                0x000033d0                action_tapping_process
+                0x000033fa      0x15a obj_gh60_lufa/common/action_tapping.o
+                0x000033fa                action_tapping_process
  .text.action_macro_play
-                0x0000352a       0xfc obj_gh60_lufa/common/action_macro.o
-                0x0000352a                action_macro_play
+                0x00003554       0xfc obj_gh60_lufa/common/action_macro.o
+                0x00003554                action_macro_play
  .text.default_layer_debug
-                0x00003626        0x2 obj_gh60_lufa/common/action_layer.o
-                0x00003626                default_layer_debug
+                0x00003650        0x2 obj_gh60_lufa/common/action_layer.o
+                0x00003650                default_layer_debug
  .text.default_layer_set
-                0x00003628       0x14 obj_gh60_lufa/common/action_layer.o
-                0x00003628                default_layer_set
+                0x00003652       0x14 obj_gh60_lufa/common/action_layer.o
+                0x00003652                default_layer_set
  .text.default_layer_or
-                0x0000363c       0x34 obj_gh60_lufa/common/action_layer.o
-                0x0000363c                default_layer_or
+                0x00003666       0x34 obj_gh60_lufa/common/action_layer.o
+                0x00003666                default_layer_or
  .text.default_layer_and
-                0x00003670       0x34 obj_gh60_lufa/common/action_layer.o
-                0x00003670                default_layer_and
+                0x0000369a       0x34 obj_gh60_lufa/common/action_layer.o
+                0x0000369a                default_layer_and
  .text.default_layer_xor
-                0x000036a4       0x34 obj_gh60_lufa/common/action_layer.o
-                0x000036a4                default_layer_xor
+                0x000036ce       0x34 obj_gh60_lufa/common/action_layer.o
+                0x000036ce                default_layer_xor
  .text.layer_clear
-                0x000036d8       0x14 obj_gh60_lufa/common/action_layer.o
-                0x000036d8                layer_clear
+                0x00003702       0x14 obj_gh60_lufa/common/action_layer.o
+                0x00003702                layer_clear
  .text.layer_move
-                0x000036ec       0x2a obj_gh60_lufa/common/action_layer.o
-                0x000036ec                layer_move
+                0x00003716       0x2a obj_gh60_lufa/common/action_layer.o
+                0x00003716                layer_move
  .text.layer_on
-                0x00003716       0x42 obj_gh60_lufa/common/action_layer.o
-                0x00003716                layer_on
+                0x00003740       0x42 obj_gh60_lufa/common/action_layer.o
+                0x00003740                layer_on
  .text.layer_off
-                0x00003758       0x4a obj_gh60_lufa/common/action_layer.o
-                0x00003758                layer_off
+                0x00003782       0x4a obj_gh60_lufa/common/action_layer.o
+                0x00003782                layer_off
  .text.layer_invert
-                0x000037a2       0x42 obj_gh60_lufa/common/action_layer.o
-                0x000037a2                layer_invert
+                0x000037cc       0x42 obj_gh60_lufa/common/action_layer.o
+                0x000037cc                layer_invert
  .text.layer_or
-                0x000037e4       0x34 obj_gh60_lufa/common/action_layer.o
-                0x000037e4                layer_or
+                0x0000380e       0x34 obj_gh60_lufa/common/action_layer.o
+                0x0000380e                layer_or
  .text.layer_and
-                0x00003818       0x34 obj_gh60_lufa/common/action_layer.o
-                0x00003818                layer_and
+                0x00003842       0x34 obj_gh60_lufa/common/action_layer.o
+                0x00003842                layer_and
  .text.layer_xor
-                0x0000384c       0x34 obj_gh60_lufa/common/action_layer.o
-                0x0000384c                layer_xor
+                0x00003876       0x34 obj_gh60_lufa/common/action_layer.o
+                0x00003876                layer_xor
  .text.layer_debug
-                0x00003880        0x2 obj_gh60_lufa/common/action_layer.o
-                0x00003880                layer_debug
+                0x000038aa        0x2 obj_gh60_lufa/common/action_layer.o
+                0x000038aa                layer_debug
  .text.layer_switch_get_action
-                0x00003882       0x84 obj_gh60_lufa/common/action_layer.o
-                0x00003882                layer_switch_get_action
- .text.add_key  0x00003906       0x9a obj_gh60_lufa/common/action_util.o
-                0x00003906                add_key
- .text.del_key  0x000039a0       0x80 obj_gh60_lufa/common/action_util.o
-                0x000039a0                del_key
+                0x000038ac       0x84 obj_gh60_lufa/common/action_layer.o
+                0x000038ac                layer_switch_get_action
+ .text.add_key  0x00003930       0x9a obj_gh60_lufa/common/action_util.o
+                0x00003930                add_key
+ .text.del_key  0x000039ca       0x80 obj_gh60_lufa/common/action_util.o
+                0x000039ca                del_key
  .text.clear_keys
-                0x00003a20       0x1c obj_gh60_lufa/common/action_util.o
-                0x00003a20                clear_keys
+                0x00003a4a       0x1c obj_gh60_lufa/common/action_util.o
+                0x00003a4a                clear_keys
  .text.add_mods
-                0x00003a3c        0xc obj_gh60_lufa/common/action_util.o
-                0x00003a3c                add_mods
+                0x00003a66        0xc obj_gh60_lufa/common/action_util.o
+                0x00003a66                add_mods
  .text.del_mods
-                0x00003a48        0xe obj_gh60_lufa/common/action_util.o
-                0x00003a48                del_mods
+                0x00003a72        0xe obj_gh60_lufa/common/action_util.o
+                0x00003a72                del_mods
  .text.clear_mods
-                0x00003a56        0x6 obj_gh60_lufa/common/action_util.o
-                0x00003a56                clear_mods
+                0x00003a80        0x6 obj_gh60_lufa/common/action_util.o
+                0x00003a80                clear_mods
  .text.add_weak_mods
-                0x00003a5c        0xc obj_gh60_lufa/common/action_util.o
-                0x00003a5c                add_weak_mods
+                0x00003a86        0xc obj_gh60_lufa/common/action_util.o
+                0x00003a86                add_weak_mods
  .text.del_weak_mods
-                0x00003a68        0xe obj_gh60_lufa/common/action_util.o
-                0x00003a68                del_weak_mods
+                0x00003a92        0xe obj_gh60_lufa/common/action_util.o
+                0x00003a92                del_weak_mods
  .text.clear_weak_mods
-                0x00003a76        0x6 obj_gh60_lufa/common/action_util.o
-                0x00003a76                clear_weak_mods
+                0x00003aa0        0x6 obj_gh60_lufa/common/action_util.o
+                0x00003aa0                clear_weak_mods
  .text.set_oneshot_mods
-                0x00003a7c        0x6 obj_gh60_lufa/common/action_util.o
-                0x00003a7c                set_oneshot_mods
+                0x00003aa6        0x6 obj_gh60_lufa/common/action_util.o
+                0x00003aa6                set_oneshot_mods
  .text.clear_oneshot_mods
-                0x00003a82        0x6 obj_gh60_lufa/common/action_util.o
-                0x00003a82                clear_oneshot_mods
+                0x00003aac        0x6 obj_gh60_lufa/common/action_util.o
+                0x00003aac                clear_oneshot_mods
  .text.has_anykey
-                0x00003a88       0x26 obj_gh60_lufa/common/action_util.o
-                0x00003a88                has_anykey
+                0x00003ab2       0x26 obj_gh60_lufa/common/action_util.o
+                0x00003ab2                has_anykey
  .text.send_keyboard_report
-                0x00003aae       0x4c obj_gh60_lufa/common/action_util.o
-                0x00003aae                send_keyboard_report
+                0x00003ad8       0x4c obj_gh60_lufa/common/action_util.o
+                0x00003ad8                send_keyboard_report
  .text.keycode_to_action
-                0x00003afa      0x144 obj_gh60_lufa/common/keymap.o
+                0x00003b24      0x144 obj_gh60_lufa/common/keymap.o
  .text.action_for_key
-                0x00003c3e       0xe6 obj_gh60_lufa/common/keymap.o
-                0x00003c3e                action_for_key
+                0x00003c68       0xe6 obj_gh60_lufa/common/keymap.o
+                0x00003c68                action_for_key
  .text.action_get_macro
-                0x00003d24        0x6 obj_gh60_lufa/common/keymap.o
-                0x00003d24                action_get_macro
+                0x00003d4e        0x6 obj_gh60_lufa/common/keymap.o
+                0x00003d4e                action_get_macro
  .text.action_function
-                0x00003d2a        0x2 obj_gh60_lufa/common/keymap.o
-                0x00003d2a                action_function
+                0x00003d54        0x2 obj_gh60_lufa/common/keymap.o
+                0x00003d54                action_function
  .text.print_set_sendchar
-                0x00003d2c        0xa obj_gh60_lufa/common/print.o
-                0x00003d2c                print_set_sendchar
- .text.biton32  0x00003d36       0xa6 obj_gh60_lufa/common/util.o
-                0x00003d36                biton32
- .text.bitrev   0x00003ddc       0x24 obj_gh60_lufa/common/util.o
-                0x00003ddc                bitrev
+                0x00003d56        0xa obj_gh60_lufa/common/print.o
+                0x00003d56                print_set_sendchar
+ .text.biton32  0x00003d60       0xa6 obj_gh60_lufa/common/util.o
+                0x00003d60                biton32
+ .text.bitrev   0x00003e06       0x24 obj_gh60_lufa/common/util.o
+                0x00003e06                bitrev
  .text.bitrev16
-                0x00003e00       0x34 obj_gh60_lufa/common/util.o
-                0x00003e00                bitrev16
+                0x00003e2a       0x34 obj_gh60_lufa/common/util.o
+                0x00003e2a                bitrev16
  .text.suspend_power_down
-                0x00003e34       0x4c obj_gh60_lufa/common/avr/suspend.o
-                0x00003e34                suspend_power_down
+                0x00003e5e       0x4c obj_gh60_lufa/common/avr/suspend.o
+                0x00003e5e                suspend_power_down
  .text.suspend_wakeup_condition
-                0x00003e80       0x2a obj_gh60_lufa/common/avr/suspend.o
-                0x00003e80                suspend_wakeup_condition
+                0x00003eaa       0x2a obj_gh60_lufa/common/avr/suspend.o
+                0x00003eaa                suspend_wakeup_condition
  .text.suspend_wakeup_init
-                0x00003eaa        0x4 obj_gh60_lufa/common/avr/suspend.o
-                0x00003eaa                suspend_wakeup_init
+                0x00003ed4        0x4 obj_gh60_lufa/common/avr/suspend.o
+                0x00003ed4                suspend_wakeup_init
  .text.__vector_12
-                0x00003eae       0x52 obj_gh60_lufa/common/avr/suspend.o
-                0x00003eae                __vector_12
+                0x00003ed8       0x52 obj_gh60_lufa/common/avr/suspend.o
+                0x00003ed8                __vector_12
  .text.timer_init
-                0x00003f00       0x12 obj_gh60_lufa/common/avr/timer.o
-                0x00003f00                timer_init
+                0x00003f2a       0x12 obj_gh60_lufa/common/avr/timer.o
+                0x00003f2a                timer_init
  .text.timer_read
-                0x00003f12       0x18 obj_gh60_lufa/common/avr/timer.o
-                0x00003f12                timer_read
+                0x00003f3c       0x18 obj_gh60_lufa/common/avr/timer.o
+                0x00003f3c                timer_read
  .text.timer_elapsed
-                0x00003f2a       0x52 obj_gh60_lufa/common/avr/timer.o
-                0x00003f2a                timer_elapsed
+                0x00003f54       0x52 obj_gh60_lufa/common/avr/timer.o
+                0x00003f54                timer_elapsed
  .text.__vector_21
-                0x00003f7c       0x4a obj_gh60_lufa/common/avr/timer.o
-                0x00003f7c                __vector_21
+                0x00003fa6       0x4a obj_gh60_lufa/common/avr/timer.o
+                0x00003fa6                __vector_21
  .text.bootloader_jump
-                0x00003fc6       0x46 obj_gh60_lufa/common/avr/bootloader.o
-                0x00003fc6                bootloader_jump
+                0x00003ff0       0x46 obj_gh60_lufa/common/avr/bootloader.o
+                0x00003ff0                bootloader_jump
  .text.scan_keycode
-                0x0000400c       0x72 obj_gh60_lufa/common/bootmagic.o
+                0x00004036       0x72 obj_gh60_lufa/common/bootmagic.o
  .text.bootmagic_scan_keycode
-                0x0000407e       0x1c obj_gh60_lufa/common/bootmagic.o
-                0x0000407e                bootmagic_scan_keycode
+                0x000040a8       0x1c obj_gh60_lufa/common/bootmagic.o
+                0x000040a8                bootmagic_scan_keycode
  .text.bootmagic
-                0x0000409a      0x266 obj_gh60_lufa/common/bootmagic.o
-                0x0000409a                bootmagic
+                0x000040c4      0x266 obj_gh60_lufa/common/bootmagic.o
+                0x000040c4                bootmagic
  .text.eeconfig_init
-                0x00004300       0x34 obj_gh60_lufa/common/avr/eeconfig.o
-                0x00004300                eeconfig_init
+                0x0000432a       0x34 obj_gh60_lufa/common/avr/eeconfig.o
+                0x0000432a                eeconfig_init
  .text.eeconfig_is_enabled
-                0x00004334       0x16 obj_gh60_lufa/common/avr/eeconfig.o
-                0x00004334                eeconfig_is_enabled
+                0x0000435e       0x16 obj_gh60_lufa/common/avr/eeconfig.o
+                0x0000435e                eeconfig_is_enabled
  .text.eeconfig_read_debug
-                0x0000434a        0x8 obj_gh60_lufa/common/avr/eeconfig.o
-                0x0000434a                eeconfig_read_debug
+                0x00004374        0x8 obj_gh60_lufa/common/avr/eeconfig.o
+                0x00004374                eeconfig_read_debug
  .text.eeconfig_write_debug
-                0x00004352        0xa obj_gh60_lufa/common/avr/eeconfig.o
-                0x00004352                eeconfig_write_debug
+                0x0000437c        0xa obj_gh60_lufa/common/avr/eeconfig.o
+                0x0000437c                eeconfig_write_debug
  .text.eeconfig_read_default_layer
-                0x0000435c        0x8 obj_gh60_lufa/common/avr/eeconfig.o
-                0x0000435c                eeconfig_read_default_layer
+                0x00004386        0x8 obj_gh60_lufa/common/avr/eeconfig.o
+                0x00004386                eeconfig_read_default_layer
  .text.eeconfig_write_default_layer
-                0x00004364        0xa obj_gh60_lufa/common/avr/eeconfig.o
-                0x00004364                eeconfig_write_default_layer
+                0x0000438e        0xa obj_gh60_lufa/common/avr/eeconfig.o
+                0x0000438e                eeconfig_write_default_layer
  .text.eeconfig_read_keymap
-                0x0000436e        0x8 obj_gh60_lufa/common/avr/eeconfig.o
-                0x0000436e                eeconfig_read_keymap
+                0x00004398        0x8 obj_gh60_lufa/common/avr/eeconfig.o
+                0x00004398                eeconfig_read_keymap
  .text.eeconfig_write_keymap
-                0x00004376        0xa obj_gh60_lufa/common/avr/eeconfig.o
-                0x00004376                eeconfig_write_keymap
+                0x000043a0        0xa obj_gh60_lufa/common/avr/eeconfig.o
+                0x000043a0                eeconfig_write_keymap
  .text.move_unit
-                0x00004380       0x90 obj_gh60_lufa/common/mousekey.o
+                0x000043aa       0x90 obj_gh60_lufa/common/mousekey.o
  .text.wheel_unit
-                0x00004410       0x72 obj_gh60_lufa/common/mousekey.o
+                0x0000443a       0x72 obj_gh60_lufa/common/mousekey.o
  .text.mousekey_on
-                0x00004482       0xd0 obj_gh60_lufa/common/mousekey.o
-                0x00004482                mousekey_on
+                0x000044ac       0xd0 obj_gh60_lufa/common/mousekey.o
+                0x000044ac                mousekey_on
  .text.mousekey_off
-                0x00004552      0x10a obj_gh60_lufa/common/mousekey.o
-                0x00004552                mousekey_off
+                0x0000457c      0x10a obj_gh60_lufa/common/mousekey.o
+                0x0000457c                mousekey_off
  .text.mousekey_send
-                0x0000465c      0x11a obj_gh60_lufa/common/mousekey.o
-                0x0000465c                mousekey_send
+                0x00004686      0x11a obj_gh60_lufa/common/mousekey.o
+                0x00004686                mousekey_send
  .text.mousekey_task
-                0x00004776      0x142 obj_gh60_lufa/common/mousekey.o
-                0x00004776                mousekey_task
+                0x000047a0      0x142 obj_gh60_lufa/common/mousekey.o
+                0x000047a0                mousekey_task
  .text.mousekey_clear
-                0x000048b8       0x18 obj_gh60_lufa/common/mousekey.o
-                0x000048b8                mousekey_clear
+                0x000048e2       0x18 obj_gh60_lufa/common/mousekey.o
+                0x000048e2                mousekey_clear
  .text.command_console_help
-                0x000048d0       0x18 obj_gh60_lufa/common/command.o
+                0x000048fa       0x18 obj_gh60_lufa/common/command.o
  .text.mousekey_console_help
-                0x000048e8       0xcc obj_gh60_lufa/common/command.o
+                0x00004912       0xcc obj_gh60_lufa/common/command.o
  .text.mousekey_param_inc
-                0x000049b4      0x1e2 obj_gh60_lufa/common/command.o
+                0x000049de      0x1e2 obj_gh60_lufa/common/command.o
  .text.mousekey_param_dec
-                0x00004b96      0x19a obj_gh60_lufa/common/command.o
+                0x00004bc0      0x19a obj_gh60_lufa/common/command.o
  .text.switch_default_layer
-                0x00004d30       0x80 obj_gh60_lufa/common/command.o
+                0x00004d5a       0x80 obj_gh60_lufa/common/command.o
  .text.command_common
-                0x00004db0      0x57e obj_gh60_lufa/common/command.o
+                0x00004dda      0x57e obj_gh60_lufa/common/command.o
  .text.command_extra
-                0x0000532e        0x4 obj_gh60_lufa/common/command.o
-                0x0000532e                command_extra
+                0x00005358        0x4 obj_gh60_lufa/common/command.o
+                0x00005358                command_extra
  .text.command_console_extra
-                0x00005332        0x4 obj_gh60_lufa/common/command.o
-                0x00005332                command_console_extra
+                0x0000535c        0x4 obj_gh60_lufa/common/command.o
+                0x0000535c                command_console_extra
  .text.command_proc
-                0x00005336      0x2e0 obj_gh60_lufa/common/command.o
-                0x00005336                command_proc
+                0x00005360      0x2e0 obj_gh60_lufa/common/command.o
+                0x00005360                command_proc
  .text.avr-libc.fplib
-                0x00005616        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
-                0x00005616                __fixsfsi
+                0x00005640        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixsfsi.o)
+                0x00005640                __fixsfsi
  .text.avr-libc.fplib
-                0x00005620       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
-                0x00005620                __fixunssfsi
+                0x0000564a       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fixunssfsi.o)
+                0x0000564a                __fixunssfsi
  .text.avr-libc.fplib
-                0x00005678       0x7a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(floatsisf.o)
-                0x00005678                __floatunsisf
-                0x0000567c                __floatsisf
+                0x000056a2       0x7a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(floatsisf.o)
+                0x000056a2                __floatunsisf
+                0x000056a6                __floatsisf
  .text.avr-libc.fplib
-                0x000056f2       0x44 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_split3.o)
-                0x000056f2                __fp_split3
-                0x00005702                __fp_splitA
+                0x0000571c       0x44 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_split3.o)
+                0x0000571c                __fp_split3
+                0x0000572c                __fp_splitA
  .text.avr-libc.fplib
-                0x00005736        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_zero.o)
-                0x00005736                __fp_zero
-                0x00005738                __fp_szero
+                0x00005760        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_zero.o)
+                0x00005760                __fp_zero
+                0x00005762                __fp_szero
  .text.avr-libc.fplib
-                0x00005744        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3.o)
-                0x00005744                __mulsf3
+                0x0000576e        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3.o)
+                0x0000576e                __mulsf3
  .text.avr-libc.fplib
-                0x00005748       0xc2 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
-                0x0000575c                __mulsf3x
-                0x00005760                __mulsf3_pse
+                0x00005772       0xc2 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(mulsf3x.o)
+                0x00005786                __mulsf3x
+                0x0000578a                __mulsf3_pse
  .text.avr-libc.fplib
-                0x0000580a        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_inf.o)
-                0x0000580a                __fp_inf
+                0x00005834        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_inf.o)
+                0x00005834                __fp_inf
  .text.avr-libc.fplib
-                0x00005816        0x6 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_nan.o)
-                0x00005816                __fp_nan
+                0x00005840        0x6 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_nan.o)
+                0x00005840                __fp_nan
  .text.avr-libc.fplib
-                0x0000581c        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
-                0x0000581c                __fp_pscA
+                0x00005846        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscA.o)
+                0x00005846                __fp_pscA
  .text.avr-libc.fplib
-                0x0000582a        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
-                0x0000582a                __fp_pscB
+                0x00005854        0xe /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_pscB.o)
+                0x00005854                __fp_pscB
  .text.avr-libc.fplib
-                0x00005838       0x22 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_round.o)
-                0x00005838                __fp_round
+                0x00005862       0x22 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libm.a(fp_round.o)
+                0x00005862                __fp_round
  .text.libgcc.div
-                0x0000585a       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
-                0x0000585a                __divmodhi4
-                0x0000585a                _div
- .text.libgcc   0x00005882        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
-                0x00005882                __tablejump2__
-                0x00005886                __tablejump__
+                0x00005884       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
+                0x00005884                __divmodhi4
+                0x00005884                _div
+ .text.libgcc   0x000058ac        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
+                0x000058ac                __tablejump2__
+                0x000058b0                __tablejump__
  .text.libgcc.div
-                0x0000588e       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
-                0x0000588e                __udivmodhi4
+                0x000058b8       0x28 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
+                0x000058b8                __udivmodhi4
  .text.avr-libc
-                0x000058b6       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega32u4.o)
-                0x000058b6                __eerd_byte_m32u4
+                0x000058e0       0x10 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_byte_atmega32u4.o)
+                0x000058e0                __eerd_byte_m32u4
  .text.avr-libc
-                0x000058c6        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_word_atmega32u4.o)
-                0x000058c6                __eerd_word_m32u4
+                0x000058f0        0xc /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_word_atmega32u4.o)
+                0x000058f0                __eerd_word_m32u4
  .text.avr-libc
-                0x000058d2       0x1c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega32u4.o)
-                0x000058d2                __eewr_byte_m32u4
-                0x000058d4                __eewr_r18_m32u4
+                0x000058fc       0x1c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_byte_atmega32u4.o)
+                0x000058fc                __eewr_byte_m32u4
+                0x000058fe                __eewr_r18_m32u4
  .text.avr-libc
-                0x000058ee        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_word_atmega32u4.o)
-                0x000058ee                __eewr_word_m32u4
+                0x00005918        0xa /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eewr_word_atmega32u4.o)
+                0x00005918                __eewr_word_m32u4
  .text.avr-libc
-                0x000058f8       0x20 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_block_atmega32u4.o)
-                0x000058f8                __eerd_block_m32u4
-                0x000058fc                __eerd_blraw_m32u4
-                0x00005918                . = ALIGN (0x2)
+                0x00005922       0x20 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/libc.a(eerd_block_atmega32u4.o)
+                0x00005922                __eerd_block_m32u4
+                0x00005926                __eerd_blraw_m32u4
+                0x00005942                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00005918        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
-                0x00005918                exit
-                0x00005918                _exit
+ .fini9         0x00005942        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+                0x00005942                exit
+                0x00005942                _exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -1185,11 +1185,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00005918        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+ .fini0         0x00005942        0x4 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
  *(.fini0)
-                0x0000591c                _etext = .
+                0x00005946                _etext = .
 
-.data           0x00800100       0x38 load address 0x0000591c
+.data           0x00800100       0x38 load address 0x00005946
                 0x00800100                PROVIDE (__data_start, .)
  *(.data)
  .data          0x00800100        0x0 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/../../../../avr/lib/avr5/crtm32u4.o
@@ -1312,8 +1312,8 @@ END GROUP
                 0x008001dd                USB_DeviceState
                 0x008001de                USB_ControlRequest
                 0x008001e6                PROVIDE (__bss_end, .)
-                0x0000591c                __data_load_start = LOADADDR (.data)
-                0x00005954                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00005946                __data_load_start = LOADADDR (.data)
+                0x0000597e                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x008001e6        0x4
                 0x008001e6                PROVIDE (__noinit_start, .)
@@ -1602,52 +1602,52 @@ END GROUP
  .debug_abbrev  0x00003fb4       0x14 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
  .debug_abbrev  0x00003fc8       0x14 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
 
-.debug_line     0x00000000     0x5836
+.debug_line     0x00000000     0x583e
  *(.debug_line)
  .debug_line    0x00000000      0x10e obj_gh60_lufa/keymap_poker.o
  .debug_line    0x0000010e      0x148 obj_gh60_lufa/keymap_common.o
- .debug_line    0x00000256      0x27b obj_gh60_lufa/matrix.o
- .debug_line    0x000004d1       0x71 obj_gh60_lufa/led.o
- .debug_line    0x00000542      0x752 obj_gh60_lufa/protocol/lufa/lufa.o
- .debug_line    0x00000c94      0x1eb obj_gh60_lufa/protocol/lufa/descriptor.o
- .debug_line    0x00000e7f      0x135 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
- .debug_line    0x00000fb4      0x3dc obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_line    0x00001390       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
- .debug_line    0x000013aa       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
- .debug_line    0x000013c4      0x29b obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_line    0x0000165f      0x4b5 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_line    0x00001b14      0xc2d obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_line    0x00002741       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
- .debug_line    0x0000275b      0x18c obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.o
- .debug_line    0x000028e7      0x399 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_line    0x00002c80       0x6b obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.o
- .debug_line    0x00002ceb        0x0 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/HostStandardReq.o
- .debug_line    0x00002ceb      0x19a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.o
- .debug_line    0x00002e85      0x23e obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.o
- .debug_line    0x000030c3      0x1c2 obj_gh60_lufa/common/host.o
- .debug_line    0x00003285      0x1f2 obj_gh60_lufa/common/keyboard.o
- .debug_line    0x00003477      0x498 obj_gh60_lufa/common/action.o
- .debug_line    0x0000390f      0x298 obj_gh60_lufa/common/action_tapping.o
- .debug_line    0x00003ba7      0x1ae obj_gh60_lufa/common/action_macro.o
- .debug_line    0x00003d55      0x22a obj_gh60_lufa/common/action_layer.o
- .debug_line    0x00003f7f      0x288 obj_gh60_lufa/common/action_util.o
- .debug_line    0x00004207      0x215 obj_gh60_lufa/common/keymap.o
- .debug_line    0x0000441c       0x9a obj_gh60_lufa/common/print.o
- .debug_line    0x000044b6       0x77 obj_gh60_lufa/common/debug.o
- .debug_line    0x0000452d      0x18c obj_gh60_lufa/common/util.o
- .debug_line    0x000046b9      0x1d5 obj_gh60_lufa/common/avr/suspend.o
- .debug_line    0x0000488e      0x11b obj_gh60_lufa/common/avr/timer.o
- .debug_line    0x000049a9      0x183 obj_gh60_lufa/common/avr/bootloader.o
- .debug_line    0x00004b2c      0x26f obj_gh60_lufa/common/bootmagic.o
- .debug_line    0x00004d9b      0x154 obj_gh60_lufa/common/avr/eeconfig.o
- .debug_line    0x00004eef      0x310 obj_gh60_lufa/common/mousekey.o
- .debug_line    0x000051ff      0x3f1 obj_gh60_lufa/common/command.o
- .debug_line    0x000055f0       0x69 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
- .debug_line    0x00005659       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
- .debug_line    0x000056b1       0x5c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
- .debug_line    0x0000570d       0x61 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
- .debug_line    0x0000576e       0x5e /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
- .debug_line    0x000057cc       0x6a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
+ .debug_line    0x00000256      0x283 obj_gh60_lufa/matrix.o
+ .debug_line    0x000004d9       0x71 obj_gh60_lufa/led.o
+ .debug_line    0x0000054a      0x752 obj_gh60_lufa/protocol/lufa/lufa.o
+ .debug_line    0x00000c9c      0x1eb obj_gh60_lufa/protocol/lufa/descriptor.o
+ .debug_line    0x00000e87      0x135 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Device_AVR8.o
+ .debug_line    0x00000fbc      0x3dc obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_line    0x00001398       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Host_AVR8.o
+ .debug_line    0x000013b2       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Pipe_AVR8.o
+ .debug_line    0x000013cc      0x29b obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_line    0x00001667      0x4b5 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_line    0x00001b1c      0xc2d obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_line    0x00002749       0x1a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/PipeStream_AVR8.o
+ .debug_line    0x00002763      0x18c obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_line    0x000028ef      0x399 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_line    0x00002c88       0x6b obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/Events.o
+ .debug_line    0x00002cf3        0x0 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/HostStandardReq.o
+ .debug_line    0x00002cf3      0x19a obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_line    0x00002e8d      0x23e obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_line    0x000030cb      0x1c2 obj_gh60_lufa/common/host.o
+ .debug_line    0x0000328d      0x1f2 obj_gh60_lufa/common/keyboard.o
+ .debug_line    0x0000347f      0x498 obj_gh60_lufa/common/action.o
+ .debug_line    0x00003917      0x298 obj_gh60_lufa/common/action_tapping.o
+ .debug_line    0x00003baf      0x1ae obj_gh60_lufa/common/action_macro.o
+ .debug_line    0x00003d5d      0x22a obj_gh60_lufa/common/action_layer.o
+ .debug_line    0x00003f87      0x288 obj_gh60_lufa/common/action_util.o
+ .debug_line    0x0000420f      0x215 obj_gh60_lufa/common/keymap.o
+ .debug_line    0x00004424       0x9a obj_gh60_lufa/common/print.o
+ .debug_line    0x000044be       0x77 obj_gh60_lufa/common/debug.o
+ .debug_line    0x00004535      0x18c obj_gh60_lufa/common/util.o
+ .debug_line    0x000046c1      0x1d5 obj_gh60_lufa/common/avr/suspend.o
+ .debug_line    0x00004896      0x11b obj_gh60_lufa/common/avr/timer.o
+ .debug_line    0x000049b1      0x183 obj_gh60_lufa/common/avr/bootloader.o
+ .debug_line    0x00004b34      0x26f obj_gh60_lufa/common/bootmagic.o
+ .debug_line    0x00004da3      0x154 obj_gh60_lufa/common/avr/eeconfig.o
+ .debug_line    0x00004ef7      0x310 obj_gh60_lufa/common/mousekey.o
+ .debug_line    0x00005207      0x3f1 obj_gh60_lufa/common/command.o
+ .debug_line    0x000055f8       0x69 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_divmodhi4.o)
+ .debug_line    0x00005661       0x58 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_exit.o)
+ .debug_line    0x000056b9       0x5c /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_tablejump.o)
+ .debug_line    0x00005715       0x61 /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_copy_data.o)
+ .debug_line    0x00005776       0x5e /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_clear_bss.o)
+ .debug_line    0x000057d4       0x6a /usr/local/CrossPack-AVR-20131216/lib/gcc/avr/4.8.1/avr5/libgcc.a(_udivmodhi4.o)
 
 .debug_frame    0x00000000     0x1d0c
  *(.debug_frame)
@@ -1763,35 +1763,35 @@ END GROUP
  .debug_str     0x000040a7      0x53b obj_gh60_lufa/common/command.o
                                 0xf84 (size before relaxing)
 
-.debug_loc      0x00000000     0x8e93
+.debug_loc      0x00000000     0x8e7d
  *(.debug_loc)
  .debug_loc     0x00000000       0x8d obj_gh60_lufa/keymap_common.o
- .debug_loc     0x0000008d      0x321 obj_gh60_lufa/matrix.o
- .debug_loc     0x000003ae      0x69a obj_gh60_lufa/protocol/lufa/lufa.o
- .debug_loc     0x00000a48      0x20a obj_gh60_lufa/protocol/lufa/descriptor.o
- .debug_loc     0x00000c52      0x3f2 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
- .debug_loc     0x00001044       0x49 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
- .debug_loc     0x0000108d      0x333 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
- .debug_loc     0x000013c0     0x1dc8 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
- .debug_loc     0x00003188      0x5bd obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.o
- .debug_loc     0x00003745      0x2e7 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
- .debug_loc     0x00003a2c       0x49 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.o
- .debug_loc     0x00003a75      0xad6 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.o
- .debug_loc     0x0000454b      0x1b8 obj_gh60_lufa/common/host.o
- .debug_loc     0x00004703      0x260 obj_gh60_lufa/common/keyboard.o
- .debug_loc     0x00004963      0xe0a obj_gh60_lufa/common/action.o
- .debug_loc     0x0000576d      0x632 obj_gh60_lufa/common/action_tapping.o
- .debug_loc     0x00005d9f      0x47b obj_gh60_lufa/common/action_macro.o
- .debug_loc     0x0000621a      0x698 obj_gh60_lufa/common/action_layer.o
- .debug_loc     0x000068b2      0x3dc obj_gh60_lufa/common/action_util.o
- .debug_loc     0x00006c8e      0x3aa obj_gh60_lufa/common/keymap.o
- .debug_loc     0x00007038      0x503 obj_gh60_lufa/common/util.o
- .debug_loc     0x0000753b       0xc5 obj_gh60_lufa/common/avr/suspend.o
- .debug_loc     0x00007600      0x20a obj_gh60_lufa/common/avr/timer.o
- .debug_loc     0x0000780a      0x289 obj_gh60_lufa/common/bootmagic.o
- .debug_loc     0x00007a93       0x84 obj_gh60_lufa/common/avr/eeconfig.o
- .debug_loc     0x00007b17      0x574 obj_gh60_lufa/common/mousekey.o
- .debug_loc     0x0000808b      0xe08 obj_gh60_lufa/common/command.o
+ .debug_loc     0x0000008d      0x30b obj_gh60_lufa/matrix.o
+ .debug_loc     0x00000398      0x69a obj_gh60_lufa/protocol/lufa/lufa.o
+ .debug_loc     0x00000a32      0x20a obj_gh60_lufa/protocol/lufa/descriptor.o
+ .debug_loc     0x00000c3c      0x3f2 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/Endpoint_AVR8.o
+ .debug_loc     0x0000102e       0x49 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBController_AVR8.o
+ .debug_loc     0x00001077      0x333 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/USBInterrupt_AVR8.o
+ .debug_loc     0x000013aa     0x1dc8 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/AVR8/EndpointStream_AVR8.o
+ .debug_loc     0x00003172      0x5bd obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/ConfigDescriptors.o
+ .debug_loc     0x0000372f      0x2e7 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/DeviceStandardReq.o
+ .debug_loc     0x00003a16       0x49 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.o
+ .debug_loc     0x00003a5f      0xad6 obj_gh60_lufa/protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Class/Common/HIDParser.o
+ .debug_loc     0x00004535      0x1b8 obj_gh60_lufa/common/host.o
+ .debug_loc     0x000046ed      0x260 obj_gh60_lufa/common/keyboard.o
+ .debug_loc     0x0000494d      0xe0a obj_gh60_lufa/common/action.o
+ .debug_loc     0x00005757      0x632 obj_gh60_lufa/common/action_tapping.o
+ .debug_loc     0x00005d89      0x47b obj_gh60_lufa/common/action_macro.o
+ .debug_loc     0x00006204      0x698 obj_gh60_lufa/common/action_layer.o
+ .debug_loc     0x0000689c      0x3dc obj_gh60_lufa/common/action_util.o
+ .debug_loc     0x00006c78      0x3aa obj_gh60_lufa/common/keymap.o
+ .debug_loc     0x00007022      0x503 obj_gh60_lufa/common/util.o
+ .debug_loc     0x00007525       0xc5 obj_gh60_lufa/common/avr/suspend.o
+ .debug_loc     0x000075ea      0x20a obj_gh60_lufa/common/avr/timer.o
+ .debug_loc     0x000077f4      0x289 obj_gh60_lufa/common/bootmagic.o
+ .debug_loc     0x00007a7d       0x84 obj_gh60_lufa/common/avr/eeconfig.o
+ .debug_loc     0x00007b01      0x574 obj_gh60_lufa/common/mousekey.o
+ .debug_loc     0x00008075      0xe08 obj_gh60_lufa/common/command.o
 
 .debug_macinfo
  *(.debug_macinfo)

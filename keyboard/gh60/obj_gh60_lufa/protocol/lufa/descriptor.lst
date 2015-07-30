@@ -1293,25 +1293,25 @@
  686               		.file 7 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 descriptor.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:13     .text.CALLBACK_USB_GetDescriptor:00000000 CALLBACK_USB_GetDescriptor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:233    .progmem.data:00000024 ConfigurationDescriptor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:226    .progmem.data:00000020 LanguageString
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:212    .progmem.data:00000010 ManufacturerString
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:198    .progmem.data:00000000 ProductString
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:188    .rodata:0000000f CSWTCH.1
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:180    .rodata:00000005 CSWTCH.2
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:172    .rodata:00000000 CSWTCH.3
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:361    .progmem.data:000000b1 DeviceDescriptor
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:615    .progmem.data:0000019f KeyboardReport
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:534    .progmem.data:00000152 MouseReport
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:476    .progmem.data:0000011c ExtrakeyReport
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:440    .progmem.data:000000fc ConsoleReport
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccUYWMG8.s:379    .progmem.data:000000c3 NKROReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:13     .text.CALLBACK_USB_GetDescriptor:00000000 CALLBACK_USB_GetDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:233    .progmem.data:00000024 ConfigurationDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:226    .progmem.data:00000020 LanguageString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:212    .progmem.data:00000010 ManufacturerString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:198    .progmem.data:00000000 ProductString
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:188    .rodata:0000000f CSWTCH.1
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:180    .rodata:00000005 CSWTCH.2
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:172    .rodata:00000000 CSWTCH.3
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:361    .progmem.data:000000b1 DeviceDescriptor
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:615    .progmem.data:0000019f KeyboardReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:534    .progmem.data:00000152 MouseReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:476    .progmem.data:0000011c ExtrakeyReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:440    .progmem.data:000000fc ConsoleReport
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccE8fFaI.s:379    .progmem.data:000000c3 NKROReport
 
 UNDEFINED SYMBOLS
 __do_copy_data

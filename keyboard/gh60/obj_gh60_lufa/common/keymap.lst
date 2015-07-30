@@ -833,18 +833,18 @@
  569               		.file 9 "../../protocol/lufa/LUFA-120730/LUFA/Drivers/USB/Core/USBTask.h"
 DEFINED SYMBOLS
                             *ABS*:00000000 keymap.c
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:2      *ABS*:0000003e __SP_H__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:3      *ABS*:0000003d __SP_L__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:4      *ABS*:0000003f __SREG__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:5      *ABS*:00000000 __tmp_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:6      *ABS*:00000001 __zero_reg__
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:12     .text.keycode_to_action:00000000 keycode_to_action
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:303    .text.matrix_power_up:00000000 matrix_power_up
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:319    .text.matrix_power_down:00000000 matrix_power_down
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:334    .text.action_for_key:00000000 action_for_key
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:2      *ABS*:0000003e __SP_H__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:3      *ABS*:0000003d __SP_L__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:4      *ABS*:0000003f __SREG__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:5      *ABS*:00000000 __tmp_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:6      *ABS*:00000001 __zero_reg__
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:12     .text.keycode_to_action:00000000 keycode_to_action
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:303    .text.matrix_power_up:00000000 matrix_power_up
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:319    .text.matrix_power_down:00000000 matrix_power_down
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:334    .text.action_for_key:00000000 action_for_key
                             *COM*:00000001 keymap_config
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:527    .text.action_get_macro:00000000 action_get_macro
-/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccduDN5q.s:547    .text.action_function:00000000 action_function
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:527    .text.action_get_macro:00000000 action_get_macro
+/var/folders/1n/7_pxd1gd79b8r2krz1090vjm0000gn/T//ccELAh6c.s:547    .text.action_function:00000000 action_function
 
 UNDEFINED SYMBOLS
 keymap_key_to_keycode
