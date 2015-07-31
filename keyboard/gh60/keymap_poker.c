@@ -11,11 +11,11 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    /* 1: FN 1 */
   KEYMAP(
-    GRV,   F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10, F11,   F12,  TRNS,  TRNS,  \
+    GRV,   F1,   F2,   F3,   F4,   F5,   F6,   F7,   F8,   F9,   F10, F11,   F12,  DEL,  DEL,  \
     TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS, TRNS,  TRNS,  TRNS,  \
     TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  \
-    TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  \
-    TRNS,  TRNS,  TRNS,       TRNS,       TRNS,  TRNS, TRNS, TRNS, TRNS, TRNS),
+    TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  TRNS,  PGUP,  TRNS,  \
+    TRNS,  TRNS,  TRNS,       TRNS,       TRNS,  TRNS, TRNS, TRNS, PGDN, TRNS),
 
 };
 
