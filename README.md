@@ -1,4 +1,4 @@
-# to make file
+# To make file
 
 
 * good reference: http://deskthority.net/workshop-f7/how-to-build-your-very-own-keyboard-firmware-t7177.html
