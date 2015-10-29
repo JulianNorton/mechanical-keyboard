@@ -1,11 +1,13 @@
 # to make file
 
 
-* http://deskthority.net/workshop-f7/how-to-build-your-very-own-keyboard-firmware-t7177.html
+* good reference: http://deskthority.net/workshop-f7/how-to-build-your-very-own-keyboard-firmware-t7177.html
+## To actual make file
+* `make clean`
+* `make KEYMAP=poker`
 
-`make clean`
-`make KEYMAP=poker`
 
+# My mapped connections
 
 ## Row = 1
   * wire color = Blue
